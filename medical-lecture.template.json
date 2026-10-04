@@ -1,0 +1,17 @@
+{
+  "title": "Acute Inflammation",
+  "subtitle": "A high-yield guide to vascular and cellular responses",
+  "course": "General Pathology",
+  "accent": "emerald",
+  "blocks": [
+    { "type": "title", "text": "Acute inflammation" },
+    { "type": "subtitle", "text": "Recognize the sequence, mediators, and clinical consequences." },
+    { "type": "paragraph", "heading": "Core concept", "text": "Acute inflammation is a rapid protective response that delivers leukocytes and plasma proteins to sites of infection or tissue injury." },
+    { "type": "note", "variant": "clinical", "title": "Clinical anchor", "text": "Warmth, erythema, swelling, pain, and loss of function arise from vasodilation, permeability, and mediator activity." },
+    { "type": "flow", "title": "The vascular response", "steps": ["Tissue injury", "Histamine and nitric oxide", "Vasodilation", "Increased permeability", "Protein-rich exudate"] },
+    { "type": "table", "title": "Key mediators", "columns": ["Mediator", "Major source", "Primary action"], "rows": [["Histamine", "Mast cells", "Vasodilation; permeability"], ["Prostaglandins", "Leukocytes, endothelium", "Pain; fever; vasodilation"], ["C5a", "Complement", "Chemotaxis; activation"]] },
+    { "type": "callout", "label": "EXAM PEARL", "text": "Exudate has high protein content; transudate is protein-poor and usually caused by altered hydrostatic or oncotic pressure." },
+    { "type": "question", "prompt": "Which mediator is a potent chemotactic factor for neutrophils?", "answer": "C5a. It is a complement split product that recruits and activates leukocytes." },
+    { "type": "checklist", "title": "Rapid review", "items": ["Know the cardinal signs", "Distinguish exudate from transudate", "Trace leukocyte recruitment", "Match mediators to effects"] }
+  ]
+}
