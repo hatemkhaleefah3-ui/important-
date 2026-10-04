@@ -70,3 +70,10 @@ Columns run left to right, lanes top to bottom. No two nodes can occupy the same
 Stage controls are standard keyboard-accessible buttons. Route tracking highlights connected stages and connections; selecting a node outside the current route returns to free exploration. Tracking state resets when the page reloads. The tracker is an explanatory walkthrough, not a timed or quantitative simulation. Formulas render as Unicode/plain text, not LaTeX.
 
 Diagrams scroll within the reader on small screens. A text connection list gives an alternative to the visual graph. Print includes a scaled diagram, connection list, and all stage descriptions. Color differences are supplemented by arrowheads, inhibition bars, dashed transport links, labels, and explicit connection kinds.
+
+## Populated medical lectures
+
+- `lectures/carbohydrate-biochemistry.json`: sugar structure, absorption, glycolysis, pyruvate fates, glycogen, gluconeogenesis, PPP, and other monosaccharides. Four diagrams and four recall questions.
+- `lectures/heart-drugs-pharmacology.json`: HFrEF classes, beta blockade, angina, antiarrhythmic classes, thrombosis, and major safety interactions. Four diagrams and five recall questions.
+
+Both use version 2 and require the redesigned reader. Each includes a visible reference block and machine-readable `sources`/`sourceIds` metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.

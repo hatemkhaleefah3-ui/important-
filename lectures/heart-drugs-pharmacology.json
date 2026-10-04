@@ -1,0 +1,1129 @@
+{
+  "schemaVersion": 2,
+  "id": "cardiovascular-pharmacology",
+  "title": "Heart drugs: cardiovascular pharmacology",
+  "subtitle": "From target to effect: pump failure, ischemia, rhythm, and thrombosis.",
+  "course": "Medical Pharmacology",
+  "author": "Verdant lecture collection",
+  "level": "Medical student / mechanism-based overview",
+  "durationMinutes": 40,
+  "sources": [
+    {
+      "id": "P1",
+      "title": "2022 AHA/ACC/HFSA heart-failure guideline summary — ACC",
+      "url": "https://www.acc.org/Latest-in-Cardiology/Articles/2022/04/01/01/42/Feature-Patient-Centered-Recommendations-Focus-of-New-HF-Guideline",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P2",
+      "title": "2023 chronic-coronary-disease guideline — AHA key points",
+      "url": "https://professional.heart.org/en/science-news/2023-guideline-for-the-management-of-patients-with-chronic-coronary-disease/top-things-to-know",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P3",
+      "title": "2023 ACC/AHA/ACCP/HRS atrial-fibrillation guideline",
+      "url": "https://www.jacc.org/doi/10.1016/j.jacc.2023.08.017",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P4",
+      "title": "Metoprolol succinate extended-release prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c50e8e36-42df-406b-8e63-eb8bf3f07e89",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P5",
+      "title": "ENTRESTO prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000dc81d-ab91-450c-8eae-8eb74e72296f",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P6",
+      "title": "Spironolactone prescribing information — DailyMed",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d6138536-cdc1-4459-84ff-9dedc0de1105",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P7",
+      "title": "Empagliflozin prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=334f1b3d-5670-6685-e063-6294a90a7e47",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P8",
+      "title": "Furosemide prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1d2a8ab4-48a1-47f9-8ac8-d04b100fcbd8",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P9",
+      "title": "Nitroglycerin sublingual prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=89da40c1-bab1-422e-b326-8ebcbdbc81f3",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P10",
+      "title": "Diltiazem prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bce61158-201d-458c-be0c-9bdd2d3a0bec",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P11",
+      "title": "Amlodipine prescribing information — DailyMed",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d09173a1-5e3c-4c86-8c7c-15238925ef50&version=15",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P12",
+      "title": "Digoxin prescribing information — DailyMed",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=41c16cff-b03e-405e-a617-d6f45d3ce2bd",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P13",
+      "title": "Amiodarone prescribing information — DailyMed",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d911b4cf-eec4-43f8-aa64-cc60cfc901b9",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P14",
+      "title": "Adenosine prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68f36fc8-8f10-593f-e053-2991aa0a48de",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P15",
+      "title": "Clopidogrel prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=20247bf8-30ec-4807-95c1-8ec7587368ae",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P16",
+      "title": "Atorvastatin prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ab0bcac-10a3-4178-9674-3730683a4183",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P17",
+      "title": "Lisinopril prescribing information — DailyMed",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b62815f3-77fc-4074-a28a-918ab5cc32db",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P18",
+      "title": "Digoxin Immune Fab — NCBI Bookshelf, mechanism discussion",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK556101/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P19",
+      "title": "2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure",
+      "url": "https://www.jacc.org/doi/10.1016/j.jacc.2021.12.012",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P20",
+      "title": "Flecainide prescribing information — DailyMed",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=b821ec16-93ff-4569-9fbb-4f3842c58bec&type=display",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "P21",
+      "title": "Sotalol prescribing information — DailyMed",
+      "url": "https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3c24cdf0-4648-4e5d-993c-1f428ce56a65",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Start with the therapeutic problem"
+    },
+    {
+      "type": "paragraph",
+      "text": "Heart drugs act on different problems: pump failure, ischemic symptoms, abnormal electrical activity, and thrombotic risk. Link each class to its target, physiological effect, clinical purpose, and major harm. Symptom relief and improved long-term outcomes are different claims.",
+      "variant": "lead"
+    },
+    {
+      "type": "objectives",
+      "items": [
+        "Separate heart-failure therapy from relief of congestion",
+        "Trace drug–target–response relationships",
+        "Distinguish rate control, rhythm control, and anticoagulation",
+        "Recognize major interactions and monitoring requirements"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Scope",
+      "text": "An educational overview of adult cardiovascular pharmacology, not a prescribing protocol. No dose or patient-specific regimen is supplied. Guideline statements are identified by their publication year; consult full current guidelines and product labels for clinical use."
+    },
+    {
+      "type": "table",
+      "title": "Four questions for every drug",
+      "columns": [
+        "Question",
+        "What to identify"
+      ],
+      "rows": [
+        [
+          "What is the target?",
+          "Receptor, enzyme, channel, or transporter"
+        ],
+        [
+          "What changes?",
+          "Rate, conduction, contraction, vascular tone, fluid, or coagulation"
+        ],
+        [
+          "What is the goal?",
+          "Symptoms, hospitalization, survival, or embolic-risk reduction"
+        ],
+        [
+          "What can fail?",
+          "Excess target effect, off-target toxicity, interactions, or accumulation"
+        ]
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Heart failure: foundational therapy versus congestion"
+    },
+    {
+      "type": "paragraph",
+      "text": "The 2022 AHA/ACC/HFSA framework for HFrEF includes four foundational classes: renin–angiotensin system inhibition, an evidence-based beta blocker, a mineralocorticoid receptor antagonist, and an SGLT2 inhibitor. Diuretics address congestion. This framework does not mean that every drug or dose in these classes is interchangeable.",
+      "sourceIds": [
+        "P1"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "The HFrEF framework",
+      "columns": [
+        "Class",
+        "Examples",
+        "Mechanistic anchor"
+      ],
+      "rows": [
+        [
+          "ARNI / ACE inhibitor / ARB",
+          "Sacubitril–valsartan; lisinopril; valsartan",
+          "Counter maladaptive renin–angiotensin signaling"
+        ],
+        [
+          "Evidence-based beta blocker",
+          "Carvedilol; metoprolol succinate; bisoprolol",
+          "Reduce sustained adrenergic drive"
+        ],
+        [
+          "MRA",
+          "Spironolactone; eplerenone",
+          "Block mineralocorticoid-receptor signaling"
+        ],
+        [
+          "SGLT2 inhibitor",
+          "Empagliflozin; dapagliflozin",
+          "Renal transporter target; benefits extend beyond glucose lowering"
+        ],
+        [
+          "Loop diuretic",
+          "Furosemide",
+          "Relieve sodium/water-related congestion"
+        ]
+      ],
+      "sourceIds": [
+        "P1",
+        "P4",
+        "P6",
+        "P7",
+        "P8",
+        "P19"
+      ]
+    },
+    {
+      "type": "process-diagram",
+      "domain": "pharmacology",
+      "title": "Sacubitril–valsartan: two coordinated targets",
+      "description": "Select each arm to compare enzyme inhibition with receptor blockade. [P5]",
+      "nodes": [
+        {
+          "id": "drug",
+          "title": "Sacubitril–valsartan",
+          "column": 0,
+          "lane": 0,
+          "description": "One combination with complementary actions."
+        },
+        {
+          "id": "active",
+          "title": "LBQ657",
+          "column": 1,
+          "lane": 0,
+          "description": "Sacubitril is converted to this active metabolite."
+        },
+        {
+          "id": "nep",
+          "title": "Neprilysin",
+          "column": 2,
+          "lane": 0,
+          "description": "Inhibition reduces breakdown of substrates including natriuretic peptides.",
+          "badge": "Inhibited enzyme"
+        },
+        {
+          "id": "peptide",
+          "title": "Peptide effects",
+          "column": 3,
+          "lane": 0,
+          "description": "Increased peptide availability supports cardiovascular and renal effects."
+        },
+        {
+          "id": "at1",
+          "title": "AT₁ receptor",
+          "column": 1,
+          "lane": 1,
+          "description": "Valsartan blocks angiotensin II signaling at AT₁.",
+          "badge": "Blocked receptor"
+        },
+        {
+          "id": "ras",
+          "title": "Reduced Ang II effects",
+          "column": 2,
+          "lane": 1,
+          "description": "Angiotensin II-dependent effects, including aldosterone release, are attenuated."
+        }
+      ],
+      "edges": [
+        {
+          "from": "drug",
+          "to": "active",
+          "kind": "reaction",
+          "label": "activation"
+        },
+        {
+          "from": "active",
+          "to": "nep",
+          "kind": "inhibition",
+          "label": "NEP inhibition"
+        },
+        {
+          "from": "nep",
+          "to": "peptide",
+          "kind": "progression",
+          "label": "less breakdown"
+        },
+        {
+          "from": "drug",
+          "to": "at1",
+          "kind": "inhibition",
+          "label": "valsartan"
+        },
+        {
+          "from": "at1",
+          "to": "ras",
+          "kind": "progression",
+          "label": "blockade effect"
+        }
+      ],
+      "paths": [
+        {
+          "id": "peptide",
+          "title": "Sacubitril arm",
+          "nodes": [
+            "drug",
+            "active",
+            "nep",
+            "peptide"
+          ]
+        },
+        {
+          "id": "receptor",
+          "title": "Valsartan arm",
+          "nodes": [
+            "drug",
+            "at1",
+            "ras"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "P5"
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "ACE inhibitor / ARNI interaction",
+      "text": "Sacubitril–valsartan must not overlap with an ACE inhibitor. The label specifies at least 36 hours between switching from or to an ACE inhibitor because of angioedema risk.",
+      "sourceIds": [
+        "P5"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Monitoring follows the mechanism",
+      "columns": [
+        "Drug / class",
+        "Major concern",
+        "What to track"
+      ],
+      "rows": [
+        [
+          "ACE inhibitor / ARB / ARNI",
+          "Hypotension; hyperkalemia; renal-function changes",
+          "Blood pressure, potassium, renal function"
+        ],
+        [
+          "Spironolactone",
+          "Hyperkalemia; gynecomastia",
+          "Potassium and renal function"
+        ],
+        [
+          "SGLT2 inhibitor",
+          "Volume depletion; genital infection; ketoacidosis",
+          "Volume status, renal context, relevant symptoms"
+        ],
+        [
+          "Furosemide",
+          "Volume and electrolyte depletion",
+          "Weight / congestion, blood pressure, electrolytes, renal function"
+        ]
+      ],
+      "sourceIds": [
+        "P17",
+        "P5",
+        "P6",
+        "P7",
+        "P8"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Do not use glucose alone to rule out ketoacidosis",
+      "text": "SGLT2-associated ketoacidosis can occur without marked hyperglycemia. The drug class has heart-failure benefits independent of diabetes status, but that does not remove its adverse-effect profile.",
+      "sourceIds": [
+        "P7",
+        "P1"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Which item primarily relieves congestion rather than representing one of the four foundational HFrEF classes?",
+      "options": [
+        "Furosemide",
+        "Evidence-based beta blocker",
+        "MRA",
+        "SGLT2 inhibitor"
+      ],
+      "correctIndex": 0,
+      "answer": "Loop diuretics treat congestion. Their role is distinct from the foundational HFrEF framework described in the 2022 guideline.",
+      "sourceIds": [
+        "P1"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Beta blockade: journey, target, response"
+    },
+    {
+      "type": "process-diagram",
+      "domain": "pharmacology",
+      "title": "Metoprolol: exposure, beta blockade, and clearance",
+      "description": "A qualitative drug journey; node spacing does not represent time or concentration. [P4]",
+      "nodes": [
+        {
+          "id": "oral",
+          "title": "Oral formulation",
+          "column": 0,
+          "lane": 0,
+          "description": "This example uses extended-release metoprolol succinate."
+        },
+        {
+          "id": "plasma",
+          "title": "Systemic exposure",
+          "column": 1,
+          "lane": 0,
+          "description": "Absorption and release characteristics determine exposure over time."
+        },
+        {
+          "id": "beta",
+          "title": "β₁ receptor",
+          "column": 2,
+          "lane": 0,
+          "description": "Preferential β₁ blockade reduces catecholamine effects. Selectivity is not absolute.",
+          "badge": "Drug target"
+        },
+        {
+          "id": "heart",
+          "title": "Nodal / cardiac effects",
+          "column": 3,
+          "lane": 0,
+          "description": "Sinus rate and AV conduction slow; cardiac workload is reduced."
+        },
+        {
+          "id": "met",
+          "title": "Hepatic metabolism",
+          "column": 2,
+          "lane": 1,
+          "description": "CYP2D6 activity and inhibitors can change exposure."
+        },
+        {
+          "id": "exit",
+          "title": "Elimination",
+          "column": 3,
+          "lane": 1,
+          "description": "Drug-related material leaves the body after metabolism; clearance affects exposure."
+        }
+      ],
+      "edges": [
+        {
+          "from": "oral",
+          "to": "plasma",
+          "kind": "transport",
+          "label": "absorption"
+        },
+        {
+          "from": "plasma",
+          "to": "beta",
+          "kind": "inhibition",
+          "label": "β₁ blockade"
+        },
+        {
+          "from": "beta",
+          "to": "heart",
+          "kind": "progression",
+          "label": "blockade effect"
+        },
+        {
+          "from": "plasma",
+          "to": "met",
+          "kind": "reaction",
+          "label": "CYP2D6"
+        },
+        {
+          "from": "met",
+          "to": "exit",
+          "kind": "transport",
+          "label": "clearance"
+        }
+      ],
+      "paths": [
+        {
+          "id": "target",
+          "title": "Journey to target",
+          "nodes": [
+            "oral",
+            "plasma",
+            "beta",
+            "heart"
+          ]
+        },
+        {
+          "id": "clearance",
+          "title": "Clearance route",
+          "nodes": [
+            "oral",
+            "plasma",
+            "met",
+            "exit"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "P4"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Selective does not mean exclusive",
+      "text": "At higher concentrations, metoprolol also blocks β₂ receptors. Bradycardia, conduction disturbance, hypotension, and bronchospasm risk remain relevant. Abrupt withdrawal can aggravate ischemia.",
+      "sourceIds": [
+        "P4"
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "Formulation matters",
+      "text": "Metoprolol succinate extended release is the metoprolol formulation in the evidence-based HFrEF framework. Do not silently substitute a different formulation or assume all beta blockers have equivalent outcome evidence.",
+      "sourceIds": [
+        "P1",
+        "P4"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Angina: reduce demand, modify vascular tone"
+    },
+    {
+      "type": "paragraph",
+      "text": "The 2023 chronic-coronary-disease guideline identifies a beta blocker or calcium channel blocker as first-line antianginal therapy. Long-term beta-blocker use does not automatically improve outcomes in every patient with chronic coronary disease; the indication depends on factors such as recent MI, ventricular function, and other primary indications.",
+      "sourceIds": [
+        "P2"
+      ]
+    },
+    {
+      "type": "process-diagram",
+      "domain": "pharmacology",
+      "title": "Nitroglycerin: from sublingual entry to lower preload",
+      "description": "Grouped pharmacodynamic sequence, not a dosing or emergency-treatment algorithm. [P9]",
+      "nodes": [
+        {
+          "id": "sl",
+          "title": "Sublingual entry",
+          "column": 0,
+          "lane": 0,
+          "description": "Absorption through oral mucosa."
+        },
+        {
+          "id": "no",
+          "title": "NO signaling",
+          "column": 1,
+          "lane": 0,
+          "description": "Bioactivation produces NO signaling."
+        },
+        {
+          "id": "cgmp",
+          "title": "Guanylate cyclase",
+          "column": 2,
+          "lane": 0,
+          "description": "NO increases smooth-muscle cGMP.",
+          "formula": "↑ cGMP"
+        },
+        {
+          "id": "relax",
+          "title": "Vascular relaxation",
+          "column": 3,
+          "lane": 0,
+          "description": "Smooth muscle relaxes."
+        },
+        {
+          "id": "vein",
+          "title": "Venous pooling",
+          "column": 4,
+          "lane": 0,
+          "description": "Predominant venous dilation lowers venous return."
+        },
+        {
+          "id": "preload",
+          "title": "Lower preload",
+          "column": 5,
+          "lane": 0,
+          "description": "LV filling pressure falls."
+        }
+      ],
+      "edges": [
+        {
+          "from": "sl",
+          "to": "no",
+          "kind": "transport",
+          "label": "entry / activation"
+        },
+        {
+          "from": "no",
+          "to": "cgmp",
+          "kind": "activation",
+          "label": "NO"
+        },
+        {
+          "from": "cgmp",
+          "to": "relax",
+          "kind": "progression",
+          "label": "cGMP signaling"
+        },
+        {
+          "from": "relax",
+          "to": "vein",
+          "kind": "progression",
+          "label": "venodilation"
+        },
+        {
+          "from": "vein",
+          "to": "preload",
+          "kind": "progression",
+          "label": "less return"
+        }
+      ],
+      "paths": [
+        {
+          "id": "main",
+          "title": "Trace the nitrate effect",
+          "nodes": [
+            "sl",
+            "no",
+            "cgmp",
+            "relax",
+            "vein",
+            "preload"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "P9"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Calcium channel blockers are not one physiological group",
+      "columns": [
+        "Group",
+        "Examples",
+        "Dominant teaching distinction"
+      ],
+      "rows": [
+        [
+          "Dihydropyridines",
+          "Amlodipine",
+          "Vascular smooth-muscle relaxation; edema is a characteristic adverse effect"
+        ],
+        [
+          "Non-dihydropyridines",
+          "Diltiazem; verapamil",
+          "More prominent nodal / cardiac effects; bradycardia and AV block are concerns"
+        ]
+      ],
+      "sourceIds": [
+        "P10",
+        "P11"
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "High-risk nitrate combination",
+      "text": "Nitrates are contraindicated with PDE-5 inhibitors and soluble guanylate-cyclase stimulators such as riociguat because of severe hypotension risk.",
+      "sourceIds": [
+        "P9"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Two nodal brakes can add",
+      "text": "Diltiazem or verapamil with a beta blocker can produce excessive slowing of conduction or heart rate. Negative inotropic effects also matter when ventricular function is impaired. Non-dihydropyridine CCBs are generally avoided in HFrEF because of negative inotropy.",
+      "sourceIds": [
+        "P10",
+        "P4",
+        "P19"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Rhythm drugs: separate electrical goals"
+    },
+    {
+      "type": "table",
+      "title": "The classic antiarrhythmic class map",
+      "sourceIds": [
+        "P20",
+        "P4",
+        "P13",
+        "P21",
+        "P10"
+      ],
+      "columns": [
+        "Class",
+        "Target / effect",
+        "Examples / caveat"
+      ],
+      "rows": [
+        [
+          "I",
+          "Fast Na⁺ channel effects",
+          "Flecainide (IC): slows conduction; structural-heart-disease context matters"
+        ],
+        [
+          "II",
+          "Beta-adrenergic blockade",
+          "Metoprolol: prominent nodal effects"
+        ],
+        [
+          "III",
+          "Repolarization / K⁺ channel effects",
+          "Sotalol; amiodarone has multiple actions"
+        ],
+        [
+          "IV",
+          "L-type Ca²⁺ channel blockade",
+          "Diltiazem / verapamil: prominent AV nodal effects"
+        ]
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Antiarrhythmics can cause arrhythmias",
+      "text": "Flecainide has important proarrhythmic risk, particularly in relevant structural-heart-disease or prior-MI settings. Sotalol can prolong QT and cause torsades de pointes; renal function, potassium, magnesium, and ECG monitoring matter. Class labels do not establish interchangeability.",
+      "sourceIds": [
+        "P20",
+        "P21"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Mechanism-focused examples",
+      "columns": [
+        "Drug / class",
+        "Main teaching target",
+        "Key distinction or risk"
+      ],
+      "rows": [
+        [
+          "Beta blockers",
+          "Adrenergic effects on nodal tissue",
+          "Rate / conduction effects; bradycardia"
+        ],
+        [
+          "Diltiazem / verapamil",
+          "L-type calcium channels",
+          "AV nodal slowing; not suitable for every ventricular-function context"
+        ],
+        [
+          "Adenosine",
+          "Transient AV nodal suppression",
+          "Can interrupt AV-node-dependent reentry; not a general AF conversion drug"
+        ],
+        [
+          "Amiodarone",
+          "Multiple channel and receptor effects",
+          "Pulmonary, hepatic, thyroid, and cardiac toxicity"
+        ],
+        [
+          "Digoxin",
+          "Na⁺/K⁺-ATPase; autonomic effects",
+          "Inotropy plus AV nodal slowing; narrow safety margin"
+        ]
+      ],
+      "sourceIds": [
+        "P4",
+        "P10",
+        "P14",
+        "P13",
+        "P12"
+      ]
+    },
+    {
+      "type": "process-diagram",
+      "domain": "pharmacology",
+      "title": "Digoxin: inotropy and nodal effects are distinct",
+      "description": "A simplified mechanism map. Increased contraction and slowed AV conduction arise through different causal chains. [P12, P18]",
+      "nodes": [
+        {
+          "id": "dig",
+          "title": "Digoxin",
+          "column": 0,
+          "lane": 0,
+          "description": "A cardiac glycoside with a narrow therapeutic margin."
+        },
+        {
+          "id": "pump",
+          "title": "Na⁺/K⁺-ATPase",
+          "column": 1,
+          "lane": 0,
+          "description": "Digoxin inhibits the membrane sodium pump.",
+          "badge": "Inhibited target"
+        },
+        {
+          "id": "ca",
+          "title": "Intracellular Ca²⁺",
+          "column": 2,
+          "lane": 0,
+          "description": "Altered Na⁺ handling reduces Ca²⁺ extrusion through Na⁺/Ca²⁺ exchange.",
+          "formula": "↑ available Ca²⁺"
+        },
+        {
+          "id": "force",
+          "title": "Increased inotropy",
+          "column": 3,
+          "lane": 0,
+          "description": "More available calcium increases contraction force."
+        },
+        {
+          "id": "vagal",
+          "title": "Autonomic effects",
+          "column": 1,
+          "lane": 1,
+          "description": "Parasympathetic effects contribute to nodal slowing."
+        },
+        {
+          "id": "av",
+          "title": "Slower AV conduction",
+          "column": 2,
+          "lane": 1,
+          "description": "Nodal effects are distinct from increased myocardial contraction."
+        }
+      ],
+      "edges": [
+        {
+          "from": "dig",
+          "to": "pump",
+          "kind": "inhibition",
+          "label": "pump inhibition"
+        },
+        {
+          "from": "pump",
+          "to": "ca",
+          "kind": "progression",
+          "label": "ionic effects"
+        },
+        {
+          "from": "ca",
+          "to": "force",
+          "kind": "progression",
+          "label": "contraction"
+        },
+        {
+          "from": "dig",
+          "to": "vagal",
+          "kind": "progression",
+          "label": "indirect effect"
+        },
+        {
+          "from": "vagal",
+          "to": "av",
+          "kind": "progression",
+          "label": "nodal effect"
+        }
+      ],
+      "paths": [
+        {
+          "id": "force",
+          "title": "Inotropic mechanism",
+          "nodes": [
+            "dig",
+            "pump",
+            "ca",
+            "force"
+          ]
+        },
+        {
+          "id": "node",
+          "title": "Nodal mechanism",
+          "nodes": [
+            "dig",
+            "vagal",
+            "av"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "P12",
+        "P18"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Digoxin toxicity is contextual",
+      "text": "Renal impairment can increase digoxin exposure. Electrolyte abnormalities, particularly hypokalemia, increase susceptibility to toxicity. Nausea, visual disturbance, bradyarrhythmias, or other arrhythmias can be clues.",
+      "sourceIds": [
+        "P12"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Amiodarone is a multi-organ drug",
+      "text": "Although often grouped as class III, amiodarone has multiple electrophysiological actions. Pulmonary toxicity, liver injury, thyroid dysfunction, bradycardia, and interactions require attention. Its effects and interactions can persist after discontinuation.",
+      "sourceIds": [
+        "P13"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Why can digoxin increase contraction force while slowing AV nodal conduction?",
+      "options": [
+        "All cardiac cells respond identically",
+        "Its ionic and autonomic effects involve different causal pathways",
+        "It blocks every calcium channel",
+        "It has no autonomic effects"
+      ],
+      "correctIndex": 1,
+      "answer": "Na⁺/K⁺-ATPase inhibition increases calcium availability in myocardium, while indirect autonomic effects contribute to nodal slowing.",
+      "sourceIds": [
+        "P18"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "What is adenosine most directly suited to interrupt in this mechanism overview?",
+      "options": [
+        "An AV-node-dependent reentry circuit",
+        "Every atrial fibrillation circuit",
+        "Every ventricular tachycardia",
+        "A coronary thrombus"
+      ],
+      "correctIndex": 0,
+      "answer": "Transient AV nodal suppression can terminate appropriate AV-node-dependent supraventricular reentry. Rhythm identification and contraindications remain essential.",
+      "sourceIds": [
+        "P14"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Thrombosis and prevention: a separate axis"
+    },
+    {
+      "type": "paragraph",
+      "text": "In atrial fibrillation, ventricular rate control, rhythm control, and embolic-risk reduction are separate decisions. The 2023 AF guideline generally favors DOACs over warfarin when anticoagulation is indicated, except in mechanical-valve recipients or patients with moderate-to-severe mitral stenosis.",
+      "sourceIds": [
+        "P3"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Do not interchange therapeutic categories",
+      "columns": [
+        "Category",
+        "Example",
+        "Mechanism / purpose"
+      ],
+      "rows": [
+        [
+          "Antiplatelet",
+          "Clopidogrel",
+          "P2Y12 inhibition reduces platelet activation; bleeding risk remains"
+        ],
+        [
+          "Anticoagulation",
+          "DOAC or warfarin, according to indication",
+          "Reduce coagulation-mediated thromboembolic risk"
+        ],
+        [
+          "Lipid lowering",
+          "Atorvastatin",
+          "HMG-CoA reductase inhibition lowers LDL-related risk"
+        ],
+        [
+          "Rate / rhythm control",
+          "Selected nodal or antiarrhythmic drug",
+          "Treat electrical behavior; does not replace indicated anticoagulation"
+        ]
+      ],
+      "sourceIds": [
+        "P15",
+        "P3",
+        "P16"
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "A controlled pulse does not settle stroke risk",
+      "text": "Successful rate control or restoration of sinus rhythm does not by itself determine whether anticoagulation is indicated. Assess thromboembolic risk and clinical context separately.",
+      "sourceIds": [
+        "P3"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Which statement best distinguishes an antiarrhythmic from an anticoagulant?",
+      "options": [
+        "Both primarily block platelet P2Y12 receptors",
+        "Rhythm drugs address electrical behavior; anticoagulants address thromboembolic risk",
+        "All rhythm drugs prevent embolic stroke",
+        "Anticoagulants slow AV conduction"
+      ],
+      "correctIndex": 1,
+      "answer": "Electrical control and embolic prevention are different treatment goals. One does not automatically substitute for the other.",
+      "sourceIds": [
+        "P3"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Mechanism-driven rapid review"
+    },
+    {
+      "type": "table",
+      "title": "Four recurring failure modes",
+      "columns": [
+        "Failure mode",
+        "Examples",
+        "Mechanistic clue"
+      ],
+      "rows": [
+        [
+          "Too much nodal slowing",
+          "Beta blocker + non-DHP CCB",
+          "Overlapping rate / conduction effects"
+        ],
+        [
+          "Too much vasodilation",
+          "Nitrate + PDE-5 inhibitor",
+          "Amplified cGMP-related hypotension"
+        ],
+        [
+          "Too much potassium retention",
+          "RAAS inhibitor + MRA in a vulnerable setting",
+          "Reduced potassium excretion; monitoring is essential"
+        ],
+        [
+          "Excess exposure or susceptibility",
+          "Digoxin with renal impairment / low potassium",
+          "Clearance and electrolyte context change toxicity risk"
+        ]
+      ],
+      "sourceIds": [
+        "P10",
+        "P9",
+        "P17",
+        "P6",
+        "P12"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "What minimum ACE-inhibitor separation is specified in the sacubitril–valsartan label?",
+      "options": [
+        "No separation",
+        "6 hours",
+        "12 hours",
+        "36 hours"
+      ],
+      "correctIndex": 3,
+      "answer": "At least 36 hours when switching from or to an ACE inhibitor. Avoid concomitant use because of angioedema risk.",
+      "sourceIds": [
+        "P5"
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Can you explain the clinical logic?",
+      "items": [
+        "I can identify the four foundational HFrEF classes",
+        "I can distinguish congestion relief from outcome evidence",
+        "I can trace a nitrate, beta blocker, and digoxin mechanism",
+        "I can explain why rate control does not replace anticoagulation",
+        "I can name the major dangerous combinations",
+        "I can connect renal function and electrolytes to drug toxicity"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Sources and boundaries"
+    },
+    {
+      "type": "note",
+      "title": "How to use this lecture",
+      "text": "Examples are selective rather than an exhaustive cardiovascular formulary. The diagrams group mechanisms and omit quantitative PK/PD, doses, and individualized selection. The source key identifies the guidelines and labels used; clinical decisions require the full relevant documents."
+    },
+    {
+      "type": "references",
+      "title": "Source key — checked 4 October 2026",
+      "items": [
+        "P1 · 2022 AHA/ACC/HFSA heart-failure guideline summary — ACC · https://www.acc.org/Latest-in-Cardiology/Articles/2022/04/01/01/42/Feature-Patient-Centered-Recommendations-Focus-of-New-HF-Guideline",
+        "P2 · 2023 chronic-coronary-disease guideline — AHA key points · https://professional.heart.org/en/science-news/2023-guideline-for-the-management-of-patients-with-chronic-coronary-disease/top-things-to-know",
+        "P3 · 2023 ACC/AHA/ACCP/HRS atrial-fibrillation guideline · https://www.jacc.org/doi/10.1016/j.jacc.2023.08.017",
+        "P4 · Metoprolol succinate extended-release prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c50e8e36-42df-406b-8e63-eb8bf3f07e89",
+        "P5 · ENTRESTO prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=000dc81d-ab91-450c-8eae-8eb74e72296f",
+        "P6 · Spironolactone prescribing information — DailyMed · https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d6138536-cdc1-4459-84ff-9dedc0de1105",
+        "P7 · Empagliflozin prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=334f1b3d-5670-6685-e063-6294a90a7e47",
+        "P8 · Furosemide prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1d2a8ab4-48a1-47f9-8ac8-d04b100fcbd8",
+        "P9 · Nitroglycerin sublingual prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=89da40c1-bab1-422e-b326-8ebcbdbc81f3",
+        "P10 · Diltiazem prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bce61158-201d-458c-be0c-9bdd2d3a0bec",
+        "P11 · Amlodipine prescribing information — DailyMed · https://www.dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d09173a1-5e3c-4c86-8c7c-15238925ef50&version=15",
+        "P12 · Digoxin prescribing information — DailyMed · https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=41c16cff-b03e-405e-a617-d6f45d3ce2bd",
+        "P13 · Amiodarone prescribing information — DailyMed · https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d911b4cf-eec4-43f8-aa64-cc60cfc901b9",
+        "P14 · Adenosine prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68f36fc8-8f10-593f-e053-2991aa0a48de",
+        "P15 · Clopidogrel prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=20247bf8-30ec-4807-95c1-8ec7587368ae",
+        "P16 · Atorvastatin prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ab0bcac-10a3-4178-9674-3730683a4183",
+        "P17 · Lisinopril prescribing information — DailyMed · https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b62815f3-77fc-4074-a28a-918ab5cc32db",
+        "P18 · Digoxin Immune Fab — NCBI Bookshelf, mechanism discussion · https://www.ncbi.nlm.nih.gov/books/NBK556101/",
+        "P19 · 2022 AHA/ACC/HFSA Guideline for the Management of Heart Failure · https://www.jacc.org/doi/10.1016/j.jacc.2021.12.012",
+        "P20 · Flecainide prescribing information — DailyMed · https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=b821ec16-93ff-4569-9fbb-4f3842c58bec&type=display",
+        "P21 · Sotalol prescribing information — DailyMed · https://www.dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3c24cdf0-4648-4e5d-993c-1f428ce56a65"
+      ]
+    }
+  ]
+}
