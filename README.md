@@ -1,10 +1,6 @@
 # Verdant lecture reader
 
-A dependency-free lecture generator. Serve this folder with any static HTTP server, open `index.html`, choose **Create something new → Make web app**, and import a lecture JSON file. The lecture output uses an ivory, ink, and indigo theme with dark mode. Built-in lectures use short, cross-device references: `/?l=heart` and `/?l=carbs`. Exact content comparison (independent of object-key order) ensures edited lectures are never silently mapped to the original. Legacy `#lecture=` URLs continue to open.
-
-Custom imports are stored by the Pages Functions sharing API and receive `/?l=<24 hex characters>` links. To enable them, create a Cloudflare KV namespace and bind it as `LECTURES` in the Pages project's **preview and production** settings, then set `ALLOW_LECTURE_UPLOADS=true` and redeploy. The API fails explicitly if storage is unavailable; it never substitutes a device-only URL or an enormous embedded link. Content is public to anyone with the URL. Writes are disabled by default: before enabling public uploads, configure Cloudflare rate limiting for POST `/api/lectures` and a storage budget/abuse policy. The upload service bounds bodies to 250 KB, uses the same schema validators as the reader, checks Origin, and stores immutable content-addressed snapshots. Origin checking is CSRF protection, not authentication. KV replication may delay opening a newly created link from another region; retry if it is temporarily missing. No expiration is applied; deleting its KV key removes a custom lecture.
-
-The two built-in aliases follow the lecture files in each deployment. Use a commit-specific deployment URL if you need that version fixed. Notes and reading state remain browser-local. The domain length is controlled by hosting; a custom domain can shorten it further.
+A dependency-free lecture generator. Serve this folder with any static HTTP server, open `index.html`, choose **Create something new → Make web app**, and import a lecture JSON file. The lecture output uses an ivory, ink, and indigo theme with dark mode. The generated URL embeds the complete validated lecture JSON in its `#lecture=` fragment, so it does not require server storage and can be opened on another device. Anyone with the URL can read its content. Very large URLs may exceed limits in browsers or messaging services; imports remain limited to 250 KB.
 
 `medical-lecture.template.json` is an authoring starter. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
 
@@ -36,7 +32,6 @@ Motion respects `prefers-reduced-motion`. Print mode omits reader controls and n
 ## Local preview and checks
 
 Run `python -m http.server 8000`, then visit `http://localhost:8000`.
-Run `node test-sharing.cjs` for catalog links and API tests.
 Run `node test-validation.cjs` for the dependency-free validation checks.
 Run `node test-process-render.cjs` for renderer interaction checks, including tracked marker replacement during result changes.
 Run `node test-reader.cjs` with Playwright and Chromium installed. The checks exercise desktop/mobile layout, both JSON formats, step navigation, recall feedback, saved notes, focus/theme controls, malicious strings, validation, and the import/build pipeline.
