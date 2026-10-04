@@ -170,6 +170,98 @@
           ]
         }
       ]
+    },
+    {
+      "type": "section",
+      "title": "Tracked processes"
+    },
+    {
+      "type": "tracked-step-process",
+      "domain": "pharmacology",
+      "title": "Track one pathway over time",
+      "pathway": "Example time-dependent pathway",
+      "description": "The left rail records when each stage occurs. The process identity remains fixed; the result control changes only the possible result.",
+      "track": {
+        "kind": "time",
+        "title": "Time"
+      },
+      "steps": [
+        {
+          "id": "time-start",
+          "title": "Initial stage",
+          "trackLabel": "0 min",
+          "description": "Define the initial state and starting time.",
+          "agent": "responsible agent"
+        },
+        {
+          "id": "time-middle",
+          "title": "Intermediate stage",
+          "trackLabel": "5 min",
+          "description": "Explain what occurs at this time point.",
+          "agent": "responsible agent"
+        },
+        {
+          "id": "time-result-a",
+          "title": "Result A",
+          "trackLabel": "1 hour",
+          "description": "Default result of this same pathway."
+        }
+      ],
+      "resultSets": [
+        {
+          "id": "time-results",
+          "fromStep": "time-middle",
+          "defaultResult": "Result A",
+          "alternatives": [
+            {
+              "id": "time-result-b",
+              "title": "Result B",
+              "agent": "same pathway, alternate result",
+              "steps": [
+                {
+                  "id": "time-result-b-step",
+                  "title": "Result B",
+                  "trackLabel": "1 hour",
+                  "description": "Alternative result of the same pathway at this time point."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tracked-step-process",
+      "domain": "pharmacology",
+      "title": "Track one pathway across locations",
+      "pathway": "Example location-dependent pathway",
+      "description": "The left rail records the anatomical or cellular location of each stage.",
+      "track": {
+        "kind": "location",
+        "title": "Location"
+      },
+      "steps": [
+        {
+          "id": "location-one",
+          "title": "Stage in the liver",
+          "trackLabel": "Liver",
+          "description": "Explain the event occurring in this location.",
+          "agent": "transport or conversion"
+        },
+        {
+          "id": "location-two",
+          "title": "Stage in circulation",
+          "trackLabel": "Bloodstream",
+          "description": "Explain the event occurring during circulation.",
+          "agent": "delivery"
+        },
+        {
+          "id": "location-three",
+          "title": "Stage at the target organ",
+          "trackLabel": "Heart",
+          "description": "Explain the event occurring at the target location."
+        }
+      ]
     }
   ]
 }

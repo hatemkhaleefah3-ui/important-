@@ -8,7 +8,7 @@ const validateStep=(step,label,ids)=>{
   if(!step||!text(step.id)||!text(step.title)||ids.has(step.id))throw Error(label+' needs a unique id and title.');
   if(step.pathway!=null)throw Error(label+' cannot define pathway; pathway belongs to the step-process.');
   ids.add(step.id);
-  for(const key of ['agent','description','formula','context','badge'])optionalText(step[key],label+' '+key);
+  for(const key of ['agent','description','formula','context','badge','trackLabel'])optionalText(step[key],label+' '+key);
   if(step.details!=null&&(!Array.isArray(step.details)||step.details.length>12||step.details.some(item=>!item||!text(item.label)||typeof item.value!=='string')))
     throw Error(label+' details need up to 12 label/value pairs.');
 };
@@ -36,6 +36,13 @@ window.validateStepProcess=block=>{
       });
     });
   }
+  const tracked=block.type==='tracked-step-process';
+  if(tracked){
+    if(!block.track||!['time','location'].includes(block.track.kind))throw Error('tracked-step-process needs track.kind set to time or location.');
+    optionalText(block.track.title,'track title');
+    const everyStep=[...block.steps,...(block.resultSets||[]).flatMap(set=>set.alternatives.flatMap(alternative=>alternative.steps))];
+    if(everyStep.some(step=>!text(step.trackLabel)))throw Error('Every tracked step and result step needs trackLabel.');
+  }else if(block.track!=null)throw Error('track is only supported by tracked-step-process.');
   return block;
 };
 const el=(tag,cls,textContent)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(textContent!=null)node.textContent=textContent;return node;};
@@ -48,9 +55,9 @@ const makeDetails=(step,id)=>{
 };
 window.renderStepProcess=(block,uid)=>{
   validateStepProcess(block);
-  const root=el('section','step-process '+(block.domain||'general'));
+  const tracked=block.type==='tracked-step-process',root=el('section','step-process '+(block.domain||'general')+(tracked?' tracked-step-process':''));
   const heading=el('header','step-process-heading');
-  heading.append(el('div','overline',(block.domain||'general')+' / Step-by-step'),el('h3','',block.title),el('div','step-process-identity','One pathway · '+block.pathway));
+  heading.append(el('div','overline',(block.domain||'general')+' / '+(tracked?'Tracked step-by-step':'Step-by-step')),el('h3','',block.title),el('div','step-process-identity','One pathway · '+block.pathway));
   if(block.description)heading.append(el('p','',block.description));
   const status=el('div','step-process-status','One pathway');status.setAttribute('aria-live','polite');heading.append(status);root.append(heading);
   const stage=el('div','step-process-stage');root.append(stage);
@@ -59,11 +66,12 @@ window.renderStepProcess=(block,uid)=>{
   const choices=set=>[null,...set.alternatives];
   const selectNextResult=set=>{const options=choices(set),current=activeResult?.set.id===set.id?options.findIndex(item=>item?.id===activeResult.alternative.id):0,next=options[(current+1)%options.length];activeResult=next?{set,alternative:next}:null;render();};
   const render=()=>{
-    stage.replaceChildren();const steps=visibleSteps(),split=activeResult?block.steps.findIndex(step=>step.id===activeResult.set.fromStep):-1;
+    stage.replaceChildren();if(tracked)stage.append(el('div','step-process-track-title',block.track.title||(block.track.kind==='time'?'Time':'Location')));const steps=visibleSteps(),split=activeResult?block.steps.findIndex(step=>step.id===activeResult.set.fromStep):-1;
     status.textContent=activeResult?'Result · '+activeResult.alternative.title:(resultSets.length?'Result · '+resultSets[0].defaultResult:'One pathway · '+block.pathway);
     steps.forEach((step,index)=>{
       const resultSet=groups.get(step.id),resultChanged=!!(activeResult&&index>=split);
       const item=el('article','step-process-item'+(resultChanged?' is-result-changed':''));item.style.setProperty('--step-order',index);
+      if(tracked)item.append(el('div','step-process-track-marker',step.trackLabel));
       const card=el('div','step-process-card'),copy=el('div','step-process-copy');
       copy.append(el('span','step-process-number','STEP '+String(index+1).padStart(2,'0')));
       if(resultSet){const selected=activeResult?.set.id===resultSet.id?activeResult.alternative.title:resultSet.defaultResult;copy.append(el('span','step-process-result','Result · '+selected));}

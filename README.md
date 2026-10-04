@@ -16,6 +16,7 @@ Required fields: `title` and a non-empty `blocks` array. Set `schemaVersion` to 
 | `note` | `text`, optional `title`, `variant` | Context panel |
 | `callout` | `text`, optional `label` | Highlighted takeaway |
 | `step-process` | `pathway`, `steps`, optional `resultSets`, `domain`, `title`, `description` | One reaction/pathway with expandable details and selectable results |
+| `tracked-step-process` | Same process fields plus `track` and a `trackLabel` on every step | Same interactive process with a time or location rail |
 | `flow` | `steps` (text or `{title, description}`), optional `title` | Keyboard-accessible interactive steps |
 | `table` | `columns` (text array), `rows` (equal-width text arrays), optional `title` | Responsive reference table |
 | `question` | `prompt`, `answer`, optional `options` and zero-based `correctIndex` | Multiple-choice feedback or revealable answer |
@@ -32,6 +33,7 @@ Motion respects `prefers-reduced-motion`. Print mode omits reader controls and n
 
 Run `python -m http.server 8000`, then visit `http://localhost:8000`.
 Run `node test-validation.cjs` for the dependency-free validation checks.
+Run `node test-process-render.cjs` for renderer interaction checks, including tracked marker replacement during result changes.
 Run `node test-reader.cjs` with Playwright and Chromium installed. The checks exercise desktop/mobile layout, both JSON formats, step navigation, recall feedback, saved notes, focus/theme controls, malicious strings, validation, and the import/build pipeline.
 
 ## Step-by-step processes
@@ -78,6 +80,14 @@ Add `step-process` blocks for chemistry, pathology, pharmacology, or general seq
 Steps run from top to bottom. The block-level `pathway` identity never changes. The detail button appears only when a step has `description`, `formula`, or `details`. A result button appears only at a declared `resultSet.fromStep`; it cycles between possible results of the same reaction/pathway, changes the result label, recolors that decision card and all replacement result cards, and replaces only the downstream result sequence. Using the control to switch to another reaction or pathway is invalid. Alternative step IDs must be unique across the entire block.
 
 Controls are native keyboard-accessible buttons, result changes are announced to assistive technology, and reduced-motion preferences are respected. Print expands every detail panel. Formulas render as Unicode/plain text, not LaTeX. The component is an explanatory sequence, not a quantitative simulation.
+
+## Time and location processes
+
+Use `tracked-step-process` to add a left-side rail while keeping the existing `step-process` available. Both types use the same cards, expandable details, agent labels, result controls, color states, and one-pathway contract.
+
+Set `track` to `{ "kind": "time", "title": "Time" }` or `{ "kind": "location", "title": "Location" }`. The title is optional. Every main step and alternative-result step must contain a nonempty `trackLabel`, for example `"5 min"`, `"1 hour"`, `"Liver"`, or `"Bloodstream"`. Result switching redraws the markers from the selected result steps. Labels remain attached to their cards when details expand.
+
+Time spacing is sequential, not proportional to elapsed time. Locations are ordered labels, not a geographic scale. All labels render as plain text. The template and process examples include both modes with illustrative values to replace with lecture-specific content.
 
 ## Populated medical lectures
 
