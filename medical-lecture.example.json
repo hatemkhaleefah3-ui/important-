@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "id": "acute-inflammation",
   "title": "Acute inflammation",
   "subtitle": "Understand the response. Connect the mediators. Remember the sequence.",
@@ -78,7 +78,8 @@
           "title": "Exudate",
           "description": "Remember the defining feature: a protein-rich fluid."
         }
-      ]
+      ],
+      "pathway": "Acute inflammatory vascular response"
     },
     {
       "type": "callout",

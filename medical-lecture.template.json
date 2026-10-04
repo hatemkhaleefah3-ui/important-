@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "id": "your-lecture-id",
   "title": "Your lecture title",
   "subtitle": "A concise overview of the topic and its purpose.",
@@ -61,7 +61,8 @@
           "title": "Outcome",
           "description": "Explain the resulting effect."
         }
-      ]
+      ],
+      "pathway": "Name one reaction or pathway"
     },
     {
       "type": "callout",
@@ -97,79 +98,48 @@
     {
       "type": "step-process",
       "domain": "chemistry",
-      "title": "Trace a biochemical reaction",
-      "description": "Authoring scaffold: replace the labels and mechanism details with your lecture content. The pathways illustrate sequence structure, not a clinical model.",
+      "title": "One reaction, alternative products",
+      "pathway": "Example enzyme-catalyzed reaction",
+      "description": "The process identity stays fixed. The result control changes only the product produced by this reaction.",
       "steps": [
         {
           "id": "substrate",
           "title": "Substrate",
-          "pathway": "Primary reaction",
           "context": "Reaction compartment",
-          "description": "Define the starting molecule and its concentration or availability.",
+          "description": "Define the substrate and reaction conditions.",
           "formula": "S",
-          "details": [
-            {
-              "label": "Input",
-              "value": "Replace with the substrate name and relevant conditions."
-            }
-          ],
           "agent": "binding"
         },
         {
           "id": "complex",
           "title": "Enzyme–substrate complex",
-          "pathway": "Forward catalysis",
-          "badge": "Reversible step",
-          "description": "Describe binding, cofactors, and the relevant catalytic mechanism.",
+          "description": "Describe binding and catalytic commitment.",
           "formula": "E + S ⇌ ES",
-          "details": [
-            {
-              "label": "Cofactor",
-              "value": "Add a cofactor if this reaction requires one."
-            }
-          ],
           "agent": "catalysis"
         },
         {
-          "id": "product",
-          "title": "Product",
-          "description": "Describe product formation and what controls reaction flux.",
-          "formula": "ES → E + P"
+          "id": "product-a",
+          "title": "Product A",
+          "description": "Default product of this one reaction.",
+          "formula": "P₁"
         }
       ],
-      "branches": [
+      "resultSets": [
         {
-          "id": "competing",
-          "title": "Competing pathway",
-          "pathway": "Competing reaction",
-          "fromStep": "substrate",
-          "agent": "alternate route",
-          "steps": [
-            {
-              "id": "branch--competing",
-              "title": "Competing pathway",
-              "description": "Explain the competing route for the same substrate.",
-              "formula": "S → P₂"
-            }
-          ]
-        },
-        {
-          "id": "binding",
-          "title": "Reverse binding step",
-          "pathway": "Reverse binding",
+          "id": "products",
           "fromStep": "complex",
-          "agent": "binding",
-          "steps": [
+          "defaultResult": "Product A",
+          "alternatives": [
             {
-              "id": "substrate--binding",
-              "title": "Substrate",
-              "context": "Reaction compartment",
-              "description": "Define the starting molecule and its concentration or availability.",
-              "formula": "S",
-              "details": [
+              "id": "product-b",
+              "title": "Product B",
+              "agent": "alternate product formation",
+              "steps": [
                 {
-                  "label": "Input",
-                  "value": "Replace with the substrate name and relevant conditions."
+                  "id": "product-b-step",
+                  "title": "Product B",
+                  "description": "Alternative result of the same reaction under the stated conditions.",
+                  "formula": "P₂"
                 }
               ]
             }
@@ -180,52 +150,51 @@
     {
       "type": "step-process",
       "domain": "pathology",
-      "title": "Map pathogen development",
-      "description": "Authoring scaffold: replace the labels and mechanism details with your lecture content. The pathways illustrate sequence structure, not a clinical model.",
+      "title": "One pathogenic process, alternative results",
+      "pathway": "Host response to one pathogen",
+      "description": "The same host–pathogen process may resolve or progress; the control changes the result, not the pathway.",
       "steps": [
         {
           "id": "exposure",
           "title": "Exposure",
-          "description": "Specify the pathogen, entry route, and relevant context.",
+          "description": "Specify the pathogen and entry route.",
           "agent": "entry"
         },
         {
-          "id": "establish",
+          "id": "establishment",
           "title": "Establishment",
-          "description": "Explain how the selected pathogen establishes itself.",
-          "agent": "host contact"
+          "description": "Explain establishment in the host.",
+          "agent": "host interaction"
         },
         {
           "id": "interaction",
-          "title": "Host interaction",
-          "pathway": "Injury progression",
-          "description": "Explain the host–pathogen mechanisms relevant to this lecture.",
-          "agent": "injury route"
+          "title": "Host–pathogen interaction",
+          "description": "Define the shared process that can produce different results.",
+          "agent": "injury progression"
         },
         {
-          "id": "injury",
-          "title": "Tissue injury",
-          "description": "Connect the mechanisms to the observed tissue changes.",
-          "agent": "persistence route"
-        },
-        {
-          "id": "persistence",
-          "title": "Persistence",
-          "description": "Explain the conditions supporting persistence in your chosen example."
+          "id": "persistent-injury",
+          "title": "Persistent tissue injury",
+          "description": "Default result when injury-producing mechanisms persist."
         }
       ],
-      "branches": [
+      "resultSets": [
         {
-          "id": "resolution",
-          "title": "Clearance route",
-          "pathway": "Clearance",
+          "id": "clinical-results",
           "fromStep": "interaction",
-          "agent": "clearance route",
-          "steps": [
+          "defaultResult": "Persistent injury",
+          "alternatives": [
             {
-              "id": "resolution--resolution",
-              "title": "Clearance / resolution",
-              "description": "Describe the conditions under which the process resolves."
+              "id": "clearance",
+              "title": "Clearance and resolution",
+              "agent": "effective host clearance",
+              "steps": [
+                {
+                  "id": "resolved",
+                  "title": "Clearance and resolution",
+                  "description": "Alternative result of the same host–pathogen process."
+                }
+              ]
             }
           ]
         }
@@ -234,79 +203,45 @@
     {
       "type": "step-process",
       "domain": "pharmacology",
-      "title": "Follow a drug journey",
-      "description": "Authoring scaffold: replace the labels and mechanism details with your lecture content. The pathways illustrate sequence structure, not a clinical model.",
+      "title": "One drug mechanism, alternative results",
+      "pathway": "Single drug–target mechanism",
+      "description": "The drug and target pathway remain fixed; the control changes only the resulting effect.",
       "steps": [
         {
-          "id": "entry",
-          "title": "Entry compartment",
-          "badge": "Route-dependent",
-          "description": "Specify the drug, formulation, route, and starting compartment. Adapt the topology to that route.",
-          "agent": "entry"
-        },
-        {
-          "id": "central",
-          "title": "Central compartment",
-          "pathway": "Target distribution",
-          "description": "Describe how the drug enters and moves through the central compartment.",
-          "details": [
-            {
-              "label": "Exposure",
-              "value": "Add relevant concentration and time information, with units and sources."
-            }
-          ],
-          "agent": "distribution"
+          "id": "drug",
+          "title": "Drug exposure",
+          "description": "Specify the drug and clinically relevant exposure context.",
+          "agent": "target engagement"
         },
         {
           "id": "target",
-          "title": "Target compartment",
-          "description": "Explain distribution to the target and the relevant drug–target interaction.",
-          "details": [
-            {
-              "label": "Target",
-              "value": "Specify the receptor, enzyme, or other target."
-            }
-          ],
-          "agent": "target action"
+          "title": "Target engagement",
+          "description": "Specify one receptor, enzyme, transporter, or channel.",
+          "agent": "signal change"
         },
         {
-          "id": "effect",
-          "title": "Response",
-          "description": "Connect target interaction to the response discussed in the lecture."
+          "id": "therapeutic",
+          "title": "Therapeutic result",
+          "description": "Default result produced through this drug–target mechanism."
         }
       ],
-      "branches": [
+      "resultSets": [
         {
-          "id": "metabolism",
-          "title": "Transformation and exit",
-          "pathway": "Metabolism and exit",
-          "fromStep": "central",
-          "agent": "transformation",
-          "steps": [
+          "id": "drug-results",
+          "fromStep": "target",
+          "defaultResult": "Therapeutic result",
+          "alternatives": [
             {
-              "id": "metabolism--metabolism",
-              "title": "Transformation",
-              "description": "Specify the relevant transformation pathways and products for this drug.",
-              "agent": "exit"
-            },
-            {
-              "id": "exit--metabolism",
-              "title": "Exit compartment",
-              "description": "Describe the relevant elimination route and its constraints."
-            }
-          ]
-        },
-        {
-          "id": "direct",
-          "title": "Direct exit route",
-          "pathway": "Direct exit",
-          "fromStep": "central",
-          "agent": "direct exit",
-          "steps": [
-            {
-              "id": "exit--direct",
-              "title": "Exit compartment",
-              "description": "Describe the relevant elimination route and its constraints."
+              "id": "adverse",
+              "title": "Adverse result",
+              "agent": "same target mechanism",
+              "steps": [
+                {
+                  "id": "adverse-result",
+                  "title": "Adverse result",
+                  "description": "Alternative result produced through the same drug–target mechanism."
+                }
+              ]
             }
           ]
         }

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "id": "cardiovascular-pharmacology",
   "title": "Heart drugs: cardiovascular pharmacology",
   "subtitle": "From target to effect: pump failure, ischemia, rhythm, and thrombosis.",
@@ -243,13 +243,13 @@
     {
       "type": "step-process",
       "domain": "pharmacology",
-      "title": "Sacubitril–valsartan: two coordinated targets",
-      "description": "Select each arm to compare enzyme inhibition with receptor blockade. [P5]",
+      "title": "Sacubitril: neprilysin inhibition",
+      "pathway": "Neprilysin inhibition",
+      "description": "One enzyme-inhibition pathway from sacubitril activation to increased peptide availability. [P5]",
       "steps": [
         {
           "id": "drug",
-          "title": "Sacubitril–valsartan",
-          "pathway": "Neprilysin arm",
+          "title": "Sacubitril",
           "description": "One combination with complementary actions.",
           "agent": "activation"
         },
@@ -272,27 +272,34 @@
           "description": "Increased peptide availability supports cardiovascular and renal effects."
         }
       ],
-      "branches": [
+      "sourceIds": [
+        "P5"
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "pharmacology",
+      "title": "Valsartan: AT₁-receptor blockade",
+      "pathway": "AT₁-receptor blockade",
+      "description": "One receptor-blockade pathway that attenuates angiotensin II effects. [P5]",
+      "steps": [
         {
-          "id": "receptor",
-          "title": "Valsartan arm",
-          "pathway": "AT₁-blockade arm",
-          "fromStep": "drug",
-          "agent": "valsartan",
-          "steps": [
-            {
-              "id": "at1--receptor",
-              "title": "AT₁ receptor",
-              "badge": "Blocked receptor",
-              "description": "Valsartan blocks angiotensin II signaling at AT₁.",
-              "agent": "blockade effect"
-            },
-            {
-              "id": "ras--receptor",
-              "title": "Reduced Ang II effects",
-              "description": "Angiotensin II-dependent effects, including aldosterone release, are attenuated."
-            }
-          ]
+          "id": "valsartan",
+          "title": "Valsartan",
+          "description": "The receptor-blocking component of the combination.",
+          "agent": "AT₁ blockade"
+        },
+        {
+          "id": "at1--receptor",
+          "title": "AT₁ receptor",
+          "badge": "Blocked receptor",
+          "description": "Valsartan blocks angiotensin II signaling at AT₁.",
+          "agent": "blockade effect"
+        },
+        {
+          "id": "ras--receptor",
+          "title": "Reduced Ang II effects",
+          "description": "Angiotensin II-dependent effects, including aldosterone release, are attenuated."
         }
       ],
       "sourceIds": [
@@ -376,8 +383,8 @@
     {
       "type": "step-process",
       "domain": "pharmacology",
-      "title": "Metoprolol: exposure, beta blockade, and clearance",
-      "description": "A qualitative drug journey; node spacing does not represent time or concentration. [P4]",
+      "title": "Metoprolol: β₁ blockade and cardiac results",
+      "description": "One drug–target pathway can produce multiple cardiac results. [P4]",
       "steps": [
         {
           "id": "oral",
@@ -388,7 +395,6 @@
         {
           "id": "plasma",
           "title": "Systemic exposure",
-          "pathway": "β₁-blockade route",
           "description": "Absorption and release characteristics determine exposure over time.",
           "agent": "β₁ blockade"
         },
@@ -401,34 +407,34 @@
         },
         {
           "id": "heart",
-          "title": "Nodal / cardiac effects",
-          "description": "Sinus rate and AV conduction slow; cardiac workload is reduced."
-        }
-      ],
-      "branches": [
-        {
-          "id": "clearance",
-          "title": "Clearance route",
-          "pathway": "Hepatic clearance",
-          "fromStep": "plasma",
-          "agent": "CYP2D6",
-          "steps": [
-            {
-              "id": "met--clearance",
-              "title": "Hepatic metabolism",
-              "description": "CYP2D6 activity and inhibitors can change exposure.",
-              "agent": "clearance"
-            },
-            {
-              "id": "exit--clearance",
-              "title": "Elimination",
-              "description": "Drug-related material leaves the body after metabolism; clearance affects exposure."
-            }
-          ]
+          "title": "Reduced heart rate",
+          "description": "β₁ blockade slows sinus rate and AV conduction."
         }
       ],
       "sourceIds": [
         "P4"
+      ],
+      "pathway": "β₁-receptor blockade",
+      "resultSets": [
+        {
+          "id": "cardiac-results",
+          "fromStep": "beta",
+          "defaultResult": "Reduced heart rate",
+          "alternatives": [
+            {
+              "id": "contractility",
+              "title": "Reduced contractility",
+              "agent": "β₁ blockade effect",
+              "steps": [
+                {
+                  "id": "reduced-contractility",
+                  "title": "Reduced contractility",
+                  "description": "The same β₁-receptor blockade pathway reduces myocardial contractile drive."
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -504,7 +510,8 @@
       ],
       "sourceIds": [
         "P9"
-      ]
+      ],
+      "pathway": "Nitric oxide–cGMP signaling"
     },
     {
       "type": "table",
@@ -646,13 +653,13 @@
     {
       "type": "step-process",
       "domain": "pharmacology",
-      "title": "Digoxin: inotropy and nodal effects are distinct",
-      "description": "A simplified mechanism map. Increased contraction and slowed AV conduction arise through different causal chains. [P12, P18]",
+      "title": "Digoxin: increased inotropy",
+      "pathway": "Na⁺/K⁺-ATPase inhibition and inotropy",
+      "description": "One ionic pathway from pump inhibition to increased contraction force. [P12, P18]",
       "steps": [
         {
           "id": "dig",
           "title": "Digoxin",
-          "pathway": "Inotropic pathway",
           "description": "A cardiac glycoside with a narrow therapeutic margin.",
           "agent": "pump inhibition"
         },
@@ -676,26 +683,34 @@
           "description": "More available calcium increases contraction force."
         }
       ],
-      "branches": [
+      "sourceIds": [
+        "P12",
+        "P18"
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "pharmacology",
+      "title": "Digoxin: slower AV conduction",
+      "pathway": "Digoxin-associated nodal slowing",
+      "description": "A separate nodal pathway, intentionally represented as its own process. [P12, P18]",
+      "steps": [
         {
-          "id": "node",
-          "title": "Nodal mechanism",
-          "pathway": "Nodal pathway",
-          "fromStep": "dig",
-          "agent": "indirect effect",
-          "steps": [
-            {
-              "id": "vagal--node",
-              "title": "Autonomic effects",
-              "description": "Parasympathetic effects contribute to nodal slowing.",
-              "agent": "nodal effect"
-            },
-            {
-              "id": "av--node",
-              "title": "Slower AV conduction",
-              "description": "Nodal effects are distinct from increased myocardial contraction."
-            }
-          ]
+          "id": "digoxin-nodal",
+          "title": "Digoxin",
+          "description": "A cardiac glycoside with nodal effects.",
+          "agent": "autonomic effects"
+        },
+        {
+          "id": "vagal--node",
+          "title": "Autonomic effects",
+          "description": "Parasympathetic effects contribute to nodal slowing.",
+          "agent": "nodal effect"
+        },
+        {
+          "id": "av--node",
+          "title": "Slower AV conduction",
+          "description": "Nodal effects are distinct from increased myocardial contraction."
         }
       ],
       "sourceIds": [

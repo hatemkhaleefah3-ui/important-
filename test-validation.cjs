@@ -12,7 +12,7 @@ validate({title:'Legacy',blocks:[{type:'title',text:'Legacy'},{type:'flow',steps
 for(const bad of [
   null,{},
   {title:'x',blocks:[]},
-  {title:'x',schemaVersion:4,blocks:[{type:'paragraph',text:'x'}]},
+  {title:'x',schemaVersion:5,blocks:[{type:'paragraph',text:'x'}]},
   {title:'x',blocks:[{type:'unknown'}]},
   {title:'x',blocks:[{type:'table',columns:['a'],rows:[['a','b']]}]},
   {title:'x',blocks:[{type:'question',prompt:'p',answer:'a',options:['a','b'],correctIndex:9}]},
@@ -21,39 +21,45 @@ for(const bad of [
 
 const html=fs.readFileSync('index.html','utf8');
 for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(match[1]);
-for(const asset of ['lecture.css?v=3.2.0','step-process.js?v=3.2.0','lecture.js?v=3.2.0'])assert(html.includes(asset));
-assert(html.includes('lectures/carbohydrate-biochemistry.json?v=3.2.0'));
-assert(html.includes('lectures/heart-drugs-pharmacology.json?v=3.2.0'));
+for(const asset of ['lecture.css?v=4.0.0','step-process.js?v=4.0.0','lecture.js?v=4.0.0'])assert(html.includes(asset));
+assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.0.0'));
+assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.0.0'));
 assert(!files.some(path=>fs.readFileSync(path,'utf8').includes('"agent": "Next step"')));
-console.log('PASS: JSON files, legacy schema, invalid inputs, and inline JavaScript syntax.');
+console.log('PASS: JSON files, legacy schema, invalid inputs, versioned assets, and inline JavaScript syntax.');
 
-const process=JSON.parse(fs.readFileSync('step-processes.example.json')).blocks.find(block=>block.type==='step-process'&&block.branches?.length);
+const specimen=JSON.parse(fs.readFileSync('step-processes.example.json')).blocks.find(block=>block.type==='step-process'&&block.resultSets?.length);
 for(const mutate of [
   block=>block.steps.push({...block.steps[0]}),
   block=>block.steps.length=1,
   block=>block.domain='other',
-  block=>block.branches[0].fromStep='missing',
-  block=>block.branches[0].steps[0].id=block.steps[0].id,
-  block=>block.branches.push({...block.branches[0]}),
-  block=>block.steps[0].pathway=42,
-  block=>block.branches[0].pathway=42,
+  block=>delete block.pathway,
+  block=>block.steps[0].pathway='Another pathway',
+  block=>block.branches=[],
+  block=>block.resultSets[0].fromStep='missing',
+  block=>block.resultSets[0].defaultResult='',
+  block=>block.resultSets[0].alternatives[0].steps[0].id=block.steps[0].id,
+  block=>block.resultSets.push({...block.resultSets[0]}),
   block=>block.steps[0].details=[{label:'',value:'x'}]
-]){const copy=JSON.parse(JSON.stringify(process));mutate(copy);assert.throws(()=>context.window.validateStepProcess(copy));}
-console.log('PASS: step-process bounds, unique IDs, details, branch references, and domains.');
+]){const copy=JSON.parse(JSON.stringify(specimen));mutate(copy);assert.throws(()=>context.window.validateStepProcess(copy));}
+console.log('PASS: one-pathway contract, result sets, unique IDs, details, references, and domains.');
 
 for(const file of ['lectures/carbohydrate-biochemistry.json','lectures/heart-drugs-pharmacology.json']){
-  const document=JSON.parse(fs.readFileSync(file)),sources=new Set(document.sources.map(source=>source.id));
+  const document=JSON.parse(fs.readFileSync(file)),sources=new Set(document.sources.map(source=>source.id)),processes=document.blocks.filter(block=>block.type==='step-process');
+  assert.equal(document.schemaVersion,4);
   assert.equal(sources.size,document.sources.length);
   for(const block of document.blocks)for(const id of block.sourceIds||[])assert(sources.has(id));
   assert(fs.statSync(file).size<250000);
-  assert.equal(document.blocks.filter(block=>block.type==='step-process').length,4);
+  assert(processes.length>=4);
   assert.equal(document.blocks.every(block=>block.type!=='process-'+'diagram'),true);
-  for(const block of document.blocks.filter(block=>block.type==='step-process'))for(const branch of block.branches||[]){
-    assert.equal(typeof branch.pathway,'string');
-    assert.equal(typeof block.steps.find(step=>step.id===branch.fromStep)?.pathway,'string');
+  for(const block of processes){
+    assert.equal(typeof block.pathway,'string');
+    assert.equal('branches' in block,false);
+    assert(block.steps.every(step=>!('pathway' in step)));
+    for(const set of block.resultSets||[]){assert.equal(typeof set.defaultResult,'string');assert(set.alternatives.length>0);}
   }
 }
 const processSource=fs.readFileSync('step-process.js','utf8');
-assert(processSource.includes("mainPathway+' → '+selected"));
-assert(processSource.includes("is-route-changed"));
-console.log('PASS: both lectures, source IDs, pathway labels, route color states, file size, and removal of the retired graph block.');
+assert(processSource.includes("'Result · '+selected"));
+assert(processSource.includes('is-result-changed'));
+assert(processSource.includes('pathway branches are not allowed'));
+console.log('PASS: lecture sources, singular pathway identity, result color states, file size, and retired graph/branch models.');
