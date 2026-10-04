@@ -1,98 +1,15 @@
 {
   "schemaVersion": 3,
-  "id": "your-lecture-id",
-  "title": "Your lecture title",
-  "subtitle": "A concise overview of the topic and its purpose.",
-  "course": "Your course",
-  "author": "Your name or institution",
-  "level": "Study guide",
+  "id": "step-process-scaffolds",
+  "title": "The step-by-step process collection",
+  "subtitle": "Trace reactions, host–pathogen processes, and drug journeys through interactive sequences.",
+  "course": "Cross-disciplinary lecture design",
+  "level": "Authoring examples",
   "durationMinutes": 10,
   "blocks": [
     {
       "type": "section",
-      "id": "overview",
-      "title": "The big picture"
-    },
-    {
-      "type": "paragraph",
-      "variant": "lead",
-      "text": "Introduce the central concept in a clear, concise paragraph."
-    },
-    {
-      "type": "objectives",
-      "title": "Your learning objectives",
-      "items": [
-        "Explain the central concept",
-        "Trace the process",
-        "Apply the concept to a case",
-        "Check your understanding"
-      ]
-    },
-    {
-      "type": "note",
-      "title": "Context",
-      "text": "Add a helpful connection or clinical anchor."
-    },
-    {
-      "type": "section",
-      "id": "process",
-      "title": "Understand the sequence"
-    },
-    {
-      "type": "step-process",
-      "domain": "general",
-      "title": "Explore the process",
-      "description": "Follow the sequence from top to bottom. Expand a step when more detail is available.",
-      "steps": [
-        {
-          "id": "flow-5-1",
-          "title": "Starting point",
-          "description": "Explain the initial condition.",
-          "agent": "Next step"
-        },
-        {
-          "id": "flow-5-2",
-          "title": "Mechanism",
-          "description": "Explain what changes and why.",
-          "agent": "Next step"
-        },
-        {
-          "id": "flow-5-3",
-          "title": "Outcome",
-          "description": "Explain the resulting effect."
-        }
-      ]
-    },
-    {
-      "type": "callout",
-      "label": "Key distinction",
-      "text": "State the essential distinction or takeaway."
-    },
-    {
-      "type": "table",
-      "title": "Compare the essentials",
-      "columns": [
-        "Concept",
-        "Mechanism",
-        "Result"
-      ],
-      "rows": [
-        [
-          "Concept A",
-          "Mechanism A",
-          "Result A"
-        ],
-        [
-          "Concept B",
-          "Mechanism B",
-          "Result B"
-        ]
-      ]
-    },
-    {
-      "type": "section",
-      "id": "process-atlas",
-      "title": "Explore step-by-step processes"
+      "title": "Chemistry & biochemistry"
     },
     {
       "type": "step-process",
@@ -174,6 +91,10 @@
       ]
     },
     {
+      "type": "section",
+      "title": "Pathology & pathogenesis"
+    },
+    {
       "type": "step-process",
       "domain": "pathology",
       "title": "Map pathogen development",
@@ -224,6 +145,10 @@
           ]
         }
       ]
+    },
+    {
+      "type": "section",
+      "title": "Pharmacology & drug journeys"
     },
     {
       "type": "step-process",
@@ -301,36 +226,6 @@
             }
           ]
         }
-      ]
-    },
-    {
-      "type": "section",
-      "id": "recall",
-      "title": "Check your understanding"
-    },
-    {
-      "type": "question",
-      "prompt": "Which choice best explains the mechanism?",
-      "options": [
-        "Choice A",
-        "Choice B",
-        "Choice C"
-      ],
-      "correctIndex": 1,
-      "answer": "Explain why Choice B is correct and why the alternatives are less appropriate."
-    },
-    {
-      "type": "question",
-      "prompt": "Can you explain the sequence in your own words?",
-      "answer": "Summarize the starting point, mechanism, and outcome."
-    },
-    {
-      "type": "checklist",
-      "title": "Ready to move on?",
-      "items": [
-        "I can explain the concept",
-        "I can trace the sequence",
-        "I can apply the concept"
       ]
     }
   ]

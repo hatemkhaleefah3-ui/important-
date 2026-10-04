@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "carbohydrate-biochemistry",
   "title": "Carbohydrate biochemistry",
   "subtitle": "Follow the carbon. Balance the energy. Understand the metabolic switches.",
@@ -221,107 +221,54 @@
       ]
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "chemistry",
       "title": "Glycolysis: the carbon and ATP checkpoints",
       "description": "A grouped map, not all ten individual reactions. Select checkpoints to inspect their role. [B1, B2]",
-      "nodes": [
+      "steps": [
         {
           "id": "g",
           "title": "Glucose",
-          "column": 0,
-          "lane": 0,
+          "context": "Cytosol",
           "description": "Six-carbon starting substrate.",
           "formula": "6C",
-          "compartment": "Cytosol"
+          "agent": "HK / GK"
         },
         {
           "id": "g6",
           "title": "Glucose-6-phosphate",
-          "column": 1,
-          "lane": 0,
+          "badge": "Investment 1",
           "description": "Hexokinase or glucokinase uses ATP to phosphorylate glucose.",
           "formula": "ATP → ADP",
-          "badge": "Investment 1"
+          "agent": "isomerase"
         },
         {
           "id": "f6",
           "title": "Fructose-6-phosphate",
-          "column": 2,
-          "lane": 0,
-          "description": "Phosphoglucose isomerase rearranges the six-carbon sugar."
+          "description": "Phosphoglucose isomerase rearranges the six-carbon sugar.",
+          "agent": "PFK-1"
         },
         {
           "id": "f16",
           "title": "Fructose-1,6-bisphosphate",
-          "column": 3,
-          "lane": 0,
+          "badge": "Investment 2",
           "description": "PFK-1 consumes the second ATP; this is a major control point.",
           "formula": "ATP → ADP",
-          "badge": "Investment 2"
+          "agent": "split"
         },
         {
           "id": "triose",
           "title": "Two triose streams",
-          "column": 4,
-          "lane": 0,
           "description": "Aldolase yields GAP and DHAP. Triose phosphate isomerase converts DHAP to GAP.",
-          "formula": "2 × 3C"
+          "formula": "2 × 3C",
+          "agent": "payoff"
         },
         {
           "id": "pyr",
           "title": "Two pyruvate",
-          "column": 5,
-          "lane": 0,
+          "badge": "Grouped payoff",
           "description": "The payoff reactions form four ATP and two NADH per glucose. Several intermediates are grouped here.",
-          "formula": "Net: 2 ATP + 2 NADH",
-          "badge": "Grouped payoff"
-        }
-      ],
-      "edges": [
-        {
-          "from": "g",
-          "to": "g6",
-          "kind": "reaction",
-          "label": "HK / GK"
-        },
-        {
-          "from": "g6",
-          "to": "f6",
-          "kind": "reversible",
-          "label": "isomerase"
-        },
-        {
-          "from": "f6",
-          "to": "f16",
-          "kind": "reaction",
-          "label": "PFK-1"
-        },
-        {
-          "from": "f16",
-          "to": "triose",
-          "kind": "reaction",
-          "label": "split"
-        },
-        {
-          "from": "triose",
-          "to": "pyr",
-          "kind": "reaction",
-          "label": "payoff"
-        }
-      ],
-      "paths": [
-        {
-          "id": "main",
-          "title": "Trace glycolysis",
-          "nodes": [
-            "g",
-            "g6",
-            "f6",
-            "f16",
-            "triose",
-            "pyr"
-          ]
+          "formula": "Net: 2 ATP + 2 NADH"
         }
       ],
       "sourceIds": [
@@ -395,116 +342,65 @@
       "title": "Pyruvate: a metabolic junction"
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "chemistry",
       "title": "Pyruvate routes: redox, oxidation, and glucose synthesis",
       "description": "Branches represent alternative fates, not a single mandatory sequence. [B2, B5, B12]",
-      "nodes": [
+      "steps": [
         {
           "id": "py",
           "title": "Pyruvate",
-          "column": 0,
-          "lane": 0,
           "description": "A three-carbon junction between several pathways.",
-          "formula": "3C"
+          "formula": "3C",
+          "agent": "LDH"
         },
         {
           "id": "lac",
           "title": "Lactate",
-          "column": 1,
-          "lane": 0,
+          "context": "Cytosol",
           "description": "Lactate dehydrogenase interconverts lactate and pyruvate while coupling NADH/NAD⁺.",
-          "formula": "NADH → NAD⁺",
-          "compartment": "Cytosol"
-        },
-        {
-          "id": "ac",
-          "title": "Acetyl-CoA",
-          "column": 1,
-          "lane": 1,
-          "description": "Pyruvate dehydrogenase forms acetyl-CoA, CO₂, and NADH.",
-          "compartment": "Mitochondrial matrix"
-        },
-        {
-          "id": "tca",
-          "title": "Citric acid cycle",
-          "column": 2,
-          "lane": 1,
-          "description": "Acetyl units enter an oxidative cycle that produces reduced carriers. This node groups the cycle."
-        },
-        {
-          "id": "oaa",
-          "title": "Oxaloacetate",
-          "column": 1,
-          "lane": 2,
-          "description": "Pyruvate carboxylase uses ATP and biotin to add carbon from bicarbonate.",
-          "formula": "ATP required"
-        },
-        {
-          "id": "glu",
-          "title": "Glucose synthesis",
-          "column": 2,
-          "lane": 2,
-          "description": "Oxaloacetate feeds gluconeogenesis through PEP and subsequent bypass reactions."
+          "formula": "NADH → NAD⁺"
         }
       ],
-      "edges": [
-        {
-          "from": "py",
-          "to": "lac",
-          "kind": "reversible",
-          "label": "LDH"
-        },
-        {
-          "from": "py",
-          "to": "ac",
-          "kind": "reaction",
-          "label": "PDH"
-        },
-        {
-          "from": "ac",
-          "to": "tca",
-          "kind": "reaction",
-          "label": "oxidation"
-        },
-        {
-          "from": "py",
-          "to": "oaa",
-          "kind": "reaction",
-          "label": "carboxylase"
-        },
-        {
-          "from": "oaa",
-          "to": "glu",
-          "kind": "reaction",
-          "label": "bypass route"
-        }
-      ],
-      "paths": [
-        {
-          "id": "redox",
-          "title": "Lactate / NAD⁺ route",
-          "nodes": [
-            "py",
-            "lac"
-          ]
-        },
+      "branches": [
         {
           "id": "oxidation",
           "title": "Oxidation route",
-          "nodes": [
-            "py",
-            "ac",
-            "tca"
+          "fromStep": "py",
+          "agent": "PDH",
+          "steps": [
+            {
+              "id": "ac--oxidation",
+              "title": "Acetyl-CoA",
+              "context": "Mitochondrial matrix",
+              "description": "Pyruvate dehydrogenase forms acetyl-CoA, CO₂, and NADH.",
+              "agent": "oxidation"
+            },
+            {
+              "id": "tca--oxidation",
+              "title": "Citric acid cycle",
+              "description": "Acetyl units enter an oxidative cycle that produces reduced carriers. This node groups the cycle."
+            }
           ]
         },
         {
           "id": "synthesis",
           "title": "Glucose-synthesis route",
-          "nodes": [
-            "py",
-            "oaa",
-            "glu"
+          "fromStep": "py",
+          "agent": "carboxylase",
+          "steps": [
+            {
+              "id": "oaa--synthesis",
+              "title": "Oxaloacetate",
+              "description": "Pyruvate carboxylase uses ATP and biotin to add carbon from bicarbonate.",
+              "formula": "ATP required",
+              "agent": "bypass route"
+            },
+            {
+              "id": "glu--synthesis",
+              "title": "Glucose synthesis",
+              "description": "Oxaloacetate feeds gluconeogenesis through PEP and subsequent bypass reactions."
+            }
           ]
         }
       ],
@@ -528,106 +424,55 @@
       "title": "Glycogen: store locally, mobilize selectively"
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "chemistry",
       "title": "Glycogen synthesis and mobilization",
       "description": "Storage and breakdown use different enzymes; they are not one reversible reaction. [B3, B4]",
-      "nodes": [
+      "steps": [
         {
           "id": "g6",
           "title": "Glucose-6-phosphate",
-          "column": 0,
-          "lane": 0,
-          "description": "A shared entry point linking storage and glycolysis."
+          "description": "A shared entry point linking storage and glycolysis.",
+          "agent": "mutase"
         },
         {
           "id": "g1",
           "title": "Glucose-1-phosphate",
-          "column": 1,
-          "lane": 0,
-          "description": "Phosphoglucomutase interconverts G6P and G1P."
+          "description": "Phosphoglucomutase interconverts G6P and G1P.",
+          "agent": "activation"
         },
         {
           "id": "udp",
           "title": "UDP-glucose",
-          "column": 2,
-          "lane": 0,
           "description": "An activated glucose donor for glycogen synthesis.",
-          "formula": "UTP required"
+          "formula": "UTP required",
+          "agent": "synthesis"
         },
         {
           "id": "gly",
           "title": "Glycogen",
-          "column": 3,
-          "lane": 0,
-          "description": "Glycogen synthase extends α1→4 chains; branching enzyme forms α1→6 branches.",
-          "badge": "Branched reserve"
-        },
-        {
-          "id": "break",
-          "title": "Mobilized G1P",
-          "column": 3,
-          "lane": 1,
-          "description": "Phosphorylase releases G1P from α1→4 links. Debranching handles branch points; a small fraction is free glucose."
-        },
-        {
-          "id": "reuse",
-          "title": "Glucose-6-phosphate",
-          "column": 2,
-          "lane": 1,
-          "description": "G1P is converted to G6P for tissue-specific use."
+          "badge": "Branched reserve",
+          "description": "Glycogen synthase extends α1→4 chains; branching enzyme forms α1→6 branches."
         }
       ],
-      "edges": [
-        {
-          "from": "g6",
-          "to": "g1",
-          "kind": "reversible",
-          "label": "mutase"
-        },
-        {
-          "from": "g1",
-          "to": "udp",
-          "kind": "reaction",
-          "label": "activation"
-        },
-        {
-          "from": "udp",
-          "to": "gly",
-          "kind": "reaction",
-          "label": "synthesis"
-        },
-        {
-          "from": "gly",
-          "to": "break",
-          "kind": "reaction",
-          "label": "mobilization"
-        },
-        {
-          "from": "break",
-          "to": "reuse",
-          "kind": "reaction",
-          "label": "mutase"
-        }
-      ],
-      "paths": [
-        {
-          "id": "store",
-          "title": "Storage route",
-          "nodes": [
-            "g6",
-            "g1",
-            "udp",
-            "gly"
-          ]
-        },
+      "branches": [
         {
           "id": "mobilize",
           "title": "Mobilization route",
-          "nodes": [
-            "gly",
-            "break",
-            "reuse"
+          "fromStep": "gly",
+          "agent": "mobilization",
+          "steps": [
+            {
+              "id": "break--mobilize",
+              "title": "Mobilized G1P",
+              "description": "Phosphorylase releases G1P from α1→4 links. Debranching handles branch points; a small fraction is free glucose.",
+              "agent": "mutase"
+            },
+            {
+              "id": "reuse--mobilize",
+              "title": "Glucose-6-phosphate",
+              "description": "G1P is converted to G6P for tissue-specific use."
+            }
           ]
         }
       ],
@@ -757,109 +602,56 @@
       "title": "Pentose phosphate pathway: a different currency"
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "chemistry",
       "title": "PPP: reducing power and pentose carbon",
       "description": "The PPP does not directly make ATP. NADPH serves different functions from NADH. [B6, B7]",
-      "nodes": [
+      "steps": [
         {
           "id": "g6",
           "title": "Glucose-6-phosphate",
-          "column": 0,
-          "lane": 0,
-          "description": "Substrate shared with glycolysis and glycogen metabolism."
+          "description": "Substrate shared with glycolysis and glycogen metabolism.",
+          "agent": "G6PD"
         },
         {
           "id": "ox",
           "title": "Oxidative phase",
-          "column": 1,
-          "lane": 0,
+          "badge": "G6PD checkpoint",
           "description": "G6PD initiates an irreversible oxidation sequence.",
-          "badge": "G6PD checkpoint"
+          "agent": "oxidation"
         },
         {
           "id": "ru",
           "title": "Ribulose-5-phosphate",
-          "column": 2,
-          "lane": 0,
           "description": "Oxidation yields a pentose, two NADPH, and CO₂ per G6P.",
-          "formula": "2 NADPH + CO₂"
+          "formula": "2 NADPH + CO₂",
+          "agent": "isomerization"
         },
         {
           "id": "r5",
           "title": "Ribose-5-phosphate",
-          "column": 3,
-          "lane": 0,
           "description": "Pentose interconversion supplies ribose for nucleotide synthesis."
-        },
-        {
-          "id": "non",
-          "title": "Nonoxidative exchange",
-          "column": 3,
-          "lane": 1,
-          "description": "Reversible carbon rearrangements adapt pentose supply to demand. Transketolase requires thiamine pyrophosphate."
-        },
-        {
-          "id": "gly",
-          "title": "Glycolytic intermediates",
-          "column": 4,
-          "lane": 1,
-          "description": "F6P and GAP reconnect pentose metabolism with glycolysis.",
-          "formula": "F6P + GAP"
         }
       ],
-      "edges": [
-        {
-          "from": "g6",
-          "to": "ox",
-          "kind": "reaction",
-          "label": "G6PD"
-        },
-        {
-          "from": "ox",
-          "to": "ru",
-          "kind": "reaction",
-          "label": "oxidation"
-        },
-        {
-          "from": "ru",
-          "to": "r5",
-          "kind": "reversible",
-          "label": "isomerization"
-        },
-        {
-          "from": "ru",
-          "to": "non",
-          "kind": "reversible",
-          "label": "carbon exchange"
-        },
-        {
-          "from": "non",
-          "to": "gly",
-          "kind": "reversible",
-          "label": "rearrangement"
-        }
-      ],
-      "paths": [
-        {
-          "id": "ribose",
-          "title": "Ribose-production route",
-          "nodes": [
-            "g6",
-            "ox",
-            "ru",
-            "r5"
-          ]
-        },
+      "branches": [
         {
           "id": "recycle",
           "title": "Carbon-recycling route",
-          "nodes": [
-            "g6",
-            "ox",
-            "ru",
-            "non",
-            "gly"
+          "fromStep": "ru",
+          "agent": "carbon exchange",
+          "steps": [
+            {
+              "id": "non--recycle",
+              "title": "Nonoxidative exchange",
+              "description": "Reversible carbon rearrangements adapt pentose supply to demand. Transketolase requires thiamine pyrophosphate.",
+              "agent": "rearrangement"
+            },
+            {
+              "id": "gly--recycle",
+              "title": "Glycolytic intermediates",
+              "description": "F6P and GAP reconnect pentose metabolism with glycolysis.",
+              "formula": "F6P + GAP"
+            }
           ]
         }
       ],
@@ -957,8 +749,8 @@
     },
     {
       "type": "note",
-      "title": "Reading the diagrams",
-      "text": "These are deliberately grouped teaching maps. Omitted intermediates, cofactors, and tissue-specific regulation are identified where relevant. Diagrams show mechanistic routes, not quantitative flux simulations."
+      "title": "Reading the processes",
+      "text": "These are deliberately grouped teaching sequences. Omitted intermediates, cofactors, and tissue-specific regulation are identified where relevant. The steps show mechanistic routes, not quantitative flux simulations."
     },
     {
       "type": "references",

@@ -1,19 +1,19 @@
 /* Verdant lecture reader. All imported strings are rendered as text, never HTML. */
 (() => {
 'use strict';
-const types=new Set(['title','subtitle','paragraph','note','callout','flow','table','question','checklist','objectives','section','references','process-diagram']);
+const types=new Set(['title','subtitle','paragraph','note','callout','flow','table','question','checklist','objectives','section','references','step-process']);
 const str=(x,name,required=false)=>{if((required&&(!x||typeof x!=='string'))||(x!=null&&typeof x!=='string'))throw Error(name+' must be text.');};
 window.validateLecture=d=>{
  if(!d||typeof d!=='object'||Array.isArray(d))throw Error('Lecture must be an object.');
  str(d.title,'title',true);if(!Array.isArray(d.blocks)||!d.blocks.length||d.blocks.length>200)throw Error('Use between 1 and 200 blocks.');
  for(const k of ['subtitle','course','id','author','level'])str(d[k],k);
- if(d.schemaVersion!=null&&d.schemaVersion!==2)throw Error('Unsupported schemaVersion. Use 2 or omit it for legacy files.');
+ if(d.schemaVersion!=null&&![2,3].includes(d.schemaVersion))throw Error('Unsupported schemaVersion. Use 3, 2, or omit it for legacy files.');
  if(d.durationMinutes!=null&&(!Number.isFinite(d.durationMinutes)||d.durationMinutes<=0))throw Error('durationMinutes must be positive.');
  for(const [i,b] of d.blocks.entries()){
  if(!b||!types.has(b.type))throw Error('Block '+(i+1)+': unknown type.');
  for(const k of ['id','heading','title','label','text','prompt','answer','description','variant'])str(b[k],'Block '+(i+1)+' '+k);
  if(['title','subtitle','paragraph','note','callout'].includes(b.type))str(b.text,'Block '+(i+1)+' text',true);
- if(b.type==='process-diagram')validateDiagram(b);
+ if(b.type==='step-process')validateStepProcess(b);
  if(b.type==='section')str(b.title,'section title',true);
  if(['checklist','objectives','references'].includes(b.type)&&(!Array.isArray(b.items)||b.items.some(x=>typeof x!=='string')))throw Error(b.type+' items must be text arrays.');
  if(b.type==='flow'&&(!Array.isArray(b.steps)||!b.steps.length||b.steps.some(x=>typeof x!=='string'&&(!x||typeof x.title!=='string'||(x.description!=null&&typeof x.description!=='string')))))throw Error('Flow steps need text or title/description objects.');
@@ -52,7 +52,7 @@ window.renderLecture=d=>{
  if(b.type==='table'){if(b.title)block.append(el('h3','',b.title));const wrap=el('div','table-wrap'),table=el('table'),caption=el('caption','','');caption.textContent=b.title||'Reference table';caption.hidden=true;table.append(caption);const head=el('thead'),hr=el('tr');b.columns.forEach(x=>{const th=el('th','',x);th.scope='col';hr.append(th)});head.append(hr);const body=el('tbody');b.rows.forEach(row=>{const tr=el('tr');row.forEach(x=>tr.append(el('td','',x)));body.append(tr)});table.append(head,body);wrap.append(table);block.append(wrap)}
  if(b.type==='question'){block.append(el('div','overline','Active recall / '+String(index+1).padStart(2,'0')),el('h3','',b.prompt));const answer=el('div','answer-panel');answer.id='answer-'+index;answer.hidden=true;answer.setAttribute('aria-live','polite');answer.textContent=b.answer;if(b.options){const options=el('div','quiz-options');b.options.forEach((text,i)=>{const btn=button(String.fromCharCode(65+i)+'  '+text,'quiz-option',()=>{options.querySelectorAll('button').forEach((n,j)=>{n.disabled=true;if(j===b.correctIndex)n.classList.add('correct')});if(i!==b.correctIndex)btn.classList.add('wrong');answer.textContent=(i===b.correctIndex?'Correct. ':'Review this concept. ')+b.answer;answer.hidden=false});options.append(btn)});block.append(options)}else{const reveal=button('Reveal explanation ↓','reveal',()=>{answer.hidden=!answer.hidden;reveal.setAttribute('aria-expanded',!answer.hidden);reveal.textContent=answer.hidden?'Reveal explanation ↓':'Hide explanation ↑'});reveal.setAttribute('aria-expanded','false');reveal.setAttribute('aria-controls',answer.id);block.append(reveal)}block.append(answer)}
  if(b.type==='checklist'){block.append(el('h3','',b.title||'Check your understanding'));const ul=el('ul');b.items.forEach((text,i)=>{const li=el('li'),label=el('label'),input=el('input');input.type='checkbox';input.checked=!!state['check'+index+'-'+i];input.onchange=()=>{state['check'+index+'-'+i]=input.checked;save()};label.append(input,el('span','',text));li.append(label);ul.append(li)});block.append(ul)}
- if(b.type==='process-diagram')block.append(renderProcessDiagram(b,'diagram-'+index));
+ if(b.type==='step-process')block.append(renderStepProcess(b,'step-process-'+index));
  section.append(block);
  }
  const notes=el('section','block notes'),label=el('label','','Your margin notes'),area=el('textarea');area.id='lecture-notes';label.htmlFor=area.id;area.placeholder='What clicked? What would you like to revisit?';area.value=typeof state.notes==='string'?state.notes:'';const status=el('span','save-status','Notes stay in this browser.');status.setAttribute('aria-live','polite');area.oninput=()=>{state.notes=area.value;status.textContent=save()?'Saved in this browser.':'Storage unavailable. Copy your notes before leaving.'};notes.append(label,area,status);article.append(notes);

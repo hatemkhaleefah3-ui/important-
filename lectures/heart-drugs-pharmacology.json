@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "cardiovascular-pharmacology",
   "title": "Heart drugs: cardiovascular pharmacology",
   "subtitle": "From target to effect: pump failure, ischemia, rhythm, and thrombosis.",
@@ -241,106 +241,55 @@
       ]
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "pharmacology",
       "title": "Sacubitril–valsartan: two coordinated targets",
       "description": "Select each arm to compare enzyme inhibition with receptor blockade. [P5]",
-      "nodes": [
+      "steps": [
         {
           "id": "drug",
           "title": "Sacubitril–valsartan",
-          "column": 0,
-          "lane": 0,
-          "description": "One combination with complementary actions."
+          "description": "One combination with complementary actions.",
+          "agent": "activation"
         },
         {
           "id": "active",
           "title": "LBQ657",
-          "column": 1,
-          "lane": 0,
-          "description": "Sacubitril is converted to this active metabolite."
+          "description": "Sacubitril is converted to this active metabolite.",
+          "agent": "NEP inhibition"
         },
         {
           "id": "nep",
           "title": "Neprilysin",
-          "column": 2,
-          "lane": 0,
+          "badge": "Inhibited enzyme",
           "description": "Inhibition reduces breakdown of substrates including natriuretic peptides.",
-          "badge": "Inhibited enzyme"
+          "agent": "less breakdown"
         },
         {
           "id": "peptide",
           "title": "Peptide effects",
-          "column": 3,
-          "lane": 0,
           "description": "Increased peptide availability supports cardiovascular and renal effects."
-        },
-        {
-          "id": "at1",
-          "title": "AT₁ receptor",
-          "column": 1,
-          "lane": 1,
-          "description": "Valsartan blocks angiotensin II signaling at AT₁.",
-          "badge": "Blocked receptor"
-        },
-        {
-          "id": "ras",
-          "title": "Reduced Ang II effects",
-          "column": 2,
-          "lane": 1,
-          "description": "Angiotensin II-dependent effects, including aldosterone release, are attenuated."
         }
       ],
-      "edges": [
-        {
-          "from": "drug",
-          "to": "active",
-          "kind": "reaction",
-          "label": "activation"
-        },
-        {
-          "from": "active",
-          "to": "nep",
-          "kind": "inhibition",
-          "label": "NEP inhibition"
-        },
-        {
-          "from": "nep",
-          "to": "peptide",
-          "kind": "progression",
-          "label": "less breakdown"
-        },
-        {
-          "from": "drug",
-          "to": "at1",
-          "kind": "inhibition",
-          "label": "valsartan"
-        },
-        {
-          "from": "at1",
-          "to": "ras",
-          "kind": "progression",
-          "label": "blockade effect"
-        }
-      ],
-      "paths": [
-        {
-          "id": "peptide",
-          "title": "Sacubitril arm",
-          "nodes": [
-            "drug",
-            "active",
-            "nep",
-            "peptide"
-          ]
-        },
+      "branches": [
         {
           "id": "receptor",
           "title": "Valsartan arm",
-          "nodes": [
-            "drug",
-            "at1",
-            "ras"
+          "fromStep": "drug",
+          "agent": "valsartan",
+          "steps": [
+            {
+              "id": "at1--receptor",
+              "title": "AT₁ receptor",
+              "badge": "Blocked receptor",
+              "description": "Valsartan blocks angiotensin II signaling at AT₁.",
+              "agent": "blockade effect"
+            },
+            {
+              "id": "ras--receptor",
+              "title": "Reduced Ang II effects",
+              "description": "Angiotensin II-dependent effects, including aldosterone release, are attenuated."
+            }
           ]
         }
       ],
@@ -423,106 +372,54 @@
       "title": "Beta blockade: journey, target, response"
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "pharmacology",
       "title": "Metoprolol: exposure, beta blockade, and clearance",
       "description": "A qualitative drug journey; node spacing does not represent time or concentration. [P4]",
-      "nodes": [
+      "steps": [
         {
           "id": "oral",
           "title": "Oral formulation",
-          "column": 0,
-          "lane": 0,
-          "description": "This example uses extended-release metoprolol succinate."
+          "description": "This example uses extended-release metoprolol succinate.",
+          "agent": "absorption"
         },
         {
           "id": "plasma",
           "title": "Systemic exposure",
-          "column": 1,
-          "lane": 0,
-          "description": "Absorption and release characteristics determine exposure over time."
+          "description": "Absorption and release characteristics determine exposure over time.",
+          "agent": "β₁ blockade"
         },
         {
           "id": "beta",
           "title": "β₁ receptor",
-          "column": 2,
-          "lane": 0,
+          "badge": "Drug target",
           "description": "Preferential β₁ blockade reduces catecholamine effects. Selectivity is not absolute.",
-          "badge": "Drug target"
+          "agent": "blockade effect"
         },
         {
           "id": "heart",
           "title": "Nodal / cardiac effects",
-          "column": 3,
-          "lane": 0,
           "description": "Sinus rate and AV conduction slow; cardiac workload is reduced."
-        },
-        {
-          "id": "met",
-          "title": "Hepatic metabolism",
-          "column": 2,
-          "lane": 1,
-          "description": "CYP2D6 activity and inhibitors can change exposure."
-        },
-        {
-          "id": "exit",
-          "title": "Elimination",
-          "column": 3,
-          "lane": 1,
-          "description": "Drug-related material leaves the body after metabolism; clearance affects exposure."
         }
       ],
-      "edges": [
-        {
-          "from": "oral",
-          "to": "plasma",
-          "kind": "transport",
-          "label": "absorption"
-        },
-        {
-          "from": "plasma",
-          "to": "beta",
-          "kind": "inhibition",
-          "label": "β₁ blockade"
-        },
-        {
-          "from": "beta",
-          "to": "heart",
-          "kind": "progression",
-          "label": "blockade effect"
-        },
-        {
-          "from": "plasma",
-          "to": "met",
-          "kind": "reaction",
-          "label": "CYP2D6"
-        },
-        {
-          "from": "met",
-          "to": "exit",
-          "kind": "transport",
-          "label": "clearance"
-        }
-      ],
-      "paths": [
-        {
-          "id": "target",
-          "title": "Journey to target",
-          "nodes": [
-            "oral",
-            "plasma",
-            "beta",
-            "heart"
-          ]
-        },
+      "branches": [
         {
           "id": "clearance",
           "title": "Clearance route",
-          "nodes": [
-            "oral",
-            "plasma",
-            "met",
-            "exit"
+          "fromStep": "plasma",
+          "agent": "CYP2D6",
+          "steps": [
+            {
+              "id": "met--clearance",
+              "title": "Hepatic metabolism",
+              "description": "CYP2D6 activity and inhibitors can change exposure.",
+              "agent": "clearance"
+            },
+            {
+              "id": "exit--clearance",
+              "title": "Elimination",
+              "description": "Drug-related material leaves the body after metabolism; clearance affects exposure."
+            }
           ]
         }
       ],
@@ -559,99 +456,46 @@
       ]
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "pharmacology",
       "title": "Nitroglycerin: from sublingual entry to lower preload",
       "description": "Grouped pharmacodynamic sequence, not a dosing or emergency-treatment algorithm. [P9]",
-      "nodes": [
+      "steps": [
         {
           "id": "sl",
           "title": "Sublingual entry",
-          "column": 0,
-          "lane": 0,
-          "description": "Absorption through oral mucosa."
+          "description": "Absorption through oral mucosa.",
+          "agent": "entry / activation"
         },
         {
           "id": "no",
           "title": "NO signaling",
-          "column": 1,
-          "lane": 0,
-          "description": "Bioactivation produces NO signaling."
+          "description": "Bioactivation produces NO signaling.",
+          "agent": "NO"
         },
         {
           "id": "cgmp",
           "title": "Guanylate cyclase",
-          "column": 2,
-          "lane": 0,
           "description": "NO increases smooth-muscle cGMP.",
-          "formula": "↑ cGMP"
+          "formula": "↑ cGMP",
+          "agent": "cGMP signaling"
         },
         {
           "id": "relax",
           "title": "Vascular relaxation",
-          "column": 3,
-          "lane": 0,
-          "description": "Smooth muscle relaxes."
+          "description": "Smooth muscle relaxes.",
+          "agent": "venodilation"
         },
         {
           "id": "vein",
           "title": "Venous pooling",
-          "column": 4,
-          "lane": 0,
-          "description": "Predominant venous dilation lowers venous return."
+          "description": "Predominant venous dilation lowers venous return.",
+          "agent": "less return"
         },
         {
           "id": "preload",
           "title": "Lower preload",
-          "column": 5,
-          "lane": 0,
           "description": "LV filling pressure falls."
-        }
-      ],
-      "edges": [
-        {
-          "from": "sl",
-          "to": "no",
-          "kind": "transport",
-          "label": "entry / activation"
-        },
-        {
-          "from": "no",
-          "to": "cgmp",
-          "kind": "activation",
-          "label": "NO"
-        },
-        {
-          "from": "cgmp",
-          "to": "relax",
-          "kind": "progression",
-          "label": "cGMP signaling"
-        },
-        {
-          "from": "relax",
-          "to": "vein",
-          "kind": "progression",
-          "label": "venodilation"
-        },
-        {
-          "from": "vein",
-          "to": "preload",
-          "kind": "progression",
-          "label": "less return"
-        }
-      ],
-      "paths": [
-        {
-          "id": "main",
-          "title": "Trace the nitrate effect",
-          "nodes": [
-            "sl",
-            "no",
-            "cgmp",
-            "relax",
-            "vein",
-            "preload"
-          ]
         }
       ],
       "sourceIds": [
@@ -796,106 +640,55 @@
       ]
     },
     {
-      "type": "process-diagram",
+      "type": "step-process",
       "domain": "pharmacology",
       "title": "Digoxin: inotropy and nodal effects are distinct",
       "description": "A simplified mechanism map. Increased contraction and slowed AV conduction arise through different causal chains. [P12, P18]",
-      "nodes": [
+      "steps": [
         {
           "id": "dig",
           "title": "Digoxin",
-          "column": 0,
-          "lane": 0,
-          "description": "A cardiac glycoside with a narrow therapeutic margin."
+          "description": "A cardiac glycoside with a narrow therapeutic margin.",
+          "agent": "pump inhibition"
         },
         {
           "id": "pump",
           "title": "Na⁺/K⁺-ATPase",
-          "column": 1,
-          "lane": 0,
+          "badge": "Inhibited target",
           "description": "Digoxin inhibits the membrane sodium pump.",
-          "badge": "Inhibited target"
+          "agent": "ionic effects"
         },
         {
           "id": "ca",
           "title": "Intracellular Ca²⁺",
-          "column": 2,
-          "lane": 0,
           "description": "Altered Na⁺ handling reduces Ca²⁺ extrusion through Na⁺/Ca²⁺ exchange.",
-          "formula": "↑ available Ca²⁺"
+          "formula": "↑ available Ca²⁺",
+          "agent": "contraction"
         },
         {
           "id": "force",
           "title": "Increased inotropy",
-          "column": 3,
-          "lane": 0,
           "description": "More available calcium increases contraction force."
-        },
-        {
-          "id": "vagal",
-          "title": "Autonomic effects",
-          "column": 1,
-          "lane": 1,
-          "description": "Parasympathetic effects contribute to nodal slowing."
-        },
-        {
-          "id": "av",
-          "title": "Slower AV conduction",
-          "column": 2,
-          "lane": 1,
-          "description": "Nodal effects are distinct from increased myocardial contraction."
         }
       ],
-      "edges": [
-        {
-          "from": "dig",
-          "to": "pump",
-          "kind": "inhibition",
-          "label": "pump inhibition"
-        },
-        {
-          "from": "pump",
-          "to": "ca",
-          "kind": "progression",
-          "label": "ionic effects"
-        },
-        {
-          "from": "ca",
-          "to": "force",
-          "kind": "progression",
-          "label": "contraction"
-        },
-        {
-          "from": "dig",
-          "to": "vagal",
-          "kind": "progression",
-          "label": "indirect effect"
-        },
-        {
-          "from": "vagal",
-          "to": "av",
-          "kind": "progression",
-          "label": "nodal effect"
-        }
-      ],
-      "paths": [
-        {
-          "id": "force",
-          "title": "Inotropic mechanism",
-          "nodes": [
-            "dig",
-            "pump",
-            "ca",
-            "force"
-          ]
-        },
+      "branches": [
         {
           "id": "node",
           "title": "Nodal mechanism",
-          "nodes": [
-            "dig",
-            "vagal",
-            "av"
+          "fromStep": "dig",
+          "agent": "indirect effect",
+          "steps": [
+            {
+              "id": "vagal--node",
+              "title": "Autonomic effects",
+              "description": "Parasympathetic effects contribute to nodal slowing.",
+              "agent": "nodal effect"
+            },
+            {
+              "id": "av--node",
+              "title": "Slower AV conduction",
+              "description": "Nodal effects are distinct from increased myocardial contraction."
+            }
           ]
         }
       ],
@@ -1096,7 +889,7 @@
     {
       "type": "note",
       "title": "How to use this lecture",
-      "text": "Examples are selective rather than an exhaustive cardiovascular formulary. The diagrams group mechanisms and omit quantitative PK/PD, doses, and individualized selection. The source key identifies the guidelines and labels used; clinical decisions require the full relevant documents."
+      "text": "Examples are selective rather than an exhaustive cardiovascular formulary. The step processes group mechanisms and omit quantitative PK/PD, doses, and individualized selection. The source key identifies the guidelines and labels used; clinical decisions require the full relevant documents."
     },
     {
       "type": "references",
