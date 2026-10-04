@@ -21,9 +21,9 @@ for(const bad of [
 
 const html=fs.readFileSync('index.html','utf8');
 for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(match[1]);
-for(const asset of ['lecture.css?v=4.2.0','step-process.js?v=4.2.0','lecture.js?v=4.2.0'])assert(html.includes(asset));
-assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.2.0'));
-assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.2.0'));
+for(const asset of ['lecture.css?v=4.2.1','step-process.js?v=4.2.1','lecture.js?v=4.2.1'])assert(html.includes(asset));
+assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.2.1'));
+assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.2.1'));
 assert(!files.some(path=>fs.readFileSync(path,'utf8').includes('"agent": "Next step"')));
 console.log('PASS: JSON files, legacy schema, invalid inputs, versioned assets, and inline JavaScript syntax.');
 
