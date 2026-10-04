@@ -34,6 +34,18 @@
       "text": "Add a helpful connection or clinical anchor."
     },
     {
+      "type": "image",
+      "processName": "Name the illustrated process or structure",
+      "title": "Optional figure title",
+      "alt": "Describe the image for a learner who cannot see it",
+      "caption": "Explain what the learner should notice in this image.",
+      "source": {
+        "fileType": "pdf",
+        "page": 2,
+        "crop": [0, 0, 1, 1]
+      }
+    },
+    {
       "type": "section",
       "id": "process",
       "title": "Understand the sequence"

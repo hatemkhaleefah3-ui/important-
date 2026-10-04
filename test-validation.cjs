@@ -5,7 +5,7 @@ context.validateStepProcess=context.window.validateStepProcess;
 vm.runInContext(fs.readFileSync('lecture.js','utf8'),context);
 const validate=context.window.validateLecture;
 
-const files=['medical-lecture.example.json','medical-lecture.template.json','step-processes.example.json','lectures/carbohydrate-biochemistry.json','lectures/heart-drugs-pharmacology.json'];
+const files=['medical-lecture.example.json','medical-lecture.template.json','step-processes.example.json','lectures/carbohydrate-biochemistry.json','lectures/heart-drugs-pharmacology.json','lectures/lymph-node-histology.json'];
 for(const path of files)validate(JSON.parse(fs.readFileSync(path)));
 validate({title:'Legacy',blocks:[{type:'title',text:'Legacy'},{type:'flow',steps:['One','Two']},{type:'question',prompt:'Why?',answer:'Because.'}]});
 
@@ -16,16 +16,30 @@ for(const bad of [
   {title:'x',blocks:[{type:'unknown'}]},
   {title:'x',blocks:[{type:'table',columns:['a'],rows:[['a','b']]}]},
   {title:'x',blocks:[{type:'question',prompt:'p',answer:'a',options:['a','b'],correctIndex:9}]},
-  {title:'x',blocks:[{type:'flow',steps:[null]}]}
+  {title:'x',blocks:[{type:'flow',steps:[null]}]},
+  {title:'x',blocks:[{type:'image',processName:'Diagram',alt:'Diagram',source:{fileType:'pdf',page:0}}]},
+  {title:'x',blocks:[{type:'image',processName:'Diagram',alt:'Diagram',source:{fileType:'pdf',page:2,crop:[0.8,0,0.3,1]}}]},
+  {title:'x',blocks:[{type:'image',processName:'Diagram',alt:'Diagram',source:{fileType:'pptx',slide:2}}]},
+  {title:'x',blocks:[{type:'image',processName:'Diagram',alt:'Diagram',source:{fileType:'docx'}}]}
 ])assert.throws(()=>validate(bad));
+validate({title:'Images',blocks:[
+  {type:'image',processName:'PDF process',alt:'PDF figure',source:{fileType:'pdf',page:2,crop:[0.1,0.2,0.8,0.6]}},
+  {type:'image',processName:'PPTX process',alt:'PPTX figure',source:{fileType:'pptx',slide:3,image:2}},
+  {type:'image',processName:'DOCX process',alt:'DOCX figure',source:{fileType:'docx',media:'image4.png'}}
+]});
 
 const html=fs.readFileSync('index.html','utf8');
 for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(match[1]);
 const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Script(selectionSource);
-for(const asset of ['lecture.css?v=4.3.1','step-process.js?v=4.3.1','lecture.js?v=4.3.1','selection-translate.js?v=4.3.1'])assert(html.includes(asset));
-assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.3.1'));
-assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.3.1'));
-assert(html.includes("+'#lecture='+enc(lectureData)"));
+const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);
+for(const asset of ['lecture.css?v=4.4.0','step-process.js?v=4.4.0','lecture.js?v=4.4.0','selection-translate.js?v=4.4.0','image-extractor.js?v=4.4.0','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
+assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.4.0'));
+assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.4.0'));
+assert(html.includes('lectures/lymph-node-histology.json?v=4.4.0'));
+assert(html.includes("+'#lecture='+enc(output)"));
+assert(html.includes('accept=".pdf,.pptx,.docx'));
+assert(imageExtractorSource.includes("import('https://cdn.jsdelivr.net/npm/pdfjs-dist@5.6.205/build/pdf.min.mjs')"));
+assert(imageExtractorSource.includes('window.JSZip.loadAsync'));
 assert(!html.includes('LectureLinks'));
 assert(!html.includes('sharing.js'));
 assert(selectionSource.includes("event.detail===2"));
@@ -38,6 +52,14 @@ assert(selectionSource.includes('insertParagraphTranslation'));
 assert(fs.readFileSync('lecture.js','utf8').includes('installLectureSelection?.(article,root)'));
 assert(!files.some(path=>fs.readFileSync(path,'utf8').includes('"agent": "Next step"')));
 console.log('PASS: JSON files, legacy schema, invalid inputs, versioned assets, and inline JavaScript syntax.');
+
+const lymph=JSON.parse(fs.readFileSync('lectures/lymph-node-histology.json'));
+const lymphImages=lymph.blocks.filter(block=>block.type==='image');
+assert.equal(lymphImages.length,5);
+assert.deepEqual(lymphImages.map(block=>block.source.page),[2,7,5,8,11]);
+assert.deepEqual(lymphImages.at(-1).source.crop,[0,0.35,1,0.65]);
+assert(lymphImages.every(block=>block.processName&&block.alt));
+console.log('PASS: image placeholder schema and lymph-node source locations.');
 
 const specimen=JSON.parse(fs.readFileSync('step-processes.example.json')).blocks.find(block=>block.type==='step-process'&&block.resultSets?.length);
 for(const mutate of [
