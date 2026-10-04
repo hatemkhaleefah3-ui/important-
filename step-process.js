@@ -7,7 +7,7 @@ const optionalText=(value,label)=>{if(value!=null&&typeof value!=='string')throw
 const validateStep=(step,label,ids)=>{
   if(!step||!text(step.id)||!text(step.title)||ids.has(step.id))throw Error(label+' needs a unique id and title.');
   ids.add(step.id);
-  for(const key of ['agent','description','formula','context','badge'])optionalText(step[key],label+' '+key);
+  for(const key of ['agent','description','formula','context','badge','pathway'])optionalText(step[key],label+' '+key);
   if(step.details!=null&&(!Array.isArray(step.details)||step.details.length>12||step.details.some(item=>!item||!text(item.label)||typeof item.value!=='string')))
     throw Error(label+' details need up to 12 label/value pairs.');
 };
@@ -23,7 +23,7 @@ window.validateStepProcess=block=>{
     const branchIds=new Set(),mainIds=new Set(block.steps.map(step=>step.id));
     block.branches.forEach((branch,index)=>{
       if(!branch||!text(branch.id)||branchIds.has(branch.id)||!text(branch.title)||!mainIds.has(branch.fromStep))throw Error('Branch '+(index+1)+' needs a unique id, title, and existing fromStep.');
-      branchIds.add(branch.id);optionalText(branch.agent,'Branch '+(index+1)+' agent');
+      branchIds.add(branch.id);optionalText(branch.agent,'Branch '+(index+1)+' agent');optionalText(branch.pathway,'Branch '+(index+1)+' pathway');
       if(!Array.isArray(branch.steps)||!branch.steps.length||branch.steps.length>24)throw Error('Branch '+(index+1)+' needs 1–24 steps.');
       branch.steps.forEach((step,stepIndex)=>validateStep(step,'Branch '+(index+1)+' step '+(stepIndex+1),ids));
     });
@@ -58,9 +58,11 @@ window.renderStepProcess=(block,uid)=>{
     stage.replaceChildren();const steps=visibleSteps();
     status.textContent=activeBranch?'Alternate pathway · '+activeBranch.title:'Main pathway';
     steps.forEach((step,index)=>{
-      const item=el('article','step-process-item');item.style.setProperty('--step-order',index);
+      const branchPoint=groups.has(step.id),branchChanged=!!(activeBranch&&index>=block.steps.findIndex(item=>item.id===activeBranch.fromStep));
+      const item=el('article','step-process-item'+(branchChanged?' is-route-changed':''));item.style.setProperty('--step-order',index);
       const card=el('div','step-process-card'),copy=el('div','step-process-copy');
       copy.append(el('span','step-process-number','STEP '+String(index+1).padStart(2,'0')));
+      if(branchPoint){const mainPathway=step.pathway||'Main pathway',selected=activeBranch?.fromStep===step.id?(activeBranch.pathway||activeBranch.title):null;copy.append(el('span','step-process-pathway',selected?mainPathway+' → '+selected:mainPathway));}
       if(step.context||step.badge)copy.append(el('span','step-process-context',step.badge||step.context));
       copy.append(el('h4','',step.title));
       if(step.context&&step.badge)copy.append(el('p','step-process-subtitle',step.context));
@@ -68,7 +70,7 @@ window.renderStepProcess=(block,uid)=>{
       const actions=el('div','step-process-actions');
       const hasDetails=!!(step.description||step.formula||step.details?.length),detailId=uid+'-'+step.id+'-detail';
       if(hasDetails){const toggle=el('button','step-detail-toggle');toggle.type='button';toggle.append(el('span','step-action-icon','＋'),el('span','step-action-label','Details'));toggle.setAttribute('aria-label','Show details for '+step.title);toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-controls',detailId);actions.append(toggle);}
-      if(groups.has(step.id)){const choices=routeChoices(step.id),current=activeBranch?.fromStep===step.id?choices.findIndex(item=>item?.id===activeBranch.id):0,next=choices[(current+1)%choices.length];const route=el('button','step-route-toggle');route.type='button';route.append(el('span','step-action-icon','⇄'),el('span','step-action-label','Path'));route.setAttribute('aria-label','Change pathway after '+step.title+' to '+(next?next.title:'main pathway'));route.title='Change downstream pathway';route.onclick=()=>selectNextRoute(step.id);actions.append(route);}
+      if(branchPoint){const choices=routeChoices(step.id),current=activeBranch?.fromStep===step.id?choices.findIndex(item=>item?.id===activeBranch.id):0,next=choices[(current+1)%choices.length];const route=el('button','step-route-toggle');route.type='button';route.append(el('span','step-action-icon','⇄'),el('span','step-action-label','Change'));route.setAttribute('aria-label','Change pathway after '+step.title+' to '+(next?(next.pathway||next.title):(step.pathway||'main pathway')));route.title='Change downstream pathway';route.onclick=()=>selectNextRoute(step.id);actions.append(route);}
       if(actions.childElementCount)card.append(actions);item.append(card);
       if(hasDetails){const panel=makeDetails(step,detailId),toggle=actions.querySelector('.step-detail-toggle');toggle.onclick=()=>{panel.hidden=!panel.hidden;toggle.setAttribute('aria-expanded',String(!panel.hidden));toggle.querySelector('.step-action-icon').textContent=panel.hidden?'＋':'−';toggle.setAttribute('aria-label',(panel.hidden?'Show':'Hide')+' details for '+step.title)};item.append(panel);}
       if(index<steps.length-1){const connector=el('div','step-process-connector');const isBranchPoint=activeBranch&&step.id===activeBranch.fromStep;const agent=isBranchPoint?(activeBranch.agent||step.agent):step.agent;connector.append(el('span','step-process-arrow','↓'));if(agent)connector.append(el('span','step-process-agent',agent));item.append(connector);}

@@ -62,12 +62,12 @@ Add `step-process` blocks for chemistry, pathology, pharmacology, or general seq
 | --- | --- |
 | `domain` | `chemistry`, `pathology`, `pharmacology`, or `general` |
 | `steps` | 2–24 ordered steps with globally unique `id` and a `title` |
-| Step metadata | Optional `description`, `formula`, `context`, `badge`; `details` contains up to 12 string label/value pairs |
+| Step metadata | Optional `description`, `formula`, `context`, `badge`, and `pathway`; `details` contains up to 12 string label/value pairs |
 | `agent` | Optional transition label shown between this step and the next: enzyme, transporter, helper, drug target, or responsible agent |
 | `branches` | Up to 12 alternate downstream pathways |
-| Branch fields | Unique `id`, `title`, an existing main-step `fromStep`, optional transition `agent`, and 1–24 replacement `steps` |
+| Branch fields | Unique `id`, `title`, an existing main-step `fromStep`, optional transition `agent`, optional short `pathway` label, and 1–24 replacement `steps` |
 
-Steps run from top to bottom. The detail button appears only when a step has `description`, `formula`, or `details`. It expands an inline explanation below that step. A route button appears only on a step named by a branch's `fromStep`. Activating it cycles through the main continuation and all alternatives at that point, replacing every downstream step. Branch step IDs must be unique across the entire block.
+Steps run from top to bottom. The detail button appears only when a step has `description`, `formula`, or `details`. It expands an inline explanation below that step. A route button appears only on a step named by a branch's `fromStep`. Give that main step a `pathway` label and each branch its alternate `pathway` label. Activating the route button changes the label from `Main label` to `Main label → Alternate label`, recolors the branch-point card and every downstream card, and replaces the downstream sequence. Branch step IDs must be unique across the entire block.
 
 Controls are native keyboard-accessible buttons, route changes are announced to assistive technology, and reduced-motion preferences are respected. Print expands every detail panel. Formulas render as Unicode/plain text, not LaTeX. The component is an explanatory sequence, not a quantitative simulation.
 

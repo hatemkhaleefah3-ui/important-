@@ -103,6 +103,7 @@
         {
           "id": "substrate",
           "title": "Substrate",
+          "pathway": "Primary reaction",
           "context": "Reaction compartment",
           "description": "Define the starting molecule and its concentration or availability.",
           "formula": "S",
@@ -117,6 +118,7 @@
         {
           "id": "complex",
           "title": "Enzyme–substrate complex",
+          "pathway": "Forward catalysis",
           "badge": "Reversible step",
           "description": "Describe binding, cofactors, and the relevant catalytic mechanism.",
           "formula": "E + S ⇌ ES",
@@ -139,6 +141,7 @@
         {
           "id": "competing",
           "title": "Competing pathway",
+          "pathway": "Competing reaction",
           "fromStep": "substrate",
           "agent": "alternate route",
           "steps": [
@@ -153,6 +156,7 @@
         {
           "id": "binding",
           "title": "Reverse binding step",
+          "pathway": "Reverse binding",
           "fromStep": "complex",
           "agent": "binding",
           "steps": [
@@ -194,6 +198,7 @@
         {
           "id": "interaction",
           "title": "Host interaction",
+          "pathway": "Injury progression",
           "description": "Explain the host–pathogen mechanisms relevant to this lecture.",
           "agent": "injury route"
         },
@@ -213,6 +218,7 @@
         {
           "id": "resolution",
           "title": "Clearance route",
+          "pathway": "Clearance",
           "fromStep": "interaction",
           "agent": "clearance route",
           "steps": [
@@ -241,6 +247,7 @@
         {
           "id": "central",
           "title": "Central compartment",
+          "pathway": "Target distribution",
           "description": "Describe how the drug enters and moves through the central compartment.",
           "details": [
             {
@@ -272,6 +279,7 @@
         {
           "id": "metabolism",
           "title": "Transformation and exit",
+          "pathway": "Metabolism and exit",
           "fromStep": "central",
           "agent": "transformation",
           "steps": [
@@ -291,6 +299,7 @@
         {
           "id": "direct",
           "title": "Direct exit route",
+          "pathway": "Direct exit",
           "fromStep": "central",
           "agent": "direct exit",
           "steps": [

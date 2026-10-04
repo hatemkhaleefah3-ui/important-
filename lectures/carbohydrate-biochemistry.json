@@ -350,6 +350,7 @@
         {
           "id": "py",
           "title": "Pyruvate",
+          "pathway": "Lactate reduction",
           "description": "A three-carbon junction between several pathways.",
           "formula": "3C",
           "agent": "LDH"
@@ -366,6 +367,7 @@
         {
           "id": "oxidation",
           "title": "Oxidation route",
+          "pathway": "Oxidative decarboxylation",
           "fromStep": "py",
           "agent": "PDH",
           "steps": [
@@ -386,6 +388,7 @@
         {
           "id": "synthesis",
           "title": "Glucose-synthesis route",
+          "pathway": "Gluconeogenic entry",
           "fromStep": "py",
           "agent": "carboxylase",
           "steps": [
@@ -451,6 +454,7 @@
         {
           "id": "gly",
           "title": "Glycogen",
+          "pathway": "Glycogen storage",
           "badge": "Branched reserve",
           "description": "Glycogen synthase extends α1→4 chains; branching enzyme forms α1→6 branches."
         }
@@ -459,6 +463,7 @@
         {
           "id": "mobilize",
           "title": "Mobilization route",
+          "pathway": "Glycogen mobilization",
           "fromStep": "gly",
           "agent": "mobilization",
           "steps": [
@@ -623,6 +628,7 @@
         {
           "id": "ru",
           "title": "Ribulose-5-phosphate",
+          "pathway": "Ribose production",
           "description": "Oxidation yields a pentose, two NADPH, and CO₂ per G6P.",
           "formula": "2 NADPH + CO₂",
           "agent": "isomerization"
@@ -637,6 +643,7 @@
         {
           "id": "recycle",
           "title": "Carbon-recycling route",
+          "pathway": "Carbon recycling",
           "fromStep": "ru",
           "agent": "carbon exchange",
           "steps": [

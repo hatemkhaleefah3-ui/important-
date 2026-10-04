@@ -249,6 +249,7 @@
         {
           "id": "drug",
           "title": "Sacubitril–valsartan",
+          "pathway": "Neprilysin arm",
           "description": "One combination with complementary actions.",
           "agent": "activation"
         },
@@ -275,6 +276,7 @@
         {
           "id": "receptor",
           "title": "Valsartan arm",
+          "pathway": "AT₁-blockade arm",
           "fromStep": "drug",
           "agent": "valsartan",
           "steps": [
@@ -386,6 +388,7 @@
         {
           "id": "plasma",
           "title": "Systemic exposure",
+          "pathway": "β₁-blockade route",
           "description": "Absorption and release characteristics determine exposure over time.",
           "agent": "β₁ blockade"
         },
@@ -406,6 +409,7 @@
         {
           "id": "clearance",
           "title": "Clearance route",
+          "pathway": "Hepatic clearance",
           "fromStep": "plasma",
           "agent": "CYP2D6",
           "steps": [
@@ -648,6 +652,7 @@
         {
           "id": "dig",
           "title": "Digoxin",
+          "pathway": "Inotropic pathway",
           "description": "A cardiac glycoside with a narrow therapeutic margin.",
           "agent": "pump inhibition"
         },
@@ -675,6 +680,7 @@
         {
           "id": "node",
           "title": "Nodal mechanism",
+          "pathway": "Nodal pathway",
           "fromStep": "dig",
           "agent": "indirect effect",
           "steps": [
