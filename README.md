@@ -29,7 +29,7 @@ Notes, bookmarks, checklist state, and theme are stored in this browser, keyed t
 
 Motion respects `prefers-reduced-motion`. Print mode omits reader controls and notes, and includes recall answers. For flow blocks, print shows all stage titles and the currently selected explanation.
 
-Inside lecture content, double-clicking or double-tapping selects a word. Three clicks or taps select the containing text block. A later single click or tap inside that active selection opens Google Translate in a new tab. The target is the browser language, with Arabic used when the browser language is English or unavailable. Translation sends the selected lecture text to Google; controls, links, inputs, and notes are excluded from the gesture.
+Inside lecture content, double-clicking or double-tapping temporarily replaces an English word with its Arabic translation. Three clicks or taps temporarily replace the containing paragraph or text block with Arabic. Any later click, tap, or scroll restores the original English. Translation uses the MyMemory `en|ar` API and sends only the selected lecture text; controls, links, inputs, and notes are excluded. Requests are divided into segments below the API's 500-byte limit, cached for the current page, and restored without rebuilding interactive controls.
 
 ## Local preview and checks
 
