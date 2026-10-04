@@ -32,3 +32,41 @@ Motion respects `prefers-reduced-motion`. Print mode omits reader controls and n
 Run `python -m http.server 8000`, then visit `http://localhost:8000`.
 Run `node test-validation.cjs` for the dependency-free validation checks.
 Run `node test-reader.cjs` with Playwright and Chromium installed. The checks exercise desktop/mobile layout, both JSON formats, step navigation, recall feedback, saved notes, focus/theme controls, malicious strings, validation, and the import/build pipeline.
+
+## Process diagrams
+
+Add `process-diagram` blocks for chemistry, pathology, or pharmacology. `process-diagrams.example.json` demonstrates all three graph styles. The main template includes editable scaffolds with explanatory prompts; replace them with subject-specific content before teaching. Their sample branches are illustrative topology, not validated reaction kinetics, infection models, or pharmacokinetic simulations.
+
+```json
+{
+  "type": "process-diagram",
+  "domain": "chemistry",
+  "title": "Your reaction pathway",
+  "nodes": [
+    { "id": "a", "title": "Substrate", "column": 0, "lane": 0,
+      "formula": "S", "compartment": "Cytosol",
+      "description": "Explain this stage.",
+      "details": [{ "label": "Cofactor", "value": "Add the applicable cofactor." }] },
+    { "id": "b", "title": "Product", "column": 1, "lane": 0,
+      "description": "Explain the resulting stage." }
+  ],
+  "edges": [{ "from": "a", "to": "b", "kind": "reaction", "label": "enzyme" }],
+  "paths": [{ "id": "main", "title": "Main route", "nodes": ["a", "b"] }]
+}
+```
+
+| Field | Contract |
+| --- | --- |
+| `domain` | `chemistry`, `pathology`, or `pharmacology` |
+| `nodes` | 1–24 nodes; unique string `id`, string `title`, integer `column` 0–5 and `lane` 0–3 |
+| Node metadata | Optional `description`, `formula`, `compartment`, `badge`; `details` contains up to 12 string label/value pairs |
+| `edges` | Up to 48 connections with existing, distinct `from`/`to` node IDs; no duplicate directed pairs |
+| Edge `kind` | `reaction`, `activation`, `inhibition`, `transport`, `progression`, or `reversible` |
+| Edge `label` | Optional short text, ideally fewer than 18 characters |
+| `paths` | Optional 1–12 routes with unique `id`, `title`, and 1–48 existing node IDs; every successive pair must have a matching connection |
+
+Columns run left to right, lanes top to bottom. No two nodes can occupy the same position. Use alternate lanes for branches. Reversible edges can be traversed in either direction; other connections follow their declared direction. Repeated stages and feedback routes are permitted if their connections exist. Arrange complex feedback graphs deliberately; crossing edges are not automatically rerouted. Break large processes into separate diagrams for clarity.
+
+Stage controls are standard keyboard-accessible buttons. Route tracking highlights connected stages and connections; selecting a node outside the current route returns to free exploration. Tracking state resets when the page reloads. The tracker is an explanatory walkthrough, not a timed or quantitative simulation. Formulas render as Unicode/plain text, not LaTeX.
+
+Diagrams scroll within the reader on small screens. A text connection list gives an alternative to the visual graph. Print includes a scaled diagram, connection list, and all stage descriptions. Color differences are supplemented by arrowheads, inhibition bars, dashed transport links, labels, and explicit connection kinds.

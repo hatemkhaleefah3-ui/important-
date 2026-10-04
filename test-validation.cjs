@@ -1,5 +1,9 @@
-const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');const context={window:{}};vm.runInNewContext(fs.readFileSync('lecture.js','utf8'),context);const validate=context.window.validateLecture;
-for(const path of ['medical-lecture.example.json','medical-lecture.template.json'])validate(JSON.parse(fs.readFileSync(path)));
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');const context={window:{}};vm.createContext(context);vm.runInContext(fs.readFileSync('process-diagram.js','utf8'),context);context.validateDiagram=context.window.validateDiagram;vm.runInContext(fs.readFileSync('lecture.js','utf8'),context);const validate=context.window.validateLecture;
+for(const path of ['medical-lecture.example.json','medical-lecture.template.json','process-diagrams.example.json'])validate(JSON.parse(fs.readFileSync(path)));
 validate({title:'Legacy',blocks:[{type:'title',text:'Legacy'},{type:'subtitle',text:'Overview'},{type:'flow',steps:['One','Two']},{type:'question',prompt:'Why?',answer:'Because.'}]});
 for(const bad of [null,{}, {title:'x',blocks:[]},{title:'x',schemaVersion:3,blocks:[{type:'paragraph',text:'x'}]}, {title:'x',blocks:[{type:'unknown'}]}, {title:'x',blocks:[{type:'table',columns:['a'],rows:[['a','b']]}]}, {title:'x',blocks:[{type:'question',prompt:'p',answer:'a',options:['a','b'],correctIndex:9}]}, {title:'x',blocks:[{type:'flow',steps:[null]}]}])assert.throws(()=>validate(bad));
 const html=fs.readFileSync('index.html','utf8');for(const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(m[1]);console.log('PASS: JSON templates, legacy schema, 8 invalid inputs, inline JavaScript syntax.');
+
+const diagram=JSON.parse(fs.readFileSync('process-diagrams.example.json')).blocks.find(b=>b.type==='process-diagram');
+for(const mutate of [d=>d.nodes.push({...d.nodes[0]}),d=>d.nodes[0].column=6,d=>d.nodes[1].column=0,d=>d.edges[0].to='missing',d=>d.paths[0].nodes=['product','branch'],d=>d.domain='other',d=>d.edges[0].kind='other']){const d=JSON.parse(JSON.stringify(diagram));mutate(d);assert.throws(()=>context.window.validateDiagram(d));}
+console.log('PASS: process diagrams, bounds, unique IDs, edge references, kinds, domains, and connected tracking paths.');
