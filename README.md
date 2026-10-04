@@ -127,4 +127,4 @@ Time spacing is sequential, not proportional to elapsed time. Locations are orde
 - `lectures/heart-drugs-pharmacology.json`: HFrEF classes, separate sacubitril/valsartan mechanisms, beta-blockade results, angina, separate digoxin mechanisms, thrombosis, and major safety interactions.
 - `lectures/lymph-node-histology.json`: reorganized lymph-node histology with five PDF image placeholders mapped to exact source pages and one crop.
 
-Both use version 4 and require the redesigned reader. Each includes a visible reference block and machine-readable `sources`/`sourceIds` metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.
+All three use version 4 and require the redesigned reader. Each includes a visible reference block and machine-readable source metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.
