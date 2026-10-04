@@ -21,12 +21,17 @@ for(const bad of [
 
 const html=fs.readFileSync('index.html','utf8');
 for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(match[1]);
-for(const asset of ['lecture.css?v=4.2.2','step-process.js?v=4.2.2','lecture.js?v=4.2.2'])assert(html.includes(asset));
-assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.2.2'));
-assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.2.2'));
+const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Script(selectionSource);
+for(const asset of ['lecture.css?v=4.3.0','step-process.js?v=4.3.0','lecture.js?v=4.3.0','selection-translate.js?v=4.3.0'])assert(html.includes(asset));
+assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.3.0'));
+assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.3.0'));
 assert(html.includes("+'#lecture='+enc(lectureData)"));
 assert(!html.includes('LectureLinks'));
 assert(!html.includes('sharing.js'));
+assert(selectionSource.includes("event.detail===2"));
+assert(selectionSource.includes("event.detail>=3"));
+assert(selectionSource.includes('translate.google.com'));
+assert(fs.readFileSync('lecture.js','utf8').includes('installLectureSelection?.(article,root)'));
 assert(!files.some(path=>fs.readFileSync(path,'utf8').includes('"agent": "Next step"')));
 console.log('PASS: JSON files, legacy schema, invalid inputs, versioned assets, and inline JavaScript syntax.');
 

@@ -29,6 +29,8 @@ Notes, bookmarks, checklist state, and theme are stored in this browser, keyed t
 
 Motion respects `prefers-reduced-motion`. Print mode omits reader controls and notes, and includes recall answers. For flow blocks, print shows all stage titles and the currently selected explanation.
 
+Inside lecture content, double-clicking or double-tapping selects a word. Three clicks or taps select the containing text block. A later single click or tap inside that active selection opens Google Translate in a new tab. The target is the browser language, with Arabic used when the browser language is English or unavailable. Translation sends the selected lecture text to Google; controls, links, inputs, and notes are excluded from the gesture.
+
 ## Local preview and checks
 
 Run `python -m http.server 8000`, then visit `http://localhost:8000`.
