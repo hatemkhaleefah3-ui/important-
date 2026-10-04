@@ -1,0 +1,24 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const {webcrypto}=require('node:crypto');
+(async()=>{
+ const step=fs.readFileSync('step-process.js','utf8'),lecture=fs.readFileSync('lecture.js','utf8');
+ const expected=step.slice(step.indexOf('const domains='),step.indexOf('const el=')).replace('window.validateStepProcess=','const validateStepProcess=')+lecture.slice(lecture.indexOf('const types='),lecture.indexOf('const el=')).replace('window.validateLecture=','export const validateLecture=');
+ const validator=fs.readFileSync('server/validation.js','utf8');assert.equal(validator.split('\n').slice(1).join('\n'),expected);
+ const c={URL,Request,Response,TextEncoder,TextDecoder,crypto:webcrypto};vm.createContext(c);
+ vm.runInContext(validator.replace('export const','const')+fs.readFileSync('functions/api/lectures.js','utf8').replace(/^import.*\n/,'').replace('export async function','async function'),c);
+ const data=JSON.parse(fs.readFileSync('lectures/heart-drugs-pharmacology.json'));
+ const map=new Map(),env={ALLOW_LECTURE_UPLOADS:'true',LECTURES:{get:async k=>map.get(k),put:async(k,v)=>map.set(k,v)}};
+ const req=(body,origin='https://test.example')=>new Request('https://test.example/api/lectures',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body});
+ assert.equal((await c.onRequestPost({request:req('{}'),env:{}})).status,503);
+ assert.equal((await c.onRequestPost({request:req('{}','https://evil.example'),env})).status,403);
+ assert.equal((await c.onRequestPost({request:req('{}'),env})).status,400);
+ assert.equal((await c.onRequestPost({request:req('x'.repeat(250001)),env})).status,413);
+ const response=await c.onRequestPost({request:req(JSON.stringify(data)),env});assert.equal(response.status,201);const {id}=await response.json();assert.match(id,/^[a-f0-9]{24}$/);assert.equal(JSON.parse(map.get(id)).title,data.title);
+ const repeat=await c.onRequestPost({request:req(JSON.stringify(data)),env});assert.equal((await repeat.json()).id,id);assert.equal(map.size,1);
+ vm.runInContext(fs.readFileSync('functions/api/lectures/[id].js','utf8').replace('export async function','async function'),c);
+ assert.equal((await c.onRequestGet({params:{id},env})).status,200);assert.equal((await c.onRequestGet({params:{id:'0'.repeat(24)},env})).status,404);assert.equal((await c.onRequestGet({params:{id:'../../etc'},env})).status,400);
+ const browser={window:{},location:{href:'https://test.example/#lecture=old',search:'?l=heart'},URL,URLSearchParams,validateLecture:d=>d,fetch:async path=>Response.json(JSON.parse(fs.readFileSync(String(path).split('?')[0])))};vm.createContext(browser);vm.runInContext(fs.readFileSync('sharing.js','utf8'),browser);
+ assert.equal(await browser.window.LectureLinks.create(data),'https://test.example/?l=heart');assert.equal((await browser.window.LectureLinks.load()).title,data.title);
+ assert.equal(await browser.window.LectureLinks.create(JSON.parse(fs.readFileSync('lectures/carbohydrate-biochemistry.json'))),'https://test.example/?l=carbs');
+ console.log('PASS: short catalog links, loader, validator parity, durable writes, deduplication, body limits, origin, bad schema, missing storage, and missing IDs.');
+})().catch(e=>{console.error(e);process.exit(1)});

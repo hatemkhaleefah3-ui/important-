@@ -17,3 +17,21 @@
 
 
 .import-links{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 20px}.import-links a{font:12px system-ui,sans-serif;color:#bbefa7;text-decoration:underline;text-underline-offset:4px}
+
+/* Ivory / ink / indigo lecture theme. Landing-page styling remains independent. */
+.lecture{--paper:#f6f7fb;--ink:#1d2538;--quiet:#59667b;--edge:#dce1eb;--accent:#4b52cc;--soft:#eceefa;font:400 16px/1.75 ui-sans-serif,system-ui,sans-serif}
+.lecture.dark{--paper:#101522;--ink:#edf0fa;--quiet:#aeb8ce;--edge:#303a50;--accent:#afb4ff;--soft:#202941;color-scheme:dark}
+.lecture .topbar{background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(18px)}
+.lecture .logo{border-radius:10px;background:var(--accent);color:#fff}
+.lecture .wordmark{letter-spacing:-.04em}.lecture .tool{border-radius:10px;background:var(--paper)}
+.lecture .lecture-hero{background:linear-gradient(125deg,#171f38,#303d78);border-color:#45518a;border-radius:24px;padding:44px 44px 0;box-shadow:0 20px 50px #18214418}
+.lecture .lecture-hero h1{font:650 clamp(36px,4.5vw,64px)/1.09 ui-sans-serif,system-ui,sans-serif;letter-spacing:-.045em}
+.lecture .lecture-hero .dek,.lecture .hero-meta{color:#cdd5ee}.lecture .lecture-hero .overline{color:#c6ccff}.lecture .lecture-hero .overline:before{background:#b8baff}.lecture .hero-art circle{stroke:#b8baff}
+.lecture .chapter h2{font:650 clamp(26px,3vw,34px)/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:-.035em}
+.lecture .objectives,.lecture .note,.lecture .question,.lecture .table-wrap{border-radius:16px}.lecture .question{background:color-mix(in srgb,var(--paper) 80%,var(--soft))}
+.lecture .callout{border-left-color:var(--accent);background:color-mix(in srgb,var(--soft) 45%,var(--paper))}
+.lecture .primary{background:var(--accent);color:#fff;border-radius:11px}.lecture .toc a.active{box-shadow:inset 0 0 0 1px var(--edge)}
+.lecture .step-process{--process-accent:#4b52cc;box-shadow:0 16px 44px #1821440a}.lecture .step-process.chemistry{--process-accent:#216e84}.lecture .step-process.pathology{--process-accent:#ad4c59}.lecture .step-process.pharmacology{--process-accent:#6650b0}
+.lecture.dark .step-process{--process-accent:#afb4ff}.lecture.dark .step-process.chemistry{--process-accent:#7dc9dc}.lecture.dark .step-process.pathology{--process-accent:#f5a1ab}.lecture.dark .step-process.pharmacology{--process-accent:#c4aaff}
+@media(max-width:760px){.lecture .lecture-hero{padding:28px 24px 0;border-radius:18px}.lecture .lecture-hero h1{font-size:36px}.lecture .hero-meta{gap:14px;flex-wrap:wrap}.lecture .topbar{backdrop-filter:none}}
+@media print{.lecture,.lecture.dark{--paper:#fff;--ink:#111;--quiet:#444;--edge:#ddd;--accent:#333;--soft:#f3f3f3}.lecture .lecture-hero{background:white;color:#111;box-shadow:none}.lecture .lecture-hero .dek,.lecture .hero-meta,.lecture .lecture-hero .overline{color:#444}}
