@@ -1,0 +1,5 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');const context={window:{}};vm.runInNewContext(fs.readFileSync('lecture.js','utf8'),context);const validate=context.window.validateLecture;
+for(const path of ['medical-lecture.example.json','medical-lecture.template.json'])validate(JSON.parse(fs.readFileSync(path)));
+validate({title:'Legacy',blocks:[{type:'title',text:'Legacy'},{type:'subtitle',text:'Overview'},{type:'flow',steps:['One','Two']},{type:'question',prompt:'Why?',answer:'Because.'}]});
+for(const bad of [null,{}, {title:'x',blocks:[]},{title:'x',schemaVersion:3,blocks:[{type:'paragraph',text:'x'}]}, {title:'x',blocks:[{type:'unknown'}]}, {title:'x',blocks:[{type:'table',columns:['a'],rows:[['a','b']]}]}, {title:'x',blocks:[{type:'question',prompt:'p',answer:'a',options:['a','b'],correctIndex:9}]}, {title:'x',blocks:[{type:'flow',steps:[null]}]}])assert.throws(()=>validate(bad));
+const html=fs.readFileSync('index.html','utf8');for(const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(m[1]);console.log('PASS: JSON templates, legacy schema, 8 invalid inputs, inline JavaScript syntax.');

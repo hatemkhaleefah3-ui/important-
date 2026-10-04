@@ -1,17 +1,116 @@
 {
-  "title": "Acute Inflammation",
-  "subtitle": "A high-yield guide to vascular and cellular responses",
-  "course": "General Pathology",
-  "accent": "emerald",
+  "schemaVersion": 2,
+  "id": "your-lecture-id",
+  "title": "Your lecture title",
+  "subtitle": "A concise overview of the topic and its purpose.",
+  "course": "Your course",
+  "author": "Your name or institution",
+  "level": "Study guide",
+  "durationMinutes": 10,
   "blocks": [
-    { "type": "title", "text": "Acute inflammation" },
-    { "type": "subtitle", "text": "Recognize the sequence, mediators, and clinical consequences." },
-    { "type": "paragraph", "heading": "Core concept", "text": "Acute inflammation is a rapid protective response that delivers leukocytes and plasma proteins to sites of infection or tissue injury." },
-    { "type": "note", "variant": "clinical", "title": "Clinical anchor", "text": "Warmth, erythema, swelling, pain, and loss of function arise from vasodilation, permeability, and mediator activity." },
-    { "type": "flow", "title": "The vascular response", "steps": ["Tissue injury", "Histamine and nitric oxide", "Vasodilation", "Increased permeability", "Protein-rich exudate"] },
-    { "type": "table", "title": "Key mediators", "columns": ["Mediator", "Major source", "Primary action"], "rows": [["Histamine", "Mast cells", "Vasodilation; permeability"], ["Prostaglandins", "Leukocytes, endothelium", "Pain; fever; vasodilation"], ["C5a", "Complement", "Chemotaxis; activation"]] },
-    { "type": "callout", "label": "EXAM PEARL", "text": "Exudate has high protein content; transudate is protein-poor and usually caused by altered hydrostatic or oncotic pressure." },
-    { "type": "question", "prompt": "Which mediator is a potent chemotactic factor for neutrophils?", "answer": "C5a. It is a complement split product that recruits and activates leukocytes." },
-    { "type": "checklist", "title": "Rapid review", "items": ["Know the cardinal signs", "Distinguish exudate from transudate", "Trace leukocyte recruitment", "Match mediators to effects"] }
+    {
+      "type": "section",
+      "id": "overview",
+      "title": "The big picture"
+    },
+    {
+      "type": "paragraph",
+      "variant": "lead",
+      "text": "Introduce the central concept in a clear, concise paragraph."
+    },
+    {
+      "type": "objectives",
+      "title": "Your learning objectives",
+      "items": [
+        "Explain the central concept",
+        "Trace the process",
+        "Apply the concept to a case",
+        "Check your understanding"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Context",
+      "text": "Add a helpful connection or clinical anchor."
+    },
+    {
+      "type": "section",
+      "id": "process",
+      "title": "Understand the sequence"
+    },
+    {
+      "type": "flow",
+      "title": "Explore the process",
+      "steps": [
+        {
+          "title": "Starting point",
+          "description": "Explain the initial condition."
+        },
+        {
+          "title": "Mechanism",
+          "description": "Explain what changes and why."
+        },
+        {
+          "title": "Outcome",
+          "description": "Explain the resulting effect."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "Key distinction",
+      "text": "State the essential distinction or takeaway."
+    },
+    {
+      "type": "table",
+      "title": "Compare the essentials",
+      "columns": [
+        "Concept",
+        "Mechanism",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Concept A",
+          "Mechanism A",
+          "Result A"
+        ],
+        [
+          "Concept B",
+          "Mechanism B",
+          "Result B"
+        ]
+      ]
+    },
+    {
+      "type": "section",
+      "id": "recall",
+      "title": "Check your understanding"
+    },
+    {
+      "type": "question",
+      "prompt": "Which choice best explains the mechanism?",
+      "options": [
+        "Choice A",
+        "Choice B",
+        "Choice C"
+      ],
+      "correctIndex": 1,
+      "answer": "Explain why Choice B is correct and why the alternatives are less appropriate."
+    },
+    {
+      "type": "question",
+      "prompt": "Can you explain the sequence in your own words?",
+      "answer": "Summarize the starting point, mechanism, and outcome."
+    },
+    {
+      "type": "checklist",
+      "title": "Ready to move on?",
+      "items": [
+        "I can explain the concept",
+        "I can trace the sequence",
+        "I can apply the concept"
+      ]
+    }
   ]
 }

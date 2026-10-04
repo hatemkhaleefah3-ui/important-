@@ -1,17 +1,32 @@
 {
-  "title": "Acute Inflammation",
-  "subtitle": "A high-yield guide to vascular and cellular responses",
+  "schemaVersion": 2,
+  "id": "acute-inflammation",
+  "title": "Acute inflammation",
+  "subtitle": "Understand the response. Connect the mediators. Remember the sequence.",
   "course": "General Pathology",
-  "accent": "emerald",
+  "author": "Medical lecture collection",
+  "level": "Core concepts",
+  "durationMinutes": 12,
   "blocks": [
-    { "type": "title", "text": "Acute inflammation" },
-    { "type": "subtitle", "text": "Recognize the sequence, mediators, and clinical consequences." },
-    { "type": "paragraph", "heading": "Core concept", "text": "Acute inflammation is a rapid protective response that delivers leukocytes and plasma proteins to sites of infection or tissue injury." },
+    { "type": "section", "id": "foundations", "title": "The protective response" },
+    { "type": "paragraph", "variant": "lead", "text": "Acute inflammation is a rapid protective response that delivers leukocytes and plasma proteins to sites of infection or tissue injury." },
+    { "type": "objectives", "title": "Your learning objectives", "items": ["Recognize the cardinal signs", "Trace the vascular response", "Connect mediators to their effects", "Distinguish exudate from transudate"] },
     { "type": "note", "variant": "clinical", "title": "Clinical anchor", "text": "Warmth, erythema, swelling, pain, and loss of function arise from vasodilation, permeability, and mediator activity." },
-    { "type": "flow", "title": "The vascular response", "steps": ["Tissue injury", "Histamine and nitric oxide", "Vasodilation", "Increased permeability", "Protein-rich exudate"] },
-    { "type": "table", "title": "Key mediators", "columns": ["Mediator", "Major source", "Primary action"], "rows": [["Histamine", "Mast cells", "Vasodilation; permeability"], ["Prostaglandins", "Leukocytes, endothelium", "Pain; fever; vasodilation"], ["C5a", "Complement", "Chemotaxis; activation"]] },
-    { "type": "callout", "label": "EXAM PEARL", "text": "Exudate has high protein content; transudate is protein-poor and usually caused by altered hydrostatic or oncotic pressure." },
-    { "type": "question", "prompt": "Which mediator is a potent chemotactic factor for neutrophils?", "answer": "C5a. It is a complement split product that recruits and activates leukocytes." },
-    { "type": "checklist", "title": "Rapid review", "items": ["Know the cardinal signs", "Distinguish exudate from transudate", "Trace leukocyte recruitment", "Match mediators to effects"] }
+    { "type": "section", "id": "sequence", "title": "Follow the vascular sequence" },
+    { "type": "paragraph", "text": "Explore the response one step at a time. Select a stage to focus on its place in the sequence." },
+    { "type": "flow", "title": "From tissue injury to exudate", "steps": [
+      { "title": "Tissue injury", "description": "Begin with the site of infection or tissue injury." },
+      { "title": "Mediator release", "description": "Connect histamine and nitric oxide with the vascular response." },
+      { "title": "Vasodilation", "description": "Relate increased blood flow to warmth and erythema." },
+      { "title": "Permeability", "description": "Consider how vascular permeability contributes to swelling." },
+      { "title": "Exudate", "description": "Remember the defining feature: a protein-rich fluid." }
+    ] },
+    { "type": "callout", "label": "Exam pearl", "text": "Exudate has high protein content; transudate is protein-poor and usually caused by altered hydrostatic or oncotic pressure." },
+    { "type": "section", "id": "mediators", "title": "Connect source and effect" },
+    { "type": "table", "title": "Key mediators at a glance", "columns": ["Mediator", "Major source", "Primary action"], "rows": [["Histamine", "Mast cells", "Vasodilation; permeability"], ["Prostaglandins", "Leukocytes, endothelium", "Pain; fever; vasodilation"], ["C5a", "Complement", "Chemotaxis; activation"]] },
+    { "type": "section", "id": "recall", "title": "Pause. Retrieve. Remember." },
+    { "type": "question", "prompt": "Which mediator is a potent chemotactic factor for neutrophils?", "options": ["Histamine", "C5a", "Prostaglandins"], "correctIndex": 1, "answer": "C5a. It is a complement split product that recruits and activates leukocytes." },
+    { "type": "question", "prompt": "What distinguishes exudate from transudate?", "answer": "Exudate is protein-rich. Transudate is protein-poor and usually reflects altered hydrostatic or oncotic pressure." },
+    { "type": "checklist", "title": "Before you move on", "items": ["I can name the cardinal signs", "I can distinguish exudate from transudate", "I can trace the vascular response", "I can match each mediator to its effects"] }
   ]
 }
