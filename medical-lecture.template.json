@@ -48,13 +48,13 @@
           "id": "flow-5-1",
           "title": "Starting point",
           "description": "Explain the initial condition.",
-          "agent": "Next step"
+          "agent": "Trigger, enzyme, or responsible agent"
         },
         {
           "id": "flow-5-2",
           "title": "Mechanism",
           "description": "Explain what changes and why.",
-          "agent": "Next step"
+          "agent": "Mediator or responsible agent"
         },
         {
           "id": "flow-5-3",

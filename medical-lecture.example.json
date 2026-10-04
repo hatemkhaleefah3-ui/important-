@@ -53,25 +53,25 @@
           "id": "flow-6-1",
           "title": "Tissue injury",
           "description": "Begin with the site of infection or tissue injury.",
-          "agent": "Next step"
+          "agent": "Damage signals"
         },
         {
           "id": "flow-6-2",
           "title": "Mediator release",
           "description": "Connect histamine and nitric oxide with the vascular response.",
-          "agent": "Next step"
+          "agent": "Histamine and nitric oxide"
         },
         {
           "id": "flow-6-3",
           "title": "Vasodilation",
           "description": "Relate increased blood flow to warmth and erythema.",
-          "agent": "Next step"
+          "agent": "Endothelial relaxation"
         },
         {
           "id": "flow-6-4",
           "title": "Permeability",
           "description": "Consider how vascular permeability contributes to swelling.",
-          "agent": "Next step"
+          "agent": "Endothelial gaps"
         },
         {
           "id": "flow-6-5",
