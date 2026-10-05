@@ -59,7 +59,7 @@ PPTX locations use a one-based slide and either the one-based image occurrence o
 { "type": "image", "processName": "Pathogen development", "alt": "Pathogen development micrograph", "source": { "fileType": "docx", "image": 3 } }
 ```
 
-All image placeholders in one lecture must refer to the same source file type. Supported Office files are modern `.pptx` and `.docx`; legacy `.ppt` and `.doc` must be converted first. Embedded PNG, JPEG, GIF, WebP, and SVG are accepted. EMF and WMF are not rendered. A source file may be at most 50 MB, and the combined extracted image payload may be at most 1.5 MB. The builder also rejects generated links above approximately 1.8 million characters; use fewer figures or tighter PDF crops if that limit is reached.
+All image placeholders in one lecture must refer to the same source file type. Supported Office files are modern `.pptx` and `.docx`; legacy `.ppt` and `.doc` must be converted first. Embedded PNG, JPEG, GIF, WebP, and SVG are accepted. EMF and WMF are not rendered. A source file may be at most 50 MB. The importer adaptively scales and encodes each figure as WebP, with JPEG fallback, against a shared approximately 1.15 MB image-data budget. The builder also rejects generated links above approximately 1.8 million characters; use fewer figures or tighter PDF crops if that limit is reached.
 
 ## Local preview and checks
 

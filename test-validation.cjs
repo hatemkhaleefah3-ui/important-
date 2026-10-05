@@ -40,6 +40,8 @@ assert(html.includes("+'#lecture='+enc(output)"));
 assert(html.includes('accept=".pdf,.pptx,.docx'));
 assert(imageExtractorSource.includes("import('https://cdn.jsdelivr.net/npm/pdfjs-dist@5.6.205/build/pdf.min.mjs')"));
 assert(imageExtractorSource.includes('window.JSZip.loadAsync'));
+assert(imageExtractorSource.includes("toDataURL('image/webp'"));
+assert(imageExtractorSource.includes('Math.floor(1120000/images.length)'));
 assert(!html.includes('LectureLinks'));
 assert(!html.includes('sharing.js'));
 assert(selectionSource.includes("event.detail===2"));
