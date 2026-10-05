@@ -2,6 +2,8 @@ const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
 const context={window:{}};vm.createContext(context);
 vm.runInContext(fs.readFileSync('step-process.js','utf8'),context);
 context.validateStepProcess=context.window.validateStepProcess;
+vm.runInContext(fs.readFileSync('exam.js','utf8'),context);
+context.validateExam=context.window.validateExam;
 vm.runInContext(fs.readFileSync('lecture.js','utf8'),context);
 const validate=context.window.validateLecture;
 
@@ -31,11 +33,11 @@ validate({title:'Images',blocks:[
 const html=fs.readFileSync('index.html','utf8');
 for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(match[1]);
 const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Script(selectionSource);
-const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);
-for(const asset of ['lecture.css?v=4.4.0','step-process.js?v=4.4.0','lecture.js?v=4.4.0','selection-translate.js?v=4.4.0','image-extractor.js?v=4.4.1','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
-assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.4.0'));
-assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.4.0'));
-assert(html.includes('lectures/lymph-node-histology.json?v=4.4.0'));
+const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);const examSource=fs.readFileSync('exam.js','utf8');new vm.Script(examSource);
+for(const asset of ['lecture.css?v=4.5.0','step-process.js?v=4.5.0','exam.js?v=4.5.0','lecture.js?v=4.5.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
+assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.5.0'));
+assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.5.0'));
+assert(html.includes('lectures/lymph-node-histology.json?v=4.5.0'));
 assert(html.includes("+'#lecture='+enc(output)"));
 assert(html.includes('accept=".pdf,.pptx,.docx'));
 assert(imageExtractorSource.includes("import('https://cdn.jsdelivr.net/npm/pdfjs-dist@5.6.205/build/pdf.min.mjs')"));
@@ -62,6 +64,22 @@ assert.deepEqual(lymphImages.map(block=>block.source.page),[2,7,5,8,11]);
 assert.deepEqual(lymphImages.at(-1).source.crop,[0,0.35,1,0.65]);
 assert(lymphImages.every(block=>block.processName&&block.alt));
 console.log('PASS: image placeholder schema and lymph-node source locations.');
+
+const examTypes=new Set(lymph.exam.questions.map(question=>question.type));
+assert.deepEqual(examTypes,new Set(['mcq','medical-history-mcq','fill-blank','select-number','match']));
+const perfect={};lymph.exam.questions.forEach((question,index)=>{const key=question.id||'question-'+(index+1);if(['mcq','medical-history-mcq'].includes(question.type))perfect[key]=question.correctIndex;else if(question.type==='fill-blank')perfect[key]=question.answers[0];else if(question.type==='select-number')perfect[key]=question.answer;else perfect[key]=Object.fromEntries(question.pairs.map(pair=>[pair.left,pair.right]))});
+const perfectGrade=context.window.gradeExam(lymph.exam,perfect);assert.equal(perfectGrade.percent,100);assert.equal(perfectGrade.correct,lymph.exam.questions.length);
+const wrong={...perfect,[lymph.exam.questions[0].id]:99};assert.equal(context.window.gradeExam(lymph.exam,wrong).correct,lymph.exam.questions.length-1);
+for(const exam of [
+ {questions:[]},
+ {questions:[{type:'unknown',prompt:'x'}]},
+ {questions:[{type:'mcq',prompt:'x',options:['a','b'],correctIndex:3}]},
+ {questions:[{type:'fill-blank',prompt:'x',answers:[]}]},
+ {questions:[{type:'select-number',prompt:'x',min:0,max:1000,step:1,answer:2}]},
+ {questions:[{type:'match',prompt:'x',pairs:[{left:'a',right:'x'},{left:'b',right:'x'}]}]}
+])assert.throws(()=>context.window.validateExam(exam));
+assert.equal(context.window.buildExamModel(JSON.parse(fs.readFileSync('lectures/heart-drugs-pharmacology.json'))).questions.length>0,true);
+console.log('PASS: mixed-format exam validation, grading, and legacy MCQ derivation.');
 
 const specimen=JSON.parse(fs.readFileSync('step-processes.example.json')).blocks.find(block=>block.type==='step-process'&&block.resultSets?.length);
 for(const mutate of [

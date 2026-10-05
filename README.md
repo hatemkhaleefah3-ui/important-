@@ -1,6 +1,6 @@
 # Verdant lecture reader
 
-A static lecture generator using PDF.js and JSZip from jsDelivr. Serve this folder with any static HTTP server, open `index.html`, choose **Create something new → Make web app**, and import a lecture JSON file. When the JSON contains image placeholders, also select its source PDF, PPTX, or DOCX. The lecture output uses an ivory, ink, and indigo theme with dark mode. The generated URL embeds the complete validated lecture JSON and any extracted images in its `#lecture=` fragment, so it does not require server storage and can be opened on another device. Anyone with the URL can read its content. Very large URLs may exceed limits in browsers or messaging services; JSON imports remain limited to 250 KB and source files to 50 MB.
+A static two-page lecture generator using PDF.js and JSZip from jsDelivr. Serve this folder with any static HTTP server, open `index.html`, choose **Create something new → Make web app**, and import a lecture JSON file. The Study page contains the normal lecture reader; the Exam page contains an independently scored assessment. When the JSON contains image placeholders, also select its source PDF, PPTX, or DOCX. The lecture output uses an ivory, ink, and indigo theme with dark mode. The generated URL embeds the complete validated lecture JSON and any extracted images in its `#lecture=` fragment, so it does not require server storage and can be opened on another device. Anyone with the URL can read its content. Very large URLs may exceed limits in browsers or messaging services; JSON imports remain limited to 250 KB and source files to 50 MB.
 
 `medical-lecture.template.json` is an authoring starter. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
 
@@ -31,6 +31,51 @@ Notes, bookmarks, checklist state, and theme are stored in this browser, keyed t
 Motion respects `prefers-reduced-motion`. Print mode omits reader controls and notes, and includes recall answers. For flow blocks, print shows all stage titles and the currently selected explanation.
 
 Inside lecture content, double-clicking or double-tapping temporarily replaces an English word with its Arabic translation. Three clicks or taps temporarily replace the containing paragraph or text block with Arabic. Any later click, tap, or scroll restores the original English. Translation uses the MyMemory `en|ar` API and sends only the selected lecture text; controls, links, inputs, and notes are excluded. Requests are divided into segments below the API's 500-byte limit, cached for the current page, and restored without rebuilding interactive controls.
+
+## Study and Exam pages
+
+Every generated lecture has a Study/Exam page switcher. Study preserves the chapter navigation, processes, tables, notes, translation gestures, and images. Exam is a separate responsive workspace with completion progress, required-answer checks, scoring, pass/fail status, per-question correction, explanations, and reset behavior. The selected page is represented by `?view=exam` before the self-contained lecture fragment, so browser back/forward and refresh preserve the page.
+
+Add a top-level `exam` object with optional `title`, `instructions`, and `passingScore` from 0 to 100. `questions` accepts 1 to 100 validated items. If `exam` is omitted, the reader derives a basic Exam page from existing study `question` blocks that contain options; this keeps older lecture files compatible.
+
+| Exam question type | Required fields | Behavior |
+| --- | --- | --- |
+| `mcq` | `prompt`, `options`, zero-based `correctIndex` | Standard single-best-answer question |
+| `medical-history-mcq` | `history`, `prompt`, `options`, `correctIndex` | Clinical-history panel followed by a single-best-answer question |
+| `fill-blank` | `prompt`, `answers` | Text response matched against one or more accepted answers; case-insensitive by default |
+| `select-number` | `prompt`, `min`, `max`, `step`, `answer` | Numeric dropdown with at most 201 choices; optional `unit` and `tolerance` |
+| `match` | `prompt`, `pairs` containing unique `left` and `right` text | One dropdown for each left-side item |
+
+Every format accepts an optional `id` and `explanation`. IDs must be unique within the exam. Answers and grading logic are embedded in the client-side JSON, so this is a study/self-assessment system rather than a secure proctored examination platform.
+
+```json
+{
+  "exam": {
+    "title": "Cardiovascular pharmacology exam",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "case-1",
+        "type": "medical-history-mcq",
+        "history": "A concise clinical presentation.",
+        "prompt": "Which mechanism best explains the finding?",
+        "options": ["Option A", "Option B", "Option C", "Option D"],
+        "correctIndex": 1,
+        "explanation": "The decisive clue supports Option B."
+      },
+      {
+        "id": "match-1",
+        "type": "match",
+        "prompt": "Match each drug to its target.",
+        "pairs": [
+          {"left": "Drug A", "right": "Target A"},
+          {"left": "Drug B", "right": "Target B"}
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## Image placeholders and lecture-file import
 

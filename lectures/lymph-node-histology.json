@@ -16,6 +16,88 @@
       "pages": "1-11"
     }
   ],
+  "exam": {
+    "title": "Lymph-node histology exam",
+    "instructions": "Complete all formats. Submit the exam to reveal the score, correct answers, and explanations.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "regions-order",
+        "type": "mcq",
+        "prompt": "Which sequence runs from the superficial region toward the center of a lymph node?",
+        "options": ["Medulla → paracortex → outer cortex", "Outer cortex → paracortex → medulla", "Paracortex → outer cortex → medulla", "Outer cortex → medulla → paracortex"],
+        "correctIndex": 1,
+        "explanation": "The outer cortex is superficial, the paracortex is deeper, and the medulla occupies the central region."
+      },
+      {
+        "id": "history-paracortex",
+        "type": "medical-history-mcq",
+        "history": "A lymph-node specimen from a patient undergoing immune evaluation shows a deep cortical compartment without lymphoid nodules. It contains numerous T lymphocytes and specialized cuboidal high endothelial venules.",
+        "prompt": "Which lymph-node compartment is being described?",
+        "options": ["Outer cortex", "Paracortex", "Medullary cord", "Subcapsular sinus"],
+        "correctIndex": 1,
+        "explanation": "A nodule-free, T-cell-rich compartment containing high endothelial venules identifies the paracortex."
+      },
+      {
+        "id": "history-secondary-follicle",
+        "type": "medical-history-mcq",
+        "history": "After antigen exposure, a reactive lymph node contains an enlarged follicle with a pale central region. Within it, B cells compete for binding to intact antigen displayed on follicular dendritic cells.",
+        "prompt": "What determines which centrocytes persist in this region?",
+        "options": ["Strong antigen binding", "Entry into a medullary sinus", "Loss of helper T-cell contact", "Migration through an afferent vessel"],
+        "correctIndex": 0,
+        "explanation": "High-affinity centrocytes are selected to persist; weak binders undergo apoptosis."
+      },
+      {
+        "id": "blank-first-sinus",
+        "type": "fill-blank",
+        "prompt": "Lymph entering through afferent vessels first reaches the ____ sinus.",
+        "answers": ["subcapsular", "subcapsular sinus"],
+        "explanation": "The subcapsular sinus is the first intranodal space encountered beneath the capsule."
+      },
+      {
+        "id": "blank-centroblasts",
+        "type": "fill-blank",
+        "prompt": "Highly mitotic centroblasts are concentrated in the ____ zone of a germinal center.",
+        "answers": ["dark", "dark zone"],
+        "explanation": "The dark zone contains proliferating centroblasts; selected centrocytes are emphasized in the light zone."
+      },
+      {
+        "id": "number-regions",
+        "type": "select-number",
+        "prompt": "How many major histologic regions are identified in a lymph-node cross section?",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "answer": 3,
+        "unit": "regions",
+        "explanation": "The three regions are outer cortex, paracortex, and medulla."
+      },
+      {
+        "id": "match-compartments",
+        "type": "match",
+        "prompt": "Match each compartment to its most characteristic feature.",
+        "pairs": [
+          {"left": "Outer cortex", "right": "B-cell lymphoid nodules"},
+          {"left": "Paracortex", "right": "T cells and high endothelial venules"},
+          {"left": "Medullary cords", "right": "Plasma cells, B cells, and T cells"},
+          {"left": "Medullary sinuses", "right": "Final lymph filtration channels"}
+        ],
+        "explanation": "Compartment identity follows the dominant cell population and structural organization."
+      },
+      {
+        "id": "match-flow",
+        "type": "match",
+        "prompt": "Match each lymph-flow structure to its position in the route.",
+        "pairs": [
+          {"left": "Afferent lymphatic vessels", "right": "Entry at convex surface"},
+          {"left": "Subcapsular sinus", "right": "First space beneath capsule"},
+          {"left": "Cortical sinuses", "right": "Channels along trabeculae"},
+          {"left": "Efferent lymphatic vessel", "right": "Exit at hilum"}
+        ],
+        "explanation": "Lymph enters on the convex surface, traverses the sinus system, and exits at the hilum."
+      }
+    ]
+  },
   "blocks": [
     {
       "type": "section",

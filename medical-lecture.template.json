@@ -7,6 +7,59 @@
   "author": "Your name or institution",
   "level": "Study guide",
   "durationMinutes": 10,
+  "exam": {
+    "title": "Your lecture exam",
+    "instructions": "Answer every question. Submit once to receive a score, correct answers, and explanations.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "exam-mcq",
+        "type": "mcq",
+        "prompt": "Which option best describes the central concept?",
+        "options": ["Correct concept", "Distractor one", "Distractor two", "Distractor three"],
+        "correctIndex": 0,
+        "explanation": "Explain why the correct option follows from the lecture."
+      },
+      {
+        "id": "exam-history",
+        "type": "medical-history-mcq",
+        "history": "Present a concise clinical history with relevant symptoms, examination findings, laboratory data, and context.",
+        "prompt": "Which mechanism or diagnosis best explains this presentation?",
+        "options": ["Correct clinical interpretation", "Alternative one", "Alternative two", "Alternative three"],
+        "correctIndex": 0,
+        "explanation": "Connect the decisive clinical clues to the answer."
+      },
+      {
+        "id": "exam-blank",
+        "type": "fill-blank",
+        "prompt": "The key structure responsible for this process is ____.",
+        "answers": ["accepted answer", "accepted synonym"],
+        "explanation": "State the exact fact being tested."
+      },
+      {
+        "id": "exam-number",
+        "type": "select-number",
+        "prompt": "Select the correct number for this quantitative fact.",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "answer": 3,
+        "unit": "units",
+        "explanation": "Show the reasoning or source of the number."
+      },
+      {
+        "id": "exam-match",
+        "type": "match",
+        "prompt": "Match each item to its defining feature.",
+        "pairs": [
+          {"left": "Item A", "right": "Feature A"},
+          {"left": "Item B", "right": "Feature B"},
+          {"left": "Item C", "right": "Feature C"}
+        ],
+        "explanation": "Review the relationships as a set."
+      }
+    ]
+  },
   "blocks": [
     {
       "type": "section",
