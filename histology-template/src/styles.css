@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pathology-50: #f4f8f5;
+  --color-pathology-100: #e5eee8;
+  --color-pathology-500: #47705a;
+  --color-pathology-700: #294837;
+  --color-pathology-900: #10251a;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+}
+
+html, body, #app { min-height: 100%; }
+body { margin: 0; }
+button, select { font: inherit; }
+
+.lecture-copy p { @apply font-serif text-[1.06rem] leading-8 text-slate-700; }
+.lecture-copy strong { @apply font-semibold text-slate-950; }
+.waypoint {
+  @apply mx-1 inline-flex items-center gap-1.5 rounded-full border border-emerald-700/25 bg-emerald-50 px-2.5 py-1 align-baseline text-sm font-semibold text-emerald-900 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-700/50 hover:bg-emerald-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700;
+}
+.waypoint[aria-current="true"] { @apply border-emerald-800 bg-emerald-800 text-white shadow-md; }
+.osd-shell:fullscreen { @apply bg-slate-950 p-0; }
+.osd-shell:fullscreen #wsi-viewer { height: 100vh; }
+.openseadragon-container:focus-visible { outline: 3px solid #6ee7b7 !important; outline-offset: -3px; }
+
+@media (max-width: 1023px) {
+  .mobile-viewer-open #content-pane { display: none; }
+  .mobile-viewer-open #viewer-pane { display: flex; position: fixed; inset: 0; z-index: 50; }
+}

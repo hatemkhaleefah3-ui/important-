@@ -1,0 +1,17 @@
+{
+  "rules": [
+    {
+      "allowed": {
+        "origins": [
+          "https://YOUR-PROJECT.pages.dev",
+          "https://YOUR-LECTURE-DOMAIN.example",
+          "http://localhost:5173"
+        ],
+        "methods": ["GET", "HEAD"],
+        "headers": ["Range"]
+      },
+      "exposeHeaders": ["Content-Length", "Content-Range", "ETag"],
+      "maxAgeSeconds": 3600
+    }
+  ]
+}
