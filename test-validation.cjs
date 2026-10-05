@@ -32,7 +32,7 @@ const html=fs.readFileSync('index.html','utf8');
 for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(match[1]);
 const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Script(selectionSource);
 const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);
-for(const asset of ['lecture.css?v=4.4.0','step-process.js?v=4.4.0','lecture.js?v=4.4.0','selection-translate.js?v=4.4.0','image-extractor.js?v=4.4.0','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
+for(const asset of ['lecture.css?v=4.4.0','step-process.js?v=4.4.0','lecture.js?v=4.4.0','selection-translate.js?v=4.4.0','image-extractor.js?v=4.4.1','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
 assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.4.0'));
 assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.4.0'));
 assert(html.includes('lectures/lymph-node-histology.json?v=4.4.0'));
