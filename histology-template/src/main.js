@@ -6,6 +6,14 @@ const app = document.querySelector('#app');
 const lectureUrl = new URLSearchParams(location.search).get('lecture') || './data/liver-hepatic-lobule.json';
 let wsi;
 let activeWaypoint;
+let slideConfigured = true;
+
+function isPlaceholderSlide(url) {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host === 'slides.example-med.org' || host.endsWith('.example-med.org') || host.endsWith('.example');
+  } catch { return false; }
+}
 
 const icon = path => `<svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">${path}</svg>`;
 const icons = {
@@ -115,6 +123,7 @@ function activateWaypoint(control, waypoint) {
   if (activeWaypoint) activeWaypoint.removeAttribute('aria-current');
   activeWaypoint = control;
   control.setAttribute('aria-current', 'true');
+  if (!slideConfigured) { showViewerSetup(); return; }
   try { wsi.focusWaypoint(waypoint); }
   catch (error) { showViewerError(error); }
 }
@@ -152,9 +161,9 @@ function wireViewerShell() {
   const zoomOut = button('Zoom out', icons.minus);
   const home = button('Reset slide view', icons.home);
   const full = button('Toggle full screen', icons.expand);
-  zoomIn.addEventListener('click', () => wsi.zoomBy(1.5));
-  zoomOut.addEventListener('click', () => wsi.zoomBy(1 / 1.5));
-  home.addEventListener('click', () => wsi.home());
+  zoomIn.addEventListener('click', () => wsi?.zoomBy(1.5));
+  zoomOut.addEventListener('click', () => wsi?.zoomBy(1 / 1.5));
+  home.addEventListener('click', () => wsi?.home());
   full.addEventListener('click', () => {
     const shell = document.querySelector('#viewer-pane');
     if (document.fullscreenElement) document.exitFullscreen(); else shell.requestFullscreen();
@@ -167,6 +176,21 @@ function showViewerError(error) {
   panel.textContent = error.message;
   panel.classList.remove('hidden');
   document.querySelector('#viewer-status').textContent = 'Slide unavailable';
+}
+
+function showViewerSetup() {
+  const panel = document.querySelector('#viewer-error');
+  panel.className = 'pointer-events-none absolute inset-x-5 top-1/2 grid -translate-y-1/2 gap-2 rounded-2xl border border-emerald-300/20 bg-emerald-950/90 p-5 text-sm text-emerald-50 shadow-xl';
+  const title = document.createElement('strong');
+  title.className = 'text-base';
+  title.textContent = 'Connect the whole-slide image';
+  const message = document.createElement('span');
+  message.className = 'leading-6 text-emerald-100/75';
+  message.textContent = 'This example uses a placeholder DZI address. Upload the .dzi file and its sibling tile folder to R2, then replace viewer.dzi_url in the JSON.';
+  panel.replaceChildren(title, message);
+  document.querySelector('#viewer-status').textContent = 'Slide not connected';
+  document.querySelector('#viewer-controls').hidden = true;
+  document.querySelector('#overlay-controls').hidden = true;
 }
 
 function renderFatal(error) {
@@ -190,6 +214,8 @@ async function bootstrap() {
   try {
     const lecture = await loadLecture(lectureUrl);
     renderShell(lecture);
+    slideConfigured = !isPlaceholderSlide(lecture.viewer.dzi_url);
+    if (!slideConfigured) { showViewerSetup(); return; }
     wsi = new WsiViewer({
       element: document.querySelector('#wsi-viewer'),
       config: lecture.viewer,

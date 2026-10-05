@@ -31,7 +31,21 @@ export class WsiViewer {
       this.renderOverlays(overlays);
       onReady?.();
     });
-    this.viewer.addHandler('open-failed', event => onError?.(new Error(event.message || 'The DZI slide could not be opened.')));
+    this.viewer.addHandler('open-failed', () => {
+      requestAnimationFrame(() => this.suppressNativeError());
+      let host = 'the configured storage host';
+      try { host = new URL(config.dzi_url).hostname; } catch {}
+      onError?.(new Error(`The slide could not be loaded from ${host}. Verify the DZI path, public read access, and R2 CORS settings.`));
+    });
+  }
+
+  suppressNativeError() {
+    for (const node of this.element.querySelectorAll('div')) {
+      if (!node.children.length && /Unable to open|attempting to load TileSource/i.test(node.textContent || '')) {
+        node.hidden = true;
+        node.setAttribute('aria-hidden', 'true');
+      }
+    }
   }
 
   focusWaypoint({ x, y, zoom_level }) {

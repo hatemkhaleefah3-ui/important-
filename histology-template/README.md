@@ -11,7 +11,7 @@ Static Vite application for Cloudflare Pages. Lecture text and slide navigation 
 - Rectangle and polygon overlay coordinates are also source-image pixels.
 - IDs must be unique across sections and waypoints; overlay group IDs must be unique within `overlays`.
 
-The example DZI hostname is intentionally a placeholder. Replace `viewer.dzi_url`, `image_width`, and `image_height` with the uploaded slide's actual values before deployment.
+The example DZI hostname is intentionally a placeholder. The viewer now recognizes it and shows a calm “Connect the whole-slide image” setup state instead of making a failed network request. Replace `viewer.dzi_url`, `image_width`, and `image_height` with the uploaded slide's actual values before deployment.
 
 ## Local development
 

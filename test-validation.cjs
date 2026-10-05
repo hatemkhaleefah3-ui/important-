@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
-const context={window:{}};vm.createContext(context);
+const context={window:{},URL};vm.createContext(context);
 vm.runInContext(fs.readFileSync('step-process.js','utf8'),context);
 context.validateStepProcess=context.window.validateStepProcess;
 vm.runInContext(fs.readFileSync('exam.js','utf8'),context);
@@ -35,7 +35,7 @@ for(const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))ne
 const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Script(selectionSource);
 const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);const examSource=fs.readFileSync('exam.js','utf8');new vm.Script(examSource);
 const histologySource=fs.readFileSync('histology-reader.js','utf8'),appSource=fs.readFileSync('app.js','utf8');vm.runInContext(histologySource,context);new vm.Script(appSource);
-for(const asset of ['lecture.css?v=4.5.0','histology-reader.css?v=1.0.0','step-process.js?v=4.5.0','exam.js?v=4.5.0','lecture.js?v=4.5.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','histology-reader.js?v=1.0.0','app.js?v=1.0.0','cdn.jsdelivr.net/npm/jszip@3.10.1','cdn.jsdelivr.net/npm/openseadragon@6.1.1'])assert(html.includes(asset));
+for(const asset of ['lecture.css?v=4.5.0','histology-reader.css?v=1.0.1','step-process.js?v=4.5.0','exam.js?v=4.5.0','lecture.js?v=4.5.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','histology-reader.js?v=1.0.1','app.js?v=1.0.0','cdn.jsdelivr.net/npm/jszip@3.10.1','cdn.jsdelivr.net/npm/openseadragon@6.1.1'])assert(html.includes(asset));
 assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.5.0'));
 assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.5.0'));
 assert(html.includes('lectures/lymph-node-histology.json?v=4.5.0'));
@@ -54,6 +54,9 @@ assert.throws(()=>context.window.validateHistologyLecture({...histology,viewer:{
 assert.throws(()=>context.window.validateHistologyLecture({...histology,sections:[]}));
 assert(histologySource.includes('imageToViewportCoordinates(waypoint.x,waypoint.y)'));
 assert(histologySource.includes('imageToViewportZoom(waypoint.zoom_level)'));
+assert.equal(context.window.isPlaceholderHistologySlide(histology.viewer.dzi_url),true);
+assert.equal(context.window.isPlaceholderHistologySlide('https://slides.med-school.edu/liver.dzi'),false);
+assert(histologySource.includes('Verify the DZI path, public read access, and R2 CORS settings.'));
 assert(appSource.includes("option('histology'"));assert(appSource.includes("option('other'"));assert(appSource.includes("option('web'"));
 assert(selectionSource.includes("event.detail===2"));
 assert(selectionSource.includes("event.detail>=3"));

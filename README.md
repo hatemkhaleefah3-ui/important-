@@ -10,7 +10,7 @@ For **Histology → Web app**, import the WSI histology JSON. The generated `#hi
 
 The root application includes `histology-reader.js` and `histology-reader.css`; the authoring contract, liver example, deployment source, and R2 instructions are in `histology-template/`. Histology waypoints and SVG overlays use source-image pixel coordinates. `zoom_level: 1` means native slide resolution. The browser converts image pixels and image zoom through the loaded OpenSeadragon `TiledImage` before panning.
 
-The example DZI URL is a placeholder. Production JSON must reference a public or authorized R2 custom-domain `.dzi` URL whose sibling `_files` directory contains every tile. Both the descriptor and tiles must return CORS headers permitting the website origin.
+The example DZI URL is a placeholder, and the reader presents it as an unconnected setup state rather than a broken slide. Production JSON must reference a public or authorized R2 custom-domain `.dzi` URL whose sibling `_files` directory contains every tile. Both the descriptor and tiles must return CORS headers permitting the website origin.
 
 ## JSON version 4
 
