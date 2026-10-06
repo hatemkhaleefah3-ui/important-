@@ -161,23 +161,50 @@
     },
     {
       "type": "table",
-      "title": "Compare the essentials",
-      "columns": [
-        "Concept",
-        "Mechanism",
-        "Result"
-      ],
+      "purpose": "quick-comparison",
+      "title": "Type 1 and Type 2 diabetes",
+      "description": "Contrast similar conditions side by side to reveal decisive differences.",
+      "columns": ["Feature", "Type 1 Diabetes", "Type 2 Diabetes"],
       "rows": [
-        [
-          "Concept A",
-          "Mechanism A",
-          "Result A"
-        ],
-        [
-          "Concept B",
-          "Mechanism B",
-          "Result B"
-        ]
+        ["Onset", "Sudden, typically in youth", "Gradual, typically in adults"],
+        ["Cause", "Autoimmune destruction", "Insulin resistance"],
+        ["Treatment", "Insulin injections", "Diet, oral medications, or insulin"]
+      ]
+    },
+    {
+      "type": "table",
+      "purpose": "simplify-complexity",
+      "title": "White blood cell functions",
+      "description": "Break a broad system into direct, digestible functions.",
+      "columns": ["White Blood Cell", "Primary Role"],
+      "rows": [
+        ["Neutrophils", "First responders to bacterial infections"],
+        ["Lymphocytes", "Produce antibodies and fight viruses"],
+        ["Eosinophils", "Attack parasites and participate in allergic reactions"]
+      ]
+    },
+    {
+      "type": "table",
+      "purpose": "rapid-review",
+      "title": "Normal adult vital signs",
+      "description": "Create a visual memory sheet for fast review.",
+      "columns": ["Vital Sign", "Normal Adult Range"],
+      "rows": [
+        ["Heart Rate", "60–100 bpm"],
+        ["Blood Pressure", "< 120/80 mmHg"],
+        ["Respiratory Rate", "12–20 breaths/min"]
+      ]
+    },
+    {
+      "type": "table",
+      "purpose": "structured-variables",
+      "title": "Core pharmacological variables",
+      "description": "Track related properties across several drug categories.",
+      "columns": ["Drug Name", "Class", "Primary Use", "Notable Side Effect"],
+      "rows": [
+        ["Ibuprofen", "NSAID", "Inflammation and pain", "Gastrointestinal irritation"],
+        ["Paracetamol", "Analgesic", "Fever and mild pain", "Liver toxicity at high doses"],
+        ["Amoxicillin", "Antibiotic", "Bacterial infections", "Allergic reactions"]
       ]
     },
     {
