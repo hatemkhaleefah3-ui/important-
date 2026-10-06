@@ -1,16 +1,10 @@
 # Verdant lecture reader
 
-A static medical-learning generator using PDF.js, JSZip, and OpenSeadragon from jsDelivr. Serve this folder with any static HTTP server, open `index.html`, and use the three-step **Create something new** wizard. The wizard first selects Histology or Other, then the output format, then presents only the applicable import controls.
+A static medical-learning generator using PDF.js and JSZip from jsDelivr. Serve this folder with any static HTTP server, open `index.html`, and use the two-step **Create something new** wizard. Choose the output format, then import the applicable lecture content.
 
-For **Histology → Web app**, import the histology JSON. The builder resolves exact curated entries first, then asks the same-origin `/api/histology-search` Pages Function to search the public Digital Slide Archive and verify a DZI tile pyramid. The original PDF, PPTX, or DOCX is optional and is used only when online lookup fails. Automatically selected specimens are visibly identified because semantic best-match selection is not equivalent to expert verification. The generated `#histology=` link opens the split-screen, multi-slide lecture viewer. For **Other → Web app**, import the standard lecture JSON and optionally its source file when image extraction is required. The generated `#lecture=` link opens the Study and Exam reader. Both link types embed the complete validated JSON in the URL fragment and require no application database. Anyone with a link can read its content.
+For **Web app**, import the standard lecture JSON and optionally its PDF, PPTX, or DOCX source when image extraction is required. The generated `#lecture=` link opens the Study and Exam reader. The link embeds the complete validated JSON in its URL fragment and requires no application database. Anyone with the link can read its content.
 
 `medical-lecture.template.json` is an authoring starter. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
-
-## Histology and pathology WSI template
-
-The root application includes `histology-slide-resolver.js`, `histology-reader.js`, and `histology-reader.css`; the authoring contract, examples, deployment source, and R2 instructions are in `histology-template/`. Schema v2 supports several named specimens in one lecture. A source can be a DZI URL, an IIIF `info.json` URL, or an image extracted from the uploaded lecture file. Histology waypoints and SVG overlays use source-image pixel coordinates. `zoom_level: 1` means native slide resolution. The browser converts image pixels and image zoom through the loaded OpenSeadragon `TiledImage` before panning.
-
-The legacy liver example's DZI URL is a placeholder, and the reader presents it as an unconnected setup state rather than a broken slide. The populated lymph-node v2 example requests five online specimens and retains pages 2, 7, 5, 8, and 11 only as optional fallbacks. The Pages Function avoids browser-to-provider CORS dependency for discovery, while OpenSeadragon still retrieves the selected DZI descriptor and tiles from the provider. Do not add a curated catalog entry unless its identity, license, stable URL, and tissue metadata have been verified.
 
 ## JSON version 4
 
@@ -119,7 +113,6 @@ All image placeholders in one lecture must refer to the same source file type. S
 Run `python -m http.server 8000`, then visit `http://localhost:8000`.
 Run `node test-validation.cjs` for schema, asset, and JavaScript validation checks.
 Run `node test-process-render.cjs` for renderer interaction checks, including tracked marker replacement during result changes.
-Run `node test-histology-search.mjs` for automatic archive ranking and DZI-pyramid verification.
 Run `node test-reader.cjs` with Playwright and Chromium installed. The checks exercise desktop/mobile layout, both JSON formats, step navigation, recall feedback, saved notes, focus/theme controls, malicious strings, validation, and the import/build pipeline.
 
 ## Step-by-step processes
@@ -179,6 +172,5 @@ Time spacing is sequential, not proportional to elapsed time. Locations are orde
 
 - `lectures/carbohydrate-biochemistry.json`: sugar structure, absorption, glycolysis, separate pyruvate reactions, separate glycogenesis/glycogenolysis pathways, PPP results, and other monosaccharides.
 - `lectures/heart-drugs-pharmacology.json`: HFrEF classes, separate sacubitril/valsartan mechanisms, beta-blockade results, angina, separate digoxin mechanisms, thrombosis, and major safety interactions.
-- `lectures/lymph-node-histology.json`: reorganized lymph-node histology with five PDF image placeholders mapped to exact source pages and one crop.
 
 All three use version 4 and require the redesigned reader. Each includes a visible reference block and machine-readable source metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.
