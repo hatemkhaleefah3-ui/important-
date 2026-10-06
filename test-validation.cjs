@@ -41,7 +41,7 @@ const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Sc
 const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);const examSource=fs.readFileSync('exam.js','utf8');new vm.Script(examSource);
 const specialFlowSource=fs.readFileSync('special-flows.js','utf8');new vm.Script(specialFlowSource);
 const appSource=fs.readFileSync('app.js','utf8');new vm.Script(appSource);
-for(const asset of ['lecture.css?v=4.6.0','step-process.js?v=4.5.0','special-flows.js?v=1.0.0','exam.js?v=4.5.0','lecture.js?v=4.6.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','app.js?v=2.2.0','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
+for(const asset of ['lecture.css?v=4.8.0','step-process.js?v=4.5.0','special-flows.js?v=1.0.0','exam.js?v=4.5.0','lecture.js?v=4.8.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','app.js?v=2.2.0','cdn.jsdelivr.net/npm/jszip@3.10.1'])assert(html.includes(asset));
 assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.5.0'));
 assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.5.0'));
 assert(appSource.includes("+'#lecture='+enc(output)"));
@@ -64,6 +64,12 @@ assert(selectionSource.includes('insertParagraphTranslation'));
 assert(fs.readFileSync('lecture.js','utf8').includes('installLectureSelection?.(article,root)'));
 assert(!files.some(path=>fs.readFileSync(path,'utf8').includes('"agent": "Next step"')));
 console.log('PASS: JSON files, legacy schema, invalid inputs, versioned assets, and inline JavaScript syntax.');
+
+const nestedListLecture={title:'Nested list test',blocks:[{type:'list',title:'Hierarchy',style:'key-points',items:[{label:'Parent',text:'Main point',children:['Supporting detail',{text:'Deeper detail',children:['Fourth-level detail']}]}]}]};
+assert.doesNotThrow(()=>validate(nestedListLecture));
+assert.throws(()=>validate({title:'Bad list',blocks:[{type:'list',style:'unknown',items:['Item']}]}),/List style/);
+assert.throws(()=>validate({title:'Empty list',blocks:[{type:'list',items:[]}]}),/at least one item/);
+console.log('PASS: designed nested lists, styles, labels, and depth validation.');
 
 const examDocument=JSON.parse(fs.readFileSync('medical-lecture.template.json'));
 const examTypes=new Set(examDocument.exam.questions.map(question=>question.type));

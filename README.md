@@ -220,3 +220,7 @@ Required fields are `title`, `substance`, and 2–20 unique `stages`. Every stag
 - `lectures/immunology-lecture-3-antigens.json`: epitopes, haptens, antigen classes, immunogenicity, adjuvants, and superantigens.
 
 All populated lecture JSON files use schema version 4 and require the redesigned reader.
+
+### Designed lists
+
+Use a `list` block for hierarchical content. Supported styles are `bullets`, `numbered`, `steps`, and `key-points`. Each item may be plain text or an object with `text`, an optional `label`, and nested `children`. Lists support up to four levels.

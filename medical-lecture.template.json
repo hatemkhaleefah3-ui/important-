@@ -82,6 +82,31 @@
       ]
     },
     {
+      "type": "list",
+      "title": "Organize a concept with subpoints",
+      "description": "Use nested children to show relationships without flattening the content.",
+      "style": "key-points",
+      "items": [
+        {
+          "label": "Core idea",
+          "text": "State the main concept directly.",
+          "children": [
+            "Add the first supporting detail.",
+            {
+              "text": "Add a supporting detail that needs another level.",
+              "children": [
+                "Use up to four total hierarchy levels."
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Clinical link",
+          "text": "Connect the concept to a practical consequence."
+        }
+      ]
+    },
+    {
       "type": "note",
       "title": "Context",
       "text": "Add a helpful connection or clinical anchor."
