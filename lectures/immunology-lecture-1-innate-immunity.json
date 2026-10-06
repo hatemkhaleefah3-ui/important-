@@ -134,41 +134,52 @@
       "sourceImageIndex": 5
     },
     {
-      "type": "table",
+      "type": "list",
       "title": "Major functions of the immune system",
-      "columns": [
-        "Function",
-        "Result"
-      ],
-      "rows": [
-        [
-          "Recognition",
-          "Detect harmful foreign substances and microbial agents"
-        ],
-        [
-          "Self–non-self discrimination",
-          "Maintain tolerance toward host tissues"
-        ],
-        [
-          "Elimination and neutralization",
-          "Remove microorganisms and harmful products"
-        ],
-        [
-          "Tissue surveillance",
-          "Remove damaged, senescent, or abnormal cells"
-        ],
-        [
-          "Inflammatory regulation",
-          "Support defense while limiting unnecessary tissue damage"
-        ],
-        [
-          "Memory",
-          "Respond faster and more effectively after re-exposure to a specific antigen"
-        ]
-      ],
+      "description": "Six coordinated functions preserve tissue integrity and physiological homeostasis.",
+      "style": "key-points",
       "sourcePages": [
         1,
         2
+      ],
+      "items": [
+        {
+          "label": "Recognition",
+          "text": "Detect potentially harmful foreign substances and microbial agents."
+        },
+        {
+          "label": "Tolerance",
+          "text": "Discriminate self from non-self.",
+          "children": [
+            "Maintain tolerance toward the body’s own tissues."
+          ]
+        },
+        {
+          "label": "Elimination",
+          "text": "Neutralize or remove infectious microorganisms and their harmful products."
+        },
+        {
+          "label": "Surveillance",
+          "text": "Remove damaged, senescent, or abnormal cells.",
+          "children": [
+            "Preserve tissue integrity."
+          ]
+        },
+        {
+          "label": "Regulation",
+          "text": "Control inflammatory responses.",
+          "children": [
+            "Maintain effective defense.",
+            "Limit unnecessary tissue damage."
+          ]
+        },
+        {
+          "label": "Memory",
+          "text": "Retain antigen-specific experience after exposure.",
+          "children": [
+            "Produce a faster and more effective response after subsequent exposure."
+          ]
+        }
       ]
     },
     {
@@ -338,44 +349,51 @@
       ]
     },
     {
-      "type": "table",
+      "type": "list",
       "title": "Seven mechanism groups",
-      "columns": [
-        "Mechanism",
-        "Principal contribution"
-      ],
-      "rows": [
-        [
-          "Mechanical barriers and surface secretions",
-          "Prevent entry and remove microorganisms"
-        ],
-        [
-          "Antibacterial substances",
-          "Damage, opsonize, or inhibit microorganisms"
-        ],
-        [
-          "Microbial antagonism",
-          "Prevent pathogen colonization"
-        ],
-        [
-          "Cellular factors",
-          "Engulf or kill microbial and abnormal targets"
-        ],
-        [
-          "Inflammation",
-          "Recruit defense components to injured tissue"
-        ],
-        [
-          "Fever",
-          "Coordinate a systemic response"
-        ],
-        [
-          "Acute-phase proteins",
-          "Increase systemic resistance, regulate injury, and promote repair"
-        ]
-      ],
+      "description": "Innate protection moves from entry prevention to local elimination and systemic coordination.",
+      "style": "numbered",
       "sourcePages": [
         4
+      ],
+      "items": [
+        {
+          "text": "Mechanical barriers and surface secretions prevent entry and remove microorganisms.",
+          "children": [
+            "Skin and mucosal epithelium",
+            "Mucus, cilia, tears, saliva, urine, and intestinal movement"
+          ]
+        },
+        {
+          "text": "Antibacterial substances damage, opsonize, or inhibit microorganisms.",
+          "children": [
+            "Complement",
+            "Lysozyme, lactoferrin, antimicrobial polypeptides, acids, and enzymes"
+          ]
+        },
+        {
+          "text": "Microbial antagonism prevents pathogen colonization.",
+          "children": [
+            "Competition for nutrients and space",
+            "Antimicrobial products and prevention of attachment"
+          ]
+        },
+        {
+          "text": "Cellular factors engulf or kill microbial and abnormal targets.",
+          "children": [
+            "Neutrophils, monocytes, and macrophages",
+            "Natural killer cells"
+          ]
+        },
+        {
+          "text": "Inflammation recruits defense components to injured tissue."
+        },
+        {
+          "text": "Fever coordinates a systemic response to infection or inflammation."
+        },
+        {
+          "text": "Acute-phase proteins increase systemic resistance, limit tissue injury, and promote repair."
+        }
       ]
     },
     {
@@ -384,63 +402,82 @@
       "id": "barriers"
     },
     {
-      "type": "table",
+      "type": "list",
       "title": "Skin and mucosal protection",
-      "columns": [
-        "Site",
-        "Mechanical protection",
-        "Chemical or biological protection"
-      ],
-      "rows": [
-        [
-          "Skin and conjunctival epithelium",
-          "Intact epithelium blocks entry; burns, trauma, and surgery increase risk",
-          "Sebaceous fatty acids and normal flora inhibit bacteria and fungi"
-        ],
-        [
-          "Mucous membranes",
-          "Mucus, ciliary movement, cellular shedding, and tight junctions",
-          "Antibacterial substances, antibodies, and mucosa-associated lymphoid tissue"
-        ],
-        [
-          "Oral cavity",
-          "Salivary flow removes microorganisms; swallowed particles reach gastrointestinal defenses",
-          "Lysozyme, antibodies, and resident microbial products"
-        ],
-        [
-          "Stomach",
-          "Low pH and high acidity destroy many microorganisms",
-          "Proteolytic enzymes"
-        ],
-        [
-          "Small intestine",
-          "Rapid movement reduces attachment",
-          "Bile salts disrupt bacterial membranes"
-        ],
-        [
-          "Ileum and large intestine",
-          "Resident microbiota provides colonization resistance",
-          "Abundant flora competes with invaders"
-        ],
-        [
-          "Upper respiratory tract",
-          "Nasal hairs and architecture filter particles; mucus traps; cilia move material; cough expels it",
-          "Mucopolysaccharides interact with influenza and some other viruses"
-        ],
-        [
-          "Genitourinary tract",
-          "Urine flow flushes organisms; cervical mucus plug blocks ascent",
-          "Spermine and zinc are antibacterial; adult vaginal acidity is unfavorable to many pathogens"
-        ],
-        [
-          "Conjunctiva",
-          "Continuous tears wash the exposed surface",
-          "Lysozyme, lactoferrin, and secretory IgA"
-        ]
-      ],
+      "description": "Each exposed surface combines mechanical clearance with chemical or biological protection.",
+      "style": "bullets",
       "sourcePages": [
         5,
         6
+      ],
+      "items": [
+        {
+          "label": "Skin and conjunctival epithelium",
+          "text": "Intact epithelium blocks microbial entry.",
+          "children": [
+            "Burns, trauma, and surgery increase infection risk.",
+            "Sebaceous fatty acids and normal flora inhibit many bacteria and fungi."
+          ]
+        },
+        {
+          "label": "Mucous membranes",
+          "text": "Physical and chemical defenses protect the mouth, respiratory tract, and genitourinary tract.",
+          "children": [
+            "Mucus traps organisms and lubricates surfaces.",
+            "Ciliary movement, cellular shedding, and tight junctions support clearance.",
+            "Antibacterial substances, antibodies, and mucosa-associated lymphoid tissue provide additional protection."
+          ]
+        },
+        {
+          "label": "Oral cavity",
+          "text": "Continuous salivary flow removes microorganisms.",
+          "children": [
+            "Lysozyme damages susceptible bacterial cell walls.",
+            "Antibodies and resident microbial products support mucosal protection.",
+            "Swallowed material enters gastrointestinal defenses."
+          ]
+        },
+        {
+          "label": "Stomach and small intestine",
+          "text": "Acidity, enzymes, bile, and movement restrict ingested organisms.",
+          "children": [
+            "Low gastric pH and proteolytic enzymes destroy many microorganisms.",
+            "Bile salts disrupt bacterial membranes.",
+            "Rapid intestinal movement reduces microbial attachment."
+          ]
+        },
+        {
+          "label": "Intestinal microbiota",
+          "text": "Rich resident flora in the ileum and large intestine provides colonization resistance."
+        },
+        {
+          "label": "Upper respiratory tract",
+          "text": "Nasal architecture and hairs filter large particles.",
+          "children": [
+            "Sticky mucus traps inhaled particles and microorganisms.",
+            "Cilia transport trapped material toward the pharynx.",
+            "Coughing removes material.",
+            "Mucopolysaccharides interact with influenza and certain other viruses."
+          ]
+        },
+        {
+          "label": "Genitourinary tract",
+          "text": "Flow and local chemistry restrict ascending infection.",
+          "children": [
+            "Urine flushes microorganisms.",
+            "Spermine and zinc in semen have antibacterial activity.",
+            "Adult vaginal acidity is unfavorable to many pathogens.",
+            "The cervical mucus plug forms a physical barrier."
+          ]
+        },
+        {
+          "label": "Conjunctiva and tears",
+          "text": "Continuous tear secretion washes the ocular surface.",
+          "children": [
+            "Lysozyme, lactoferrin, and secretory IgA provide antimicrobial protection.",
+            "Reduced or absent tear secretion increases ocular infection risk."
+          ]
+        }
       ]
     },
     {
