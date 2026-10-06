@@ -1,17 +1,585 @@
 {
-  "title": "Acute Inflammation",
-  "subtitle": "A high-yield guide to vascular and cellular responses",
-  "course": "General Pathology",
-  "accent": "emerald",
+  "schemaVersion": 4,
+  "id": "your-lecture-id",
+  "title": "Your lecture title",
+  "subtitle": "A concise overview of the topic and its purpose.",
+  "course": "Your course",
+  "author": "Your name or institution",
+  "level": "Study guide",
+  "durationMinutes": 10,
+  "exam": {
+    "title": "Your lecture exam",
+    "instructions": "Answer every question. Submit once to receive a score, correct answers, and explanations.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "exam-mcq",
+        "type": "mcq",
+        "prompt": "Which option best describes the central concept?",
+        "options": ["Correct concept", "Distractor one", "Distractor two", "Distractor three"],
+        "correctIndex": 0,
+        "explanation": "Explain why the correct option follows from the lecture."
+      },
+      {
+        "id": "exam-history",
+        "type": "medical-history-mcq",
+        "history": "Present a concise clinical history with relevant symptoms, examination findings, laboratory data, and context.",
+        "prompt": "Which mechanism or diagnosis best explains this presentation?",
+        "options": ["Correct clinical interpretation", "Alternative one", "Alternative two", "Alternative three"],
+        "correctIndex": 0,
+        "explanation": "Connect the decisive clinical clues to the answer."
+      },
+      {
+        "id": "exam-blank",
+        "type": "fill-blank",
+        "prompt": "The key structure responsible for this process is ____.",
+        "answers": ["accepted answer", "accepted synonym"],
+        "explanation": "State the exact fact being tested."
+      },
+      {
+        "id": "exam-number",
+        "type": "select-number",
+        "prompt": "Select the correct number for this quantitative fact.",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "answer": 3,
+        "unit": "units",
+        "explanation": "Show the reasoning or source of the number."
+      },
+      {
+        "id": "exam-match",
+        "type": "match",
+        "prompt": "Match each item to its defining feature.",
+        "pairs": [
+          {"left": "Item A", "right": "Feature A"},
+          {"left": "Item B", "right": "Feature B"},
+          {"left": "Item C", "right": "Feature C"}
+        ],
+        "explanation": "Review the relationships as a set."
+      }
+    ]
+  },
   "blocks": [
-    { "type": "title", "text": "Acute inflammation" },
-    { "type": "subtitle", "text": "Recognize the sequence, mediators, and clinical consequences." },
-    { "type": "paragraph", "heading": "Core concept", "text": "Acute inflammation is a rapid protective response that delivers leukocytes and plasma proteins to sites of infection or tissue injury." },
-    { "type": "note", "variant": "clinical", "title": "Clinical anchor", "text": "Warmth, erythema, swelling, pain, and loss of function arise from vasodilation, permeability, and mediator activity." },
-    { "type": "flow", "title": "The vascular response", "steps": ["Tissue injury", "Histamine and nitric oxide", "Vasodilation", "Increased permeability", "Protein-rich exudate"] },
-    { "type": "table", "title": "Key mediators", "columns": ["Mediator", "Major source", "Primary action"], "rows": [["Histamine", "Mast cells", "Vasodilation; permeability"], ["Prostaglandins", "Leukocytes, endothelium", "Pain; fever; vasodilation"], ["C5a", "Complement", "Chemotaxis; activation"]] },
-    { "type": "callout", "label": "EXAM PEARL", "text": "Exudate has high protein content; transudate is protein-poor and usually caused by altered hydrostatic or oncotic pressure." },
-    { "type": "question", "prompt": "Which mediator is a potent chemotactic factor for neutrophils?", "answer": "C5a. It is a complement split product that recruits and activates leukocytes." },
-    { "type": "checklist", "title": "Rapid review", "items": ["Know the cardinal signs", "Distinguish exudate from transudate", "Trace leukocyte recruitment", "Match mediators to effects"] }
+    {
+      "type": "section",
+      "id": "overview",
+      "title": "The big picture"
+    },
+    {
+      "type": "paragraph",
+      "variant": "lead",
+      "text": "Introduce the central concept in a clear, concise paragraph."
+    },
+    {
+      "type": "objectives",
+      "title": "Your learning objectives",
+      "items": [
+        "Explain the central concept",
+        "Trace the process",
+        "Apply the concept to a case",
+        "Check your understanding"
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Organize a concept with subpoints",
+      "description": "Numbering is automatic: flat lists use Roman numerals; parents with sublists use numbers; one-item sublists use a bullet; multi-item sublists use capital letters.",
+      "style": "key-points",
+      "items": [
+        {
+          "label": "Core idea",
+          "text": "State the main concept directly.",
+          "children": [
+            "Add the first supporting detail.",
+            {
+              "text": "Add a supporting detail that needs another level.",
+              "children": [
+                "Use up to four total hierarchy levels."
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Clinical link",
+          "text": "Connect the concept to a practical consequence."
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Context",
+      "text": "Add a helpful connection or clinical anchor."
+    },
+    {
+      "type": "image",
+      "processName": "Name the illustrated process or structure",
+      "title": "Optional figure title",
+      "alt": "Describe the image for a learner who cannot see it",
+      "caption": "Explain what the learner should notice in this image.",
+      "source": {
+        "fileType": "pdf",
+        "page": 2,
+        "crop": [0, 0, 1, 1]
+      }
+    },
+    {
+      "type": "section",
+      "id": "process",
+      "title": "Understand the sequence"
+    },
+    {
+      "type": "step-process",
+      "domain": "general",
+      "title": "Explore the process",
+      "description": "Follow the sequence from top to bottom. Expand a step when more detail is available.",
+      "steps": [
+        {
+          "id": "flow-5-1",
+          "title": "Starting point",
+          "description": "Explain the initial condition.",
+          "agent": "Trigger, enzyme, or responsible agent"
+        },
+        {
+          "id": "flow-5-2",
+          "title": "Mechanism",
+          "description": "Explain what changes and why.",
+          "agent": "Mediator or responsible agent"
+        },
+        {
+          "id": "flow-5-3",
+          "title": "Outcome",
+          "description": "Explain the resulting effect."
+        }
+      ],
+      "pathway": "Name one reaction or pathway"
+    },
+    {
+      "type": "callout",
+      "label": "Key distinction",
+      "text": "State the essential distinction or takeaway."
+    },
+    {
+      "type": "table",
+      "purpose": "quick-comparison",
+      "title": "Type 1 and Type 2 diabetes",
+      "description": "Contrast similar conditions side by side to reveal decisive differences.",
+      "columns": ["Feature", "Type 1 Diabetes", "Type 2 Diabetes"],
+      "rows": [
+        ["Onset", "Sudden, typically in youth", "Gradual, typically in adults"],
+        ["Cause", "Autoimmune destruction", "Insulin resistance"],
+        ["Treatment", "Insulin injections", "Diet, oral medications, or insulin"]
+      ]
+    },
+    {
+      "type": "table",
+      "purpose": "simplify-complexity",
+      "title": "White blood cell functions",
+      "description": "Break a broad system into direct, digestible functions.",
+      "columns": ["White Blood Cell", "Primary Role"],
+      "rows": [
+        ["Neutrophils", "First responders to bacterial infections"],
+        ["Lymphocytes", "Produce antibodies and fight viruses"],
+        ["Eosinophils", "Attack parasites and participate in allergic reactions"]
+      ]
+    },
+    {
+      "type": "table",
+      "purpose": "rapid-review",
+      "title": "Normal adult vital signs",
+      "description": "Create a visual memory sheet for fast review.",
+      "columns": ["Vital Sign", "Normal Adult Range"],
+      "rows": [
+        ["Heart Rate", "60–100 bpm"],
+        ["Blood Pressure", "< 120/80 mmHg"],
+        ["Respiratory Rate", "12–20 breaths/min"]
+      ]
+    },
+    {
+      "type": "table",
+      "purpose": "structured-variables",
+      "title": "Core pharmacological variables",
+      "description": "Track related properties across several drug categories.",
+      "columns": ["Drug Name", "Class", "Primary Use", "Notable Side Effect"],
+      "rows": [
+        ["Ibuprofen", "NSAID", "Inflammation and pain", "Gastrointestinal irritation"],
+        ["Paracetamol", "Analgesic", "Fever and mild pain", "Liver toxicity at high doses"],
+        ["Amoxicillin", "Antibiotic", "Bacterial infections", "Allergic reactions"]
+      ]
+    },
+    {
+      "type": "section",
+      "id": "process-atlas",
+      "title": "Explore step-by-step processes"
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "One reaction, alternative products",
+      "pathway": "Example enzyme-catalyzed reaction",
+      "description": "The process identity stays fixed. The result control changes only the product produced by this reaction.",
+      "steps": [
+        {
+          "id": "substrate",
+          "title": "Substrate",
+          "context": "Reaction compartment",
+          "description": "Define the substrate and reaction conditions.",
+          "formula": "S",
+          "agent": "binding"
+        },
+        {
+          "id": "complex",
+          "title": "Enzyme–substrate complex",
+          "description": "Describe binding and catalytic commitment.",
+          "formula": "E + S ⇌ ES",
+          "agent": "catalysis"
+        },
+        {
+          "id": "product-a",
+          "title": "Product A",
+          "description": "Default product of this one reaction.",
+          "formula": "P₁"
+        }
+      ],
+      "resultSets": [
+        {
+          "id": "products",
+          "fromStep": "complex",
+          "defaultResult": "Product A",
+          "alternatives": [
+            {
+              "id": "product-b",
+              "title": "Product B",
+              "agent": "alternate product formation",
+              "steps": [
+                {
+                  "id": "product-b-step",
+                  "title": "Product B",
+                  "description": "Alternative result of the same reaction under the stated conditions.",
+                  "formula": "P₂"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "pathology",
+      "title": "One pathogenic process, alternative results",
+      "pathway": "Host response to one pathogen",
+      "description": "The same host–pathogen process may resolve or progress; the control changes the result, not the pathway.",
+      "steps": [
+        {
+          "id": "exposure",
+          "title": "Exposure",
+          "description": "Specify the pathogen and entry route.",
+          "agent": "entry"
+        },
+        {
+          "id": "establishment",
+          "title": "Establishment",
+          "description": "Explain establishment in the host.",
+          "agent": "host interaction"
+        },
+        {
+          "id": "interaction",
+          "title": "Host–pathogen interaction",
+          "description": "Define the shared process that can produce different results.",
+          "agent": "injury progression"
+        },
+        {
+          "id": "persistent-injury",
+          "title": "Persistent tissue injury",
+          "description": "Default result when injury-producing mechanisms persist."
+        }
+      ],
+      "resultSets": [
+        {
+          "id": "clinical-results",
+          "fromStep": "interaction",
+          "defaultResult": "Persistent injury",
+          "alternatives": [
+            {
+              "id": "clearance",
+              "title": "Clearance and resolution",
+              "agent": "effective host clearance",
+              "steps": [
+                {
+                  "id": "resolved",
+                  "title": "Clearance and resolution",
+                  "description": "Alternative result of the same host–pathogen process."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "pharmacology",
+      "title": "One drug mechanism, alternative results",
+      "pathway": "Single drug–target mechanism",
+      "description": "The drug and target pathway remain fixed; the control changes only the resulting effect.",
+      "steps": [
+        {
+          "id": "drug",
+          "title": "Drug exposure",
+          "description": "Specify the drug and clinically relevant exposure context.",
+          "agent": "target engagement"
+        },
+        {
+          "id": "target",
+          "title": "Target engagement",
+          "description": "Specify one receptor, enzyme, transporter, or channel.",
+          "agent": "signal change"
+        },
+        {
+          "id": "therapeutic",
+          "title": "Therapeutic result",
+          "description": "Default result produced through this drug–target mechanism."
+        }
+      ],
+      "resultSets": [
+        {
+          "id": "drug-results",
+          "fromStep": "target",
+          "defaultResult": "Therapeutic result",
+          "alternatives": [
+            {
+              "id": "adverse",
+              "title": "Adverse result",
+              "agent": "same target mechanism",
+              "steps": [
+                {
+                  "id": "adverse-result",
+                  "title": "Adverse result",
+                  "description": "Alternative result produced through the same drug–target mechanism."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "id": "recall",
+      "title": "Check your understanding"
+    },
+    {
+      "type": "question",
+      "prompt": "Which choice best explains the mechanism?",
+      "options": [
+        "Choice A",
+        "Choice B",
+        "Choice C"
+      ],
+      "correctIndex": 1,
+      "answer": "Explain why Choice B is correct and why the alternatives are less appropriate."
+    },
+    {
+      "type": "question",
+      "prompt": "Can you explain the sequence in your own words?",
+      "answer": "Summarize the starting point, mechanism, and outcome."
+    },
+    {
+      "type": "checklist",
+      "title": "Ready to move on?",
+      "items": [
+        "I can explain the concept",
+        "I can trace the sequence",
+        "I can apply the concept"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Tracked processes"
+    },
+    {
+      "type": "tracked-step-process",
+      "domain": "pharmacology",
+      "title": "Track one pathway over time",
+      "pathway": "Example time-dependent pathway",
+      "description": "The left rail records when each stage occurs. The process identity remains fixed; the result control changes only the possible result.",
+      "track": {
+        "kind": "time",
+        "title": "Time"
+      },
+      "steps": [
+        {
+          "id": "time-start",
+          "title": "Initial stage",
+          "trackLabel": "0 min",
+          "description": "Define the initial state and starting time.",
+          "agent": "responsible agent"
+        },
+        {
+          "id": "time-middle",
+          "title": "Intermediate stage",
+          "trackLabel": "5 min",
+          "description": "Explain what occurs at this time point.",
+          "agent": "responsible agent"
+        },
+        {
+          "id": "time-result-a",
+          "title": "Result A",
+          "trackLabel": "1 hour",
+          "description": "Default result of this same pathway."
+        }
+      ],
+      "resultSets": [
+        {
+          "id": "time-results",
+          "fromStep": "time-middle",
+          "defaultResult": "Result A",
+          "alternatives": [
+            {
+              "id": "time-result-b",
+              "title": "Result B",
+              "agent": "same pathway, alternate result",
+              "steps": [
+                {
+                  "id": "time-result-b-step",
+                  "title": "Result B",
+                  "trackLabel": "1 hour",
+                  "description": "Alternative result of the same pathway at this time point."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tracked-step-process",
+      "domain": "pharmacology",
+      "title": "Track one pathway across locations",
+      "pathway": "Example location-dependent pathway",
+      "description": "The left rail records the anatomical or cellular location of each stage.",
+      "track": {
+        "kind": "location",
+        "title": "Location"
+      },
+      "steps": [
+        {
+          "id": "location-one",
+          "title": "Stage in the liver",
+          "trackLabel": "Liver",
+          "description": "Explain the event occurring in this location.",
+          "agent": "transport or conversion"
+        },
+        {
+          "id": "location-two",
+          "title": "Stage in circulation",
+          "trackLabel": "Bloodstream",
+          "description": "Explain the event occurring during circulation.",
+          "agent": "delivery"
+        },
+        {
+          "id": "location-three",
+          "title": "Stage at the target organ",
+          "trackLabel": "Heart",
+          "description": "Explain the event occurring at the target location."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Structural layers and body journeys"
+    },
+    {
+      "type": "structure-layers",
+      "title": "Structure from superficial to deep",
+      "structure": "Name the organ, wall, region, or anatomical structure",
+      "direction": "superficial-to-deep",
+      "description": "Use this block for ordered histological or anatomical layers. Keep one spatial axis per block.",
+      "layers": [
+        {
+          "id": "surface-layer",
+          "title": "Surface layer",
+          "depthLabel": "Superficial",
+          "tone": "epithelial",
+          "relativeThickness": 0.75,
+          "tissue": "Tissue classification",
+          "description": "Describe the surface-facing layer.",
+          "landmarks": ["Landmark A", "Landmark B"],
+          "clinicalNote": "Optional diagnostic or clinical distinction.",
+          "boundaryAfter": "Name the boundary to the next layer"
+        },
+        {
+          "id": "middle-layer",
+          "title": "Middle layer",
+          "depthLabel": "Intermediate",
+          "tone": "connective",
+          "relativeThickness": 1.4,
+          "tissue": "Tissue classification",
+          "description": "Describe the middle layer and its function.",
+          "landmarks": ["Landmark C"],
+          "boundaryAfter": "Name the next boundary"
+        },
+        {
+          "id": "deep-layer",
+          "title": "Deep layer",
+          "depthLabel": "Deep",
+          "tone": "muscle",
+          "relativeThickness": 1.8,
+          "tissue": "Tissue classification",
+          "description": "Describe the deepest layer represented in this block.",
+          "landmarks": ["Landmark D"]
+        }
+      ]
+    },
+    {
+      "type": "substance-journey",
+      "title": "Journey of a substance through the body",
+      "substance": "Name the physiological substance or drug",
+      "route": "Entry → distribution → action → elimination",
+      "description": "Use one stage per meaningful compartment or transformation. Availability percentages are optional and must be evidence-based when used in real teaching content.",
+      "stages": [
+        {
+          "id": "journey-entry",
+          "title": "Entry",
+          "location": "Entry compartment",
+          "phase": "entry",
+          "form": "Starting form",
+          "duration": "Starting time",
+          "description": "Explain how the substance enters this system.",
+          "transition": "Name the transfer to the next compartment"
+        },
+        {
+          "id": "journey-distribution",
+          "title": "Distribution",
+          "location": "Transport compartment",
+          "phase": "distribution",
+          "form": "Transported form",
+          "duration": "Relevant timing",
+          "description": "Explain transport, binding, and compartment exchange.",
+          "details": [{"label": "Determinant", "value": "Add a controlling physiological or pharmacokinetic factor"}],
+          "transition": "Name the delivery mechanism"
+        },
+        {
+          "id": "journey-action",
+          "title": "Action or physiological use",
+          "location": "Target compartment",
+          "phase": "action",
+          "form": "Active or usable form",
+          "duration": "Effect timing",
+          "description": "Explain the target event and response.",
+          "transition": "Name redistribution or clearance"
+        },
+        {
+          "id": "journey-elimination",
+          "title": "Elimination or recycling",
+          "location": "Exit or recovery compartment",
+          "phase": "elimination",
+          "form": "Excreted, stored, or recycled form",
+          "duration": "Terminal timing",
+          "description": "Explain how the substance leaves, is stored, or returns to the cycle."
+        }
+      ]
+    }
   ]
 }

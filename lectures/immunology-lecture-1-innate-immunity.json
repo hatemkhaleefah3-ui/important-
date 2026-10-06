@@ -1,0 +1,1157 @@
+{
+  "schemaVersion": 4,
+  "id": "immunology-1-innate-immunity",
+  "title": "Introduction to the Immune System and Innate Immunity",
+  "subtitle": "Recognition, barriers, cellular elimination, inflammation, and systemic defense.",
+  "course": "Microbiology · Immunology",
+  "author": "Tikrit University · College of Medicine · Microbiology Department",
+  "level": "Second class",
+  "durationMinutes": 55,
+  "sourceDocument": {
+    "fileName": "Immunology_Lecture_1_Introduction_and_Innate_Immunity .pdf",
+    "pageCount": 12,
+    "imagePlaceholderCount": 8
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Immunity: recognition, defense, and homeostasis",
+      "id": "immunity"
+    },
+    {
+      "type": "paragraph",
+      "text": "Immunity is the integrated capacity to recognize, respond to, and eliminate infectious microorganisms, foreign substances, and other harmful agents while preserving tissue integrity and physiological homeostasis. Specialized cells, lymphoid tissues and organs, soluble mediators, and molecular recognition mechanisms continuously survey the internal environment.",
+      "variant": "lead",
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "objectives",
+      "title": "Learning objectives",
+      "items": [
+        "Define immunity and its major functions",
+        "Distinguish innate immunity from adaptive immunity",
+        "Identify the barriers, cells, and soluble mediators of innate defense",
+        "Trace phagocytosis and acute inflammation",
+        "Connect fever and acute-phase proteins to systemic defense"
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Institutional heading",
+      "title": "Tikrit University heading",
+      "alt": "Tikrit University heading from the first page.",
+      "caption": "Tikrit University, College of Medicine, Microbiology Department.",
+      "sourceLabel": "PDF page 1 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.1154901965770846,
+          0.2798484840778389,
+          0.7797058579189325,
+          0.030681822035047743
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "image",
+      "processName": "Institutional heading detail",
+      "title": "College heading detail",
+      "alt": "Embedded heading detail from the first page.",
+      "caption": "College and department heading detail.",
+      "sourceLabel": "PDF page 1 · embedded image 2",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.33313726288041257,
+          0.32060102982954547,
+          0.33352940378625406,
+          0.029247476597024938
+        ]
+      },
+      "sourceImageIndex": 2
+    },
+    {
+      "type": "image",
+      "processName": "Institutional heading detail",
+      "title": "Department heading detail",
+      "alt": "Embedded department heading detail from the first page.",
+      "caption": "Microbiology Department heading detail.",
+      "sourceLabel": "PDF page 1 · embedded image 3",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.3431372549019608,
+          0.3282828282828283,
+          0.3137254901960784,
+          0.013888888888888888
+        ]
+      },
+      "sourceImageIndex": 3
+    },
+    {
+      "type": "image",
+      "processName": "Institutional emblem",
+      "title": "Tikrit University emblem",
+      "alt": "Tikrit University emblem.",
+      "caption": "Institutional emblem.",
+      "sourceLabel": "PDF page 1 · embedded image 4",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.39565359377393533,
+          0.0636363366637567,
+          0.2855392406189364,
+          0.10789141028818458
+        ]
+      },
+      "sourceImageIndex": 4
+    },
+    {
+      "type": "image",
+      "processName": "Innate immune defense",
+      "title": "Introduction to immunity",
+      "alt": "Illustration associated with immunity and host defense.",
+      "caption": "Immunity protects tissues through coordinated barriers, cells, and soluble mediators.",
+      "sourceLabel": "PDF page 1 · embedded image 5",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.23006536446365655,
+          0.37061872385969064,
+          0.5398692960053487,
+          0.18333334874625157
+        ]
+      },
+      "sourceImageIndex": 5
+    },
+    {
+      "type": "list",
+      "title": "Major functions of the immune system",
+      "description": "Six coordinated functions preserve tissue integrity and physiological homeostasis.",
+      "style": "key-points",
+      "sourcePages": [
+        1,
+        2
+      ],
+      "items": [
+        {
+          "label": "Recognition",
+          "text": "Detect potentially harmful foreign substances and microbial agents."
+        },
+        {
+          "label": "Tolerance",
+          "text": "Discriminate self from non-self.",
+          "children": [
+            "Maintain tolerance toward the body’s own tissues."
+          ]
+        },
+        {
+          "label": "Elimination",
+          "text": "Neutralize or remove infectious microorganisms and their harmful products."
+        },
+        {
+          "label": "Surveillance",
+          "text": "Remove damaged, senescent, or abnormal cells.",
+          "children": [
+            "Preserve tissue integrity."
+          ]
+        },
+        {
+          "label": "Regulation",
+          "text": "Control inflammatory responses.",
+          "children": [
+            "Maintain effective defense.",
+            "Limit unnecessary tissue damage."
+          ]
+        },
+        {
+          "label": "Memory",
+          "text": "Retain antigen-specific experience after exposure.",
+          "children": [
+            "Produce a faster and more effective response after subsequent exposure."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Innate and adaptive immunity",
+      "columns": [
+        "Feature",
+        "Innate immunity",
+        "Adaptive immunity"
+      ],
+      "rows": [
+        [
+          "Onset",
+          "Rapid",
+          "Delayed during first exposure"
+        ],
+        [
+          "Specificity",
+          "Broad recognition",
+          "Highly antigen-specific"
+        ],
+        [
+          "Memory",
+          "No classical antigen-specific memory",
+          "Present"
+        ],
+        [
+          "Main cells",
+          "Neutrophils, macrophages, NK cells, and others",
+          "B and T lymphocytes"
+        ],
+        [
+          "Major components",
+          "Barriers, complement, phagocytes, inflammation",
+          "Antibodies and antigen-specific lymphocytes"
+        ],
+        [
+          "Repeated exposure",
+          "Limited enhancement",
+          "Faster and stronger response"
+        ]
+      ],
+      "sourcePages": [
+        2
+      ],
+      "purpose": "quick-comparison",
+      "description": "Contrast onset, specificity, memory, cells, components, and repeated exposure."
+    },
+    {
+      "type": "image",
+      "processName": "Immune-system organization",
+      "title": "Innate and adaptive immunity",
+      "alt": "Diagram of immune-system organization.",
+      "caption": "Innate mechanisms act rapidly; adaptive mechanisms provide antigen specificity and memory.",
+      "sourceLabel": "PDF page 2 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 2,
+        "crop": [
+          0.37745098039215685,
+          0.3169444498389658,
+          0.24501635981541053,
+          0.19051767599703084
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "callout",
+      "label": "Coordinated protection",
+      "text": "Protection against infectious disease depends on coordinated innate and adaptive mechanisms.",
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Determinants of immune competence",
+      "id": "determinants"
+    },
+    {
+      "type": "table",
+      "title": "Age and susceptibility",
+      "columns": [
+        "Life stage",
+        "Protective or risk factors",
+        "Examples"
+      ],
+      "rows": [
+        [
+          "Fetus in utero",
+          "Placental protection is incomplete; immune immaturity increases susceptibility",
+          "Toxoplasma gondii, rubella virus, herpes viruses, and cytomegaloviruses may cross the placenta and cause congenital abnormalities, severe disease, or fetal death"
+        ],
+        [
+          "Newborns and young individuals",
+          "Immune immaturity increases susceptibility to some infections",
+          "Measles, mumps, poliomyelitis, and chickenpox may be more severe in adults; stronger immune responses can contribute to tissue injury"
+        ],
+        [
+          "Elderly individuals",
+          "Declining immune activity, physical abnormalities, and cumulative environmental exposure increase risk",
+          "Prostatic enlargement may cause urinary stasis; smoking contributes to susceptibility"
+        ]
+      ],
+      "sourcePages": [
+        3
+      ],
+      "purpose": "quick-comparison",
+      "description": "Compare immune protection and infection risk across the major life stages."
+    },
+    {
+      "type": "table",
+      "title": "Hormonal, nutritional, and stress effects",
+      "columns": [
+        "Factor",
+        "Effect on defense",
+        "Important associations"
+      ],
+      "rows": [
+        [
+          "Endocrine disorders",
+          "Altered hormonal or enzymatic activity can increase susceptibility",
+          "Diabetes mellitus, hypothyroidism, and adrenal dysfunction"
+        ],
+        [
+          "Glucocorticoids",
+          "Suppress inflammation, reduce phagocytic ingestion, and modify responses to bacterial products such as endotoxin",
+          "In diabetes: Staphylococcus, Streptococcus, Candida, Aspergillus, and mucormycosis occur more frequently"
+        ],
+        [
+          "Pregnancy",
+          "Increased steroid levels are associated with greater susceptibility to some infections",
+          "Physiologic endocrine change"
+        ],
+        [
+          "Protein-calorie malnutrition",
+          "Impairs humoral and cell-mediated immunity",
+          "Reduced C3 and factor B, interferon responses, neutrophil and phagocytic activity; leukopenia"
+        ],
+        [
+          "Prolonged stress",
+          "Inversely related to immune function",
+          "Greater susceptibility to infection"
+        ]
+      ],
+      "sourcePages": [
+        3,
+        4
+      ],
+      "purpose": "structured-variables",
+      "description": "Track each modifying factor, its effect on defense, and its important associations."
+    },
+    {
+      "type": "note",
+      "title": "Nutritional integrity",
+      "text": "Adequate nutrition supports complement, interferon responses, leukocyte numbers, neutrophil activity, and phagocytosis.",
+      "sourcePages": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Innate immunity: immediate multilayered defense",
+      "id": "innate"
+    },
+    {
+      "type": "paragraph",
+      "text": "Innate immunity is present from birth, remains continuously available, recognizes broad patterns without classical antigen-specific memory, responds rapidly, and does not strengthen in the same manner after repeated exposure to the same antigen.",
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Seven mechanism groups",
+      "description": "Innate protection moves from entry prevention to local elimination and systemic coordination.",
+      "style": "numbered",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "text": "Mechanical barriers and surface secretions prevent entry and remove microorganisms.",
+          "children": [
+            "Skin and mucosal epithelium",
+            "Mucus, cilia, tears, saliva, urine, and intestinal movement"
+          ]
+        },
+        {
+          "text": "Antibacterial substances damage, opsonize, or inhibit microorganisms.",
+          "children": [
+            "Complement",
+            "Lysozyme, lactoferrin, antimicrobial polypeptides, acids, and enzymes"
+          ]
+        },
+        {
+          "text": "Microbial antagonism prevents pathogen colonization.",
+          "children": [
+            "Competition for nutrients and space",
+            "Antimicrobial products and prevention of attachment"
+          ]
+        },
+        {
+          "text": "Cellular factors engulf or kill microbial and abnormal targets.",
+          "children": [
+            "Neutrophils, monocytes, and macrophages",
+            "Natural killer cells"
+          ]
+        },
+        {
+          "text": "Inflammation recruits defense components to injured tissue."
+        },
+        {
+          "text": "Fever coordinates a systemic response to infection or inflammation."
+        },
+        {
+          "text": "Acute-phase proteins increase systemic resistance, limit tissue injury, and promote repair."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Barrier and surface defenses",
+      "id": "barriers"
+    },
+    {
+      "type": "list",
+      "title": "Skin and mucosal protection",
+      "description": "Each exposed surface combines mechanical clearance with chemical or biological protection.",
+      "style": "bullets",
+      "sourcePages": [
+        5,
+        6
+      ],
+      "items": [
+        {
+          "label": "Skin and conjunctival epithelium",
+          "text": "Intact epithelium blocks microbial entry.",
+          "children": [
+            "Burns, trauma, and surgery increase infection risk.",
+            "Sebaceous fatty acids and normal flora inhibit many bacteria and fungi."
+          ]
+        },
+        {
+          "label": "Mucous membranes",
+          "text": "Physical and chemical defenses protect the mouth, respiratory tract, and genitourinary tract.",
+          "children": [
+            "Mucus traps organisms and lubricates surfaces.",
+            "Ciliary movement, cellular shedding, and tight junctions support clearance.",
+            "Antibacterial substances, antibodies, and mucosa-associated lymphoid tissue provide additional protection."
+          ]
+        },
+        {
+          "label": "Oral cavity",
+          "text": "Continuous salivary flow removes microorganisms.",
+          "children": [
+            "Lysozyme damages susceptible bacterial cell walls.",
+            "Antibodies and resident microbial products support mucosal protection.",
+            "Swallowed material enters gastrointestinal defenses."
+          ]
+        },
+        {
+          "label": "Stomach and small intestine",
+          "text": "Acidity, enzymes, bile, and movement restrict ingested organisms.",
+          "children": [
+            "Low gastric pH and proteolytic enzymes destroy many microorganisms.",
+            "Bile salts disrupt bacterial membranes.",
+            "Rapid intestinal movement reduces microbial attachment."
+          ]
+        },
+        {
+          "label": "Intestinal microbiota",
+          "text": "Rich resident flora in the ileum and large intestine provides colonization resistance."
+        },
+        {
+          "label": "Upper respiratory tract",
+          "text": "Nasal architecture and hairs filter large particles.",
+          "children": [
+            "Sticky mucus traps inhaled particles and microorganisms.",
+            "Cilia transport trapped material toward the pharynx.",
+            "Coughing removes material.",
+            "Mucopolysaccharides interact with influenza and certain other viruses."
+          ]
+        },
+        {
+          "label": "Genitourinary tract",
+          "text": "Flow and local chemistry restrict ascending infection.",
+          "children": [
+            "Urine flushes microorganisms.",
+            "Spermine and zinc in semen have antibacterial activity.",
+            "Adult vaginal acidity is unfavorable to many pathogens.",
+            "The cervical mucus plug forms a physical barrier."
+          ]
+        },
+        {
+          "label": "Conjunctiva and tears",
+          "text": "Continuous tear secretion washes the ocular surface.",
+          "children": [
+            "Lysozyme, lactoferrin, and secretory IgA provide antimicrobial protection.",
+            "Reduced or absent tear secretion increases ocular infection risk."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Lysozyme",
+      "text": "Alexander Fleming described lysozyme in 1922. This low-molecular-weight muramidase hydrolyzes peptidoglycan. Tear concentrations act mainly against selected bacteria, particularly Gram-positive organisms; higher concentrations inside phagocytes contribute to broader intracellular killing.",
+      "sourcePages": [
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Antibacterial substances in blood and tissues",
+      "columns": [
+        "Substance",
+        "Action or setting"
+      ],
+      "rows": [
+        [
+          "Complement",
+          "Membrane disruption, opsonization, and inflammatory promotion"
+        ],
+        [
+          "β-Lysin",
+          "Relatively heat-stable activity against Bacillus anthracis and related bacilli"
+        ],
+        [
+          "Leukins and plakins",
+          "Basic antimicrobial polypeptides derived from leukocytes and associated with platelets"
+        ],
+        [
+          "Lactic acid",
+          "Creates conditions unfavorable for growth in muscle and inflammatory sites"
+        ],
+        [
+          "Lactoperoxidase",
+          "Generates reactive antimicrobial products in milk"
+        ],
+        [
+          "Lactoferrin",
+          "Sequesters iron"
+        ]
+      ],
+      "sourcePages": [
+        6,
+        7
+      ],
+      "purpose": "simplify-complexity",
+      "description": "Connect each soluble innate-defense factor to its principal action or setting."
+    },
+    {
+      "type": "table",
+      "title": "Microbial antagonism",
+      "columns": [
+        "Mechanism",
+        "Example or consequence"
+      ],
+      "rows": [
+        [
+          "Antimicrobial production",
+          "E. coli produces colicin in the large intestine"
+        ],
+        [
+          "Competition",
+          "Resident organisms compete for nutrients and space"
+        ],
+        [
+          "Attachment interference",
+          "Microbiota reduces pathogen access to epithelial binding sites"
+        ],
+        [
+          "Loss of colonization resistance",
+          "Antibiotic disruption can permit opportunistic proliferation and disease"
+        ]
+      ],
+      "sourcePages": [
+        7
+      ],
+      "purpose": "simplify-complexity",
+      "description": "Reduce colonization resistance to its core mechanisms and consequences."
+    },
+    {
+      "type": "section",
+      "title": "Cellular elimination",
+      "id": "cellular"
+    },
+    {
+      "type": "paragraph",
+      "text": "Neutrophils, monocytes, and macrophages ingest and destroy microorganisms, foreign particles, and cellular debris.",
+      "sourcePages": [
+        7
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "general",
+      "title": "Phagocytic destruction",
+      "description": "Follow a microorganism from surface contact to intracellular degradation.",
+      "pathway": "Phagocytosis",
+      "steps": [
+        {
+          "id": "phago-attach",
+          "title": "Attachment",
+          "description": "A microorganism or foreign particle adheres to the phagocyte surface.",
+          "agent": "phagocyte recognition"
+        },
+        {
+          "id": "phago-ingest",
+          "title": "Ingestion",
+          "description": "The membrane encloses the target through an endocytic process.",
+          "agent": "membrane engulfment"
+        },
+        {
+          "id": "phago-phagosome",
+          "title": "Phagosome",
+          "description": "The ingested target occupies an intracellular vesicle.",
+          "agent": "phagosome formation"
+        },
+        {
+          "id": "phago-fuse",
+          "title": "Lysosomal fusion",
+          "description": "The phagosome fuses with a lysosome.",
+          "agent": "lysosome"
+        },
+        {
+          "id": "phago-kill",
+          "title": "Phagolysosome",
+          "description": "Oxygen radicals, digestive enzymes, and other degradative mechanisms destroy the target.",
+          "agent": "intracellular killing"
+        },
+        {
+          "id": "phago-degrade",
+          "title": "Degradation",
+          "description": "Microbial material and debris are broken down.",
+          "agent": "degradative enzymes"
+        }
+      ],
+      "sourcePages": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Phagocytic destruction",
+      "title": "Phagocytosis",
+      "alt": "Diagram showing engulfment and intracellular destruction by a phagocyte.",
+      "caption": "Attachment and ingestion form a phagosome; lysosomal fusion forms a phagolysosome for degradation.",
+      "sourceLabel": "PDF page 8 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 8,
+        "crop": [
+          0.2512254901960784,
+          0.06553031458999171,
+          0.49673202614379086,
+          0.2352272765805023
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "table",
+      "title": "Clinical limits and evidence",
+      "columns": [
+        "Situation",
+        "Significance"
+      ],
+      "rows": [
+        [
+          "Mycobacteria and Brucella",
+          "Resist intracellular digestion and may multiply within phagocytes, allowing dissemination"
+        ],
+        [
+          "Agranulocytosis",
+          "Loss of granulocytes increases infection susceptibility"
+        ],
+        [
+          "Chronic granulomatous disease",
+          "Defective intracellular killing demonstrates the importance of phagocyte function"
+        ]
+      ],
+      "sourcePages": [
+        8
+      ],
+      "purpose": "quick-comparison",
+      "description": "Distinguish microbial survival strategies from disorders that reveal the importance of phagocytes."
+    },
+    {
+      "type": "note",
+      "title": "Natural killer cells",
+      "text": "NK cells recognize abnormal host cells and directly kill virus-infected and malignant cells. Interferons enhance NK-cell activation and cytotoxicity during early defense.",
+      "sourcePages": [
+        8
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Inflammation, fever, and acute-phase defense",
+      "id": "systemic"
+    },
+    {
+      "type": "flow",
+      "title": "Acute inflammatory recruitment",
+      "steps": [
+        {
+          "title": "Vasodilation",
+          "description": "Increased blood flow delivers plasma proteins, neutrophils, and other phagocytes."
+        },
+        {
+          "title": "Increased vascular permeability",
+          "description": "Protein-rich exudate containing immunoglobulins and complement enters tissue."
+        },
+        {
+          "title": "Leukocyte emigration",
+          "description": "Leukocytes pass through endothelial gaps into injured tissue."
+        },
+        {
+          "title": "Chemotaxis",
+          "description": "Neutrophils and macrophages follow mediator gradients."
+        },
+        {
+          "title": "Phagocytosis",
+          "description": "Recruited cells attach, engulf, and destroy microorganisms with oxygen radicals and digestive enzymes."
+        }
+      ],
+      "sourcePages": [
+        8,
+        9
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Fever",
+      "columns": [
+        "Category",
+        "Members or effects"
+      ],
+      "rows": [
+        [
+          "Exogenous pyrogens",
+          "Gram-negative endotoxin; staphylococcal enterotoxin; group A streptococcal erythrogenic toxin"
+        ],
+        [
+          "Endogenous pyrogens",
+          "IL-1, interferon-alpha, and IL-6; macrophages produce IL-1"
+        ],
+        [
+          "Beneficial effects",
+          "Activates leukocytes; restricts bacterial growth by decreasing iron availability; enhances antibody production and T-cell proliferation; protects host cells against some TNF-alpha effects"
+        ]
+      ],
+      "sourcePages": [
+        9
+      ],
+      "purpose": "rapid-review",
+      "description": "Review pyrogen categories and the beneficial effects of fever."
+    },
+    {
+      "type": "table",
+      "title": "Acute-phase proteins",
+      "columns": [
+        "Protein",
+        "Contribution"
+      ],
+      "rows": [
+        [
+          "C-reactive protein",
+          "Rapidly rises during infection or injury and can activate complement"
+        ],
+        [
+          "Mannose-binding protein",
+          "Supports innate recognition and defense"
+        ],
+        [
+          "Alpha-1-acid glycoprotein",
+          "Participates in the acute-phase response"
+        ],
+        [
+          "Serum amyloid P component",
+          "Participates in the acute-phase response"
+        ],
+        [
+          "Other acute-phase proteins",
+          "Enhance resistance, limit tissue injury, and promote repair"
+        ]
+      ],
+      "sourcePages": [
+        9
+      ],
+      "purpose": "rapid-review",
+      "description": "Link the major acute-phase proteins to their contributions during infection and tissue injury."
+    },
+    {
+      "type": "section",
+      "title": "Integrated innate response",
+      "id": "integration"
+    },
+    {
+      "type": "image",
+      "processName": "Innate defense sequence",
+      "title": "Integrated innate response heading",
+      "alt": "Embedded graphic from the integrated innate-response sequence.",
+      "caption": "Innate defense proceeds from entry prevention to adaptive activation.",
+      "sourceLabel": "PDF page 11 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 11,
+        "crop": [
+          0.11274509803921569,
+          0.05802904475818981,
+          0.7844117607166564,
+          0.04416792802136354
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "flow",
+      "title": "From exposure to adaptive activation",
+      "steps": [
+        {
+          "title": "Prevent entry",
+          "description": "Skin and mucosal epithelium"
+        },
+        {
+          "title": "Remove microorganisms",
+          "description": "Mucus, cilia, tears, saliva, urine, intestinal motility, and coughing"
+        },
+        {
+          "title": "Inhibit growth",
+          "description": "Gastric acid, bile, lysozyme, lactoferrin, antimicrobial peptides, and normal microbiota"
+        },
+        {
+          "title": "Recognize and recruit",
+          "description": "Complement and inflammatory mediators"
+        },
+        {
+          "title": "Eliminate",
+          "description": "Neutrophils, monocytes, and macrophages perform phagocytosis"
+        },
+        {
+          "title": "Coordinate systemic defense",
+          "description": "Fever and acute-phase proteins"
+        },
+        {
+          "title": "Resolve and repair",
+          "description": "Remove microorganisms and damaged tissue, then restore homeostasis"
+        },
+        {
+          "title": "Initiate adaptive immunity",
+          "description": "Innate signals activate antigen-specific mechanisms"
+        }
+      ],
+      "sourcePages": [
+        11
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Complementary defense levels",
+      "columns": [
+        "Level",
+        "Mechanisms"
+      ],
+      "rows": [
+        [
+          "Barrier",
+          "Skin and mucosal epithelium prevent entry"
+        ],
+        [
+          "Clearance",
+          "Mucus, cilia, tears, saliva, urine, intestinal motility, and coughing remove microbes"
+        ],
+        [
+          "Antimicrobial",
+          "Acidity, bile, lysozyme, lactoferrin, peptides, complement, and interferons inhibit or destroy"
+        ],
+        [
+          "Biological",
+          "Normal microbiota prevents colonization"
+        ],
+        [
+          "Cellular",
+          "Neutrophils, monocytes, and macrophages phagocytose"
+        ],
+        [
+          "Inflammatory",
+          "Vascular change, leukocyte recruitment, and chemotaxis concentrate defense"
+        ],
+        [
+          "Systemic",
+          "Fever and acute-phase proteins coordinate whole-body defense"
+        ]
+      ],
+      "sourcePages": [
+        12
+      ],
+      "purpose": "rapid-review",
+      "description": "Use the defense levels as a final visual memory sheet for innate immunity."
+    },
+    {
+      "type": "references",
+      "title": "References",
+      "items": [
+        "Tikrit University, College of Medicine, Microbiology Department. Introduction to the Immune System and Innate Immunity, pages 1–12."
+      ]
+    }
+  ],
+  "exam": {
+    "title": "Introduction and innate immunity exam",
+    "instructions": "Answer every question. Submit once to receive a score, correct answers, and explanations.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "l1-1",
+        "type": "mcq",
+        "prompt": "Which feature belongs to innate immunity?",
+        "options": [
+          "Highly antigen-specific memory",
+          "Rapid broad recognition",
+          "Delayed primary response",
+          "Antibody-only defense"
+        ],
+        "correctIndex": 1,
+        "explanation": "Innate immunity responds rapidly through broad recognition."
+      },
+      {
+        "id": "l1-2",
+        "type": "mcq",
+        "prompt": "Which mechanism supplies colonization resistance?",
+        "options": [
+          "Normal microbiota",
+          "Hypothalamic reset",
+          "T-cell memory",
+          "Placental transfer"
+        ],
+        "correctIndex": 0,
+        "explanation": "Resident microbiota competes with pathogens and inhibits attachment."
+      },
+      {
+        "id": "l1-3",
+        "type": "fill-blank",
+        "prompt": "Lysozyme hydrolyzes bacterial _____.",
+        "answers": [
+          "peptidoglycan",
+          "the peptidoglycan layer"
+        ],
+        "explanation": "Lysozyme is a muramidase that attacks peptidoglycan."
+      },
+      {
+        "id": "l1-4",
+        "type": "select-number",
+        "prompt": "How many major mechanism groups of innate immunity are listed?",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "answer": 7,
+        "explanation": "The groups are barriers, antibacterial substances, microbial antagonism, cellular factors, inflammation, fever, and acute-phase proteins."
+      },
+      {
+        "id": "l1-5",
+        "type": "match",
+        "prompt": "Match each defense to its action.",
+        "pairs": [
+          {
+            "left": "Complement",
+            "right": "Opsonization, inflammation, and microbial killing"
+          },
+          {
+            "left": "Lactoferrin",
+            "right": "Iron sequestration"
+          },
+          {
+            "left": "Cilia",
+            "right": "Mucociliary clearance"
+          },
+          {
+            "left": "NK cells",
+            "right": "Killing virus-infected and malignant cells"
+          }
+        ],
+        "explanation": "Each mechanism contributes a distinct layer of defense."
+      },
+      {
+        "id": "l1-6",
+        "type": "medical-history-mcq",
+        "history": "A patient receives prolonged broad-spectrum antibiotics and then develops overgrowth by an opportunistic organism.",
+        "prompt": "Which protective mechanism was most directly disrupted?",
+        "options": [
+          "Microbial antagonism",
+          "Fever",
+          "Placental defense",
+          "Adaptive memory"
+        ],
+        "correctIndex": 0,
+        "explanation": "Antibiotics can disrupt resident microbiota and colonization resistance."
+      },
+      {
+        "id": "l1-7",
+        "type": "mcq",
+        "prompt": "What immediately follows ingestion during phagocytosis?",
+        "options": [
+          "Fever",
+          "Phagosome formation",
+          "Antibody production",
+          "Vasodilation"
+        ],
+        "correctIndex": 1,
+        "explanation": "Engulfment encloses the target in a phagosome."
+      },
+      {
+        "id": "l1-8",
+        "type": "fill-blank",
+        "prompt": "Fusion of a phagosome with a lysosome forms a _____.",
+        "answers": [
+          "phagolysosome"
+        ],
+        "explanation": "The fused degradative compartment is the phagolysosome."
+      },
+      {
+        "id": "l1-9",
+        "type": "mcq",
+        "prompt": "Which organisms may resist intracellular digestion within phagocytes?",
+        "options": [
+          "Mycobacteria and Brucella",
+          "Influenza and poliovirus",
+          "Candida and Aspergillus only",
+          "Staphylococcus and Streptococcus only"
+        ],
+        "correctIndex": 0,
+        "explanation": "Mycobacteria and Brucella can survive and multiply intracellularly."
+      },
+      {
+        "id": "l1-10",
+        "type": "match",
+        "prompt": "Match inflammatory events to their effects.",
+        "pairs": [
+          {
+            "left": "Vasodilation",
+            "right": "Increased local blood flow"
+          },
+          {
+            "left": "Permeability",
+            "right": "Protein-rich exudate enters tissue"
+          },
+          {
+            "left": "Emigration",
+            "right": "Leukocytes cross endothelium"
+          },
+          {
+            "left": "Chemotaxis",
+            "right": "Directed movement along mediator gradients"
+          }
+        ],
+        "explanation": "These events recruit soluble and cellular defenses."
+      },
+      {
+        "id": "l1-11",
+        "type": "medical-history-mcq",
+        "history": "A patient with absent tear secretion develops recurrent ocular infection.",
+        "prompt": "Which lost combination best explains the risk?",
+        "options": [
+          "Mechanical washing plus lysozyme, lactoferrin, and sIgA",
+          "Gastric acid plus bile",
+          "Urinary flow plus zinc",
+          "Cough plus nasal hairs"
+        ],
+        "correctIndex": 0,
+        "explanation": "Tears provide continuous clearance and complementary antimicrobial factors."
+      },
+      {
+        "id": "l1-12",
+        "type": "mcq",
+        "prompt": "Which is an endogenous pyrogen?",
+        "options": [
+          "Endotoxin",
+          "Staphylococcal enterotoxin",
+          "IL-1",
+          "Erythrogenic toxin"
+        ],
+        "correctIndex": 2,
+        "explanation": "IL-1 is produced by macrophages and participates in fever."
+      },
+      {
+        "id": "l1-13",
+        "type": "select-number",
+        "prompt": "How many stages are listed in the integrated innate response from entry prevention through adaptive activation?",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+        "answer": 8,
+        "explanation": "The integrated sequence contains eight stages."
+      },
+      {
+        "id": "l1-14",
+        "type": "fill-blank",
+        "prompt": "The acidic environment that inhibits many pathogens is found in the adult _____.",
+        "answers": [
+          "vagina"
+        ],
+        "explanation": "Adult vaginal acidity is a genitourinary defense."
+      },
+      {
+        "id": "l1-15",
+        "type": "medical-history-mcq",
+        "history": "An older man has urinary stasis caused by prostatic enlargement and develops recurrent urinary infection.",
+        "prompt": "Which determinant is most relevant?",
+        "options": [
+          "Age-associated physical abnormality",
+          "Classical antigen memory",
+          "High gastric acidity",
+          "Enhanced mucociliary clearance"
+        ],
+        "correctIndex": 0,
+        "explanation": "Urinary stasis is an age-associated physical risk factor."
+      },
+      {
+        "id": "l1-16",
+        "type": "match",
+        "prompt": "Match antimicrobial substances to their settings.",
+        "pairs": [
+          {
+            "left": "β-Lysin",
+            "right": "Bacillus anthracis and related bacilli"
+          },
+          {
+            "left": "Lactoperoxidase",
+            "right": "Milk"
+          },
+          {
+            "left": "Lactic acid",
+            "right": "Muscle and inflammatory sites"
+          },
+          {
+            "left": "Colicin",
+            "right": "E. coli in the large intestine"
+          }
+        ],
+        "explanation": "Each item has a specific setting or example."
+      },
+      {
+        "id": "l1-17",
+        "type": "mcq",
+        "prompt": "Which finding is associated with protein-calorie malnutrition?",
+        "options": [
+          "Increased factor B",
+          "Enhanced neutrophil activity",
+          "Leukopenia",
+          "Increased interferon response"
+        ],
+        "correctIndex": 2,
+        "explanation": "Malnutrition can reduce complement, interferon responses, neutrophil and phagocytic activity, and leukocyte numbers."
+      },
+      {
+        "id": "l1-18",
+        "type": "medical-history-mcq",
+        "history": "A child has chronic granulomatous disease and recurrent infections.",
+        "prompt": "Which process is most directly impaired?",
+        "options": [
+          "Intracellular killing by phagocytes",
+          "Mucus production",
+          "Urinary flushing",
+          "Antigen-specific memory formation"
+        ],
+        "correctIndex": 0,
+        "explanation": "The condition demonstrates the importance of phagocyte microbial killing."
+      }
+    ]
+  }
+}
