@@ -84,7 +84,7 @@
     {
       "type": "list",
       "title": "Organize a concept with subpoints",
-      "description": "Use nested children to show relationships without flattening the content.",
+      "description": "Numbering is automatic: flat lists use Roman numerals; parents with sublists use numbers; one-item sublists use a bullet; multi-item sublists use capital letters.",
       "style": "key-points",
       "items": [
         {

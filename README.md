@@ -223,4 +223,4 @@ All populated lecture JSON files use schema version 4 and require the redesigned
 
 ### Designed lists
 
-Use a `list` block for hierarchical content. Supported styles are `bullets`, `numbered`, `steps`, and `key-points`. Each item may be plain text or an object with `text`, an optional `label`, and nested `children`. Lists support up to four levels.
+Use a `list` block for hierarchical content. Supported visual styles are `bullets`, `numbered`, `steps`, and `key-points`; style controls the color treatment, while hierarchy controls the marker. A flat list uses Roman numerals (`I.`, `II.`, `III.`). A list containing sublists uses decimal parent markers (`1.`, `2.`, `3.`). A one-item sublist uses `•`; a multi-item sublist uses capital letters (`A.`, `B.`, `C.`). A deeper multi-item level returns to Roman numerals. Each item may be plain text or an object with `text`, an optional `label`, and nested `children`. Lists support up to four levels.
