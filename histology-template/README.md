@@ -13,7 +13,7 @@ Static histology authoring package for Cloudflare Pages. The root website suppor
 - Rectangle and polygon overlay coordinates are also source-image pixels.
 - IDs must be unique across sections and waypoints; overlay group IDs must be unique within `overlays`.
 
-In schema v2, every item in `slides` declares a semantic `request` and either a usable `source` or an exact `fallback` location in a PDF, PPTX, or DOCX. The website uses a catalog source only when organ, stain, diagnosis, and species match and the catalog entry is marked `verified`. Otherwise it extracts the declared fallback from the user-selected lecture file. It never chooses a merely similar public image.
+In schema v2, every item in `slides` declares a semantic `request` and either a usable `source` or an exact `fallback` location in a PDF, PPTX, or DOCX. The website uses curated catalog sources first. With `policy: "automatic-best-match"`, a Cloudflare Pages Function searches Digital Slide Archive, scores specimen metadata, verifies the tile pyramid, and returns a DZI endpoint. Because this is heuristic retrieval, the reader visibly marks these specimens for verification. The selected lecture file remains an optional failure fallback.
 
 The schema-v1 DZI hostname is intentionally a placeholder. The viewer recognizes it and shows a calm setup state instead of making a failed network request.
 
@@ -83,10 +83,11 @@ Use explicit production and preview origins instead of `*` when the set of consu
 
 1. Choose **Histology & pathology → Web app**.
 2. Import the schema-v2 histology JSON.
-3. If the JSON has unresolved fallbacks, import the original lecture PDF, PPTX, or DOCX.
-4. `histology-slide-resolver.js` checks the verified catalog, then extracts only the declared fallback locations.
-5. `histology-reader.js` initializes OpenSeadragon and provides a slide switcher, navigator, text-to-slide buttons, waypoints, and overlays.
-6. The generated long link contains the resolved lecture and requires no database.
+3. Optionally import the original lecture PDF, PPTX, or DOCX as a failure fallback.
+4. `histology-slide-resolver.js` checks curated entries, then calls `/api/histology-search` for an automatic DSA match.
+5. The Pages Function verifies that the selected DSA item exposes a large-image tile pyramid before returning its DZI URL.
+6. `histology-reader.js` initializes OpenSeadragon and provides a slide switcher, navigator, provenance, text-to-slide buttons, waypoints, and overlays.
+7. The generated long link contains the resolved lecture and requires no application database.
 
 ## Operational constraints
 

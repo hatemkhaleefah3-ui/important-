@@ -124,6 +124,11 @@
     const body = element('div', 'histo-copy');
     const intro = element('div', 'histo-intro');
     intro.append(element('span', '', 'Interactive histology lecture'), element('p', '', data.metadata.description)); body.append(intro);
+    if (data.schema_version === 2 && data.slides.some(slide => slide.resolution === 'automatic-best-match')) {
+      const notice = element('aside', 'histo-match-notice');
+      notice.append(element('strong', '', 'Automated archive matching'), element('span', '', 'These whole-slide specimens were selected algorithmically from their metadata. Verify organ, stain, and diagnosis before relying on them.'));
+      body.append(notice);
+    }
 
     const interactiveButtons = [];
     data.sections.forEach((section, index) => {
@@ -159,8 +164,9 @@
     const error = element('div', 'histo-error'); error.hidden = true;
     const controls = element('div', 'histo-controls'); stage.append(viewer, error, controls);
     const slideBar = element('div', 'histo-slide-bar');
+    const provenance = element('div', 'histo-provenance');
     const overlayBar = element('div', 'histo-overlays');
-    viewerPane.append(viewerHead, stage, slideBar, overlayBar); root.append(content, viewerPane); document.body.append(root);
+    viewerPane.append(viewerHead, stage, slideBar, provenance, overlayBar); root.append(content, viewerPane); document.body.append(root);
 
     mobileOpen.onclick = () => document.body.classList.add('histo-viewer-open');
     close.onclick = () => document.body.classList.remove('histo-viewer-open');
@@ -204,6 +210,16 @@
       pendingWaypoint = waypoint;
       if (currentSlide?.id === slide.id && tiled) { if (waypoint) applyWaypoint(waypoint); else osd.viewport.goHome(); return; }
       currentSlide = slide; tiled = null; error.classList.remove('histo-setup'); error.hidden = true; viewerLabel.textContent = slide.label; status.textContent = 'Loading slide…';
+      provenance.replaceChildren();
+      if (slide.resolution === 'automatic-best-match') {
+        provenance.append(element('strong', '', 'Automatic match · verify specimen'), element('span', '', slide.source?.source_label || 'Digital Slide Archive'));
+        if (slide.provider_url) {
+          const link = element('a', '', 'Source record ↗'); link.href = slide.provider_url; link.target = '_blank'; link.rel = 'noopener noreferrer'; provenance.append(link);
+        }
+      } else if (slide.source?.source_label) {
+        provenance.append(element('strong', '', slide.resolution === 'lecture-image-fallback' ? 'Lecture-file fallback' : 'Slide source'), element('span', '', slide.source.source_label));
+      }
+      provenance.hidden = !provenance.childElementCount;
       if (activeSlideButton) activeSlideButton.removeAttribute('aria-current');
       activeSlideButton = slideBar.querySelector('[data-slide-id="' + slide.id + '"]'); activeSlideButton?.setAttribute('aria-current', 'true');
       const sourceUrl = slide.source?.url || slide.source?.info_url;
@@ -242,7 +258,7 @@
     control('Reset slide view', '⌂', () => osd.viewport.goHome());
     control('Toggle full screen', '⛶', () => document.fullscreenElement ? document.exitFullscreen() : viewerPane.requestFullscreen());
     osd.addHandler('open', () => {
-      tiled = osd.world.getItemAt(0); status.textContent = currentSlide?.resolution === 'lecture-image-fallback' ? 'Lecture image' : 'Slide ready';
+      tiled = osd.world.getItemAt(0); status.textContent = currentSlide?.resolution === 'lecture-image-fallback' ? 'Lecture image' : currentSlide?.resolution === 'automatic-best-match' ? 'Automatic WSI match' : 'Slide ready';
       renderOverlays(currentSlide?.overlays || []);
       if (pendingWaypoint) { const waypoint = pendingWaypoint; pendingWaypoint = null; applyWaypoint(waypoint); }
     });

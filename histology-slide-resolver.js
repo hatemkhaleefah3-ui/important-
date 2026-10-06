@@ -19,6 +19,19 @@
     ) || null;
   }
 
+  async function findAutomaticSlide(request, catalog, onProgress) {
+    const provider = catalog?.providers?.find(entry => entry?.enabled === true && entry.type === 'dsa-search');
+    if (!provider || !request) return null;
+    onProgress('Searching the public whole-slide archive for ' + request.organ + '…');
+    const url = new URL(provider.endpoint, location.origin);
+    for (const key of ['organ', 'stain', 'diagnosis', 'species']) url.searchParams.set(key, request[key] || '');
+    url.searchParams.set('structures', (request.structures || []).join('|'));
+    const response = await fetch(url, { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw Error('Online whole-slide search is unavailable (HTTP ' + response.status + ').');
+    const payload = await response.json();
+    return payload.match || null;
+  }
+
   async function resolveHistologySlides(data, sourceFile, catalog = { slides: [] }, onProgress = () => {}) {
     if (data.schema_version !== 2) return data;
     const result = structuredClone(data);
@@ -33,6 +46,27 @@
         slide.source.license ||= match.license;
         slide.catalog_match = match.id;
         slide.resolution = 'verified-catalog';
+      } else if (catalog?.policy === 'automatic-best-match') {
+        let automatic = null;
+        try {
+          automatic = await findAutomaticSlide(slide.request, catalog, onProgress);
+        } catch (error) {
+          if (!sourceFile || !slide.fallback) throw error;
+          onProgress('Online search failed; using the selected lecture-file fallback for ' + slide.label + '.');
+        }
+        if (automatic) {
+          slide.source = automatic.source;
+          slide.catalog_match = automatic.id;
+          slide.image_width = automatic.image_width;
+          slide.image_height = automatic.image_height;
+          slide.provider_url = automatic.provider_url;
+          slide.match_score = automatic.score;
+          slide.resolution = 'automatic-best-match';
+        } else if (slide.fallback) {
+          unresolved.push(slide);
+        } else {
+          throw Error('No online whole-slide match or lecture-image fallback is available for “' + slide.label + '”.');
+        }
       } else if (slide.fallback) {
         unresolved.push(slide);
       } else {
@@ -68,5 +102,6 @@
   }
 
   window.findCatalogSlide = findCatalogSlide;
+  window.findAutomaticHistologySlide = findAutomaticSlide;
   window.resolveHistologySlides = resolveHistologySlides;
 })();

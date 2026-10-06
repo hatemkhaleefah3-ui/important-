@@ -172,7 +172,8 @@
         "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "label": { "$ref": "#/$defs/text" },
         "description": { "type": "string" }, "alt": { "type": "string" }, "request": { "$ref": "#/$defs/request" },
         "source": { "$ref": "#/$defs/source" }, "fallback": { "$ref": "#/$defs/fallback" },
-        "resolution": { "enum": ["verified-catalog", "lecture-image-fallback"] }, "catalog_match": { "type": "string" },
+        "resolution": { "enum": ["verified-catalog", "automatic-best-match", "lecture-image-fallback"] }, "catalog_match": { "type": "string" },
+        "provider_url": { "type": "string", "pattern": "^https://" }, "match_score": { "type": "number", "minimum": 0 },
         "image_width": { "type": "number", "exclusiveMinimum": 0 }, "image_height": { "type": "number", "exclusiveMinimum": 0 },
         "overlays": { "type": "array", "items": { "$ref": "#/$defs/overlay" } }
       },

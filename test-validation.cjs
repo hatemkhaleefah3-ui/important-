@@ -36,7 +36,7 @@ const selectionSource=fs.readFileSync('selection-translate.js','utf8');new vm.Sc
 const imageExtractorSource=fs.readFileSync('image-extractor.js','utf8');new vm.Script(imageExtractorSource);const examSource=fs.readFileSync('exam.js','utf8');new vm.Script(examSource);
 const resolverSource=fs.readFileSync('histology-slide-resolver.js','utf8');vm.runInContext(resolverSource,context);
 const histologySource=fs.readFileSync('histology-reader.js','utf8'),appSource=fs.readFileSync('app.js','utf8');vm.runInContext(histologySource,context);new vm.Script(appSource);
-for(const asset of ['lecture.css?v=4.5.0','histology-reader.css?v=2.0.0','step-process.js?v=4.5.0','exam.js?v=4.5.0','lecture.js?v=4.5.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','histology-slide-resolver.js?v=2.0.0','histology-reader.js?v=2.0.0','app.js?v=2.0.0','cdn.jsdelivr.net/npm/jszip@3.10.1','cdn.jsdelivr.net/npm/openseadragon@6.1.1'])assert(html.includes(asset));
+for(const asset of ['lecture.css?v=4.5.0','histology-reader.css?v=2.1.0','step-process.js?v=4.5.0','exam.js?v=4.5.0','lecture.js?v=4.5.0','selection-translate.js?v=4.5.0','image-extractor.js?v=4.5.0','histology-slide-resolver.js?v=2.1.0','histology-reader.js?v=2.1.0','app.js?v=2.1.0','cdn.jsdelivr.net/npm/jszip@3.10.1','cdn.jsdelivr.net/npm/openseadragon@6.1.1'])assert(html.includes(asset));
 assert(html.includes('lectures/carbohydrate-biochemistry.json?v=4.5.0'));
 assert(html.includes('lectures/heart-drugs-pharmacology.json?v=4.5.0'));
 assert(html.includes('lectures/lymph-node-histology.json?v=4.5.0'));
@@ -69,8 +69,18 @@ const verifiedCatalog={slides:[{id:'normal-lymph-he',verified:true,organ:'lymph 
 assert.equal(context.window.findCatalogSlide({organ:'LYMPH NODE',stain:'h&e',diagnosis:'normal',species:'human'},verifiedCatalog).id,'normal-lymph-he');
 assert.equal(context.window.findCatalogSlide({organ:'lymph node',stain:'H&E',diagnosis:'lymphoma',species:'human'},verifiedCatalog),null);
 assert.equal(context.window.findCatalogSlide({organ:'lymph node',stain:'H&E',diagnosis:'normal',species:'human'},{slides:[{...verifiedCatalog.slides[0],verified:false}]}),null);
-assert.deepEqual(JSON.parse(fs.readFileSync('histology-template/public/data/slide-catalog.json')),{schema_version:1,slides:[]});
+const slideCatalog=JSON.parse(fs.readFileSync('histology-template/public/data/slide-catalog.json'));
+assert.equal(slideCatalog.schema_version,2);
+assert.equal(slideCatalog.policy,'automatic-best-match');
+assert.equal(slideCatalog.providers[0].endpoint,'/api/histology-search');
+assert.deepEqual(slideCatalog.slides,[]);
 JSON.parse(fs.readFileSync('histology-template/histology-lecture.schema.json'));
+const searchFunction=fs.readFileSync('functions/api/histology-search.js','utf8');
+assert(searchFunction.includes("'/resource/search'"));
+assert(searchFunction.includes("'/tiles/dzi.dzi'"));
+assert(searchFunction.includes('isTileable'));
+assert(resolverSource.includes("slide.resolution = 'automatic-best-match'"));
+assert(histologySource.includes('Automated archive matching'));
 assert(appSource.includes("option('histology'"));assert(appSource.includes("option('other'"));assert(appSource.includes("option('web'"));
 assert(selectionSource.includes("event.detail===2"));
 assert(selectionSource.includes("event.detail>=3"));
