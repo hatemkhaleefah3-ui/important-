@@ -433,6 +433,101 @@
           "description": "Explain the event occurring at the target location."
         }
       ]
+    },
+    {
+      "type": "section",
+      "title": "Structural layers and body journeys"
+    },
+    {
+      "type": "structure-layers",
+      "title": "Structure from superficial to deep",
+      "structure": "Name the organ, wall, region, or anatomical structure",
+      "direction": "superficial-to-deep",
+      "description": "Use this block for ordered histological or anatomical layers. Keep one spatial axis per block.",
+      "layers": [
+        {
+          "id": "surface-layer",
+          "title": "Surface layer",
+          "depthLabel": "Superficial",
+          "tone": "epithelial",
+          "relativeThickness": 0.75,
+          "tissue": "Tissue classification",
+          "description": "Describe the surface-facing layer.",
+          "landmarks": ["Landmark A", "Landmark B"],
+          "clinicalNote": "Optional diagnostic or clinical distinction.",
+          "boundaryAfter": "Name the boundary to the next layer"
+        },
+        {
+          "id": "middle-layer",
+          "title": "Middle layer",
+          "depthLabel": "Intermediate",
+          "tone": "connective",
+          "relativeThickness": 1.4,
+          "tissue": "Tissue classification",
+          "description": "Describe the middle layer and its function.",
+          "landmarks": ["Landmark C"],
+          "boundaryAfter": "Name the next boundary"
+        },
+        {
+          "id": "deep-layer",
+          "title": "Deep layer",
+          "depthLabel": "Deep",
+          "tone": "muscle",
+          "relativeThickness": 1.8,
+          "tissue": "Tissue classification",
+          "description": "Describe the deepest layer represented in this block.",
+          "landmarks": ["Landmark D"]
+        }
+      ]
+    },
+    {
+      "type": "substance-journey",
+      "title": "Journey of a substance through the body",
+      "substance": "Name the physiological substance or drug",
+      "route": "Entry → distribution → action → elimination",
+      "description": "Use one stage per meaningful compartment or transformation. Availability percentages are optional and must be evidence-based when used in real teaching content.",
+      "stages": [
+        {
+          "id": "journey-entry",
+          "title": "Entry",
+          "location": "Entry compartment",
+          "phase": "entry",
+          "form": "Starting form",
+          "duration": "Starting time",
+          "description": "Explain how the substance enters this system.",
+          "transition": "Name the transfer to the next compartment"
+        },
+        {
+          "id": "journey-distribution",
+          "title": "Distribution",
+          "location": "Transport compartment",
+          "phase": "distribution",
+          "form": "Transported form",
+          "duration": "Relevant timing",
+          "description": "Explain transport, binding, and compartment exchange.",
+          "details": [{"label": "Determinant", "value": "Add a controlling physiological or pharmacokinetic factor"}],
+          "transition": "Name the delivery mechanism"
+        },
+        {
+          "id": "journey-action",
+          "title": "Action or physiological use",
+          "location": "Target compartment",
+          "phase": "action",
+          "form": "Active or usable form",
+          "duration": "Effect timing",
+          "description": "Explain the target event and response.",
+          "transition": "Name redistribution or clearance"
+        },
+        {
+          "id": "journey-elimination",
+          "title": "Elimination or recycling",
+          "location": "Exit or recovery compartment",
+          "phase": "elimination",
+          "form": "Excreted, stored, or recycled form",
+          "duration": "Terminal timing",
+          "description": "Explain how the substance leaves, is stored, or returns to the cycle."
+        }
+      ]
     }
   ]
 }

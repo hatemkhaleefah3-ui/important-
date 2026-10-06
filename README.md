@@ -19,6 +19,8 @@ Required fields: `title` and a non-empty `blocks` array. Set `schemaVersion` to 
 | `callout` | `text`, optional `label` | Highlighted takeaway |
 | `step-process` | `pathway`, `steps`, optional `resultSets`, `domain`, `title`, `description` | One reaction/pathway with expandable details and selectable results |
 | `tracked-step-process` | Same process fields plus `track` and a `trackLabel` on every step | Same interactive process with a time or location rail |
+| `structure-layers` | `structure`, ordered `layers`, optional `description` | Interactive superficial-to-deep anatomy/histology stack with layer isolation and boundary detail |
+| `substance-journey` | `substance`, ordered `stages`, optional `route`, `description` | Interactive physiology/pharmacology tracer across body compartments and transformations |
 | `image` | `processName`, `alt`, `source`; optional `title`, `caption` | Shows a designed placeholder while authoring and embeds the extracted source image during import |
 | `flow` | `steps` (text or `{title, description}`), optional `title` | Keyboard-accessible interactive steps |
 | `table` | `columns` (text array), `rows` (equal-width text arrays), optional `title` | Responsive reference table |
@@ -168,9 +170,49 @@ Set `track` to `{ "kind": "time", "title": "Time" }` or `{ "kind": "location", "
 
 Time spacing is sequential, not proportional to elapsed time. Locations are ordered labels, not a geographic scale. All labels render as plain text. The template and process examples include both modes with illustrative values to replace with lecture-specific content.
 
+## Structural layers: superficial to deep
+
+Use `structure-layers` for one anatomical or histological structure whose layers have a strict superficial-to-deep order. It is a spatial model, not a biochemical pathway. The reader presents the layers as a proportional tissue stack, lets the learner move shallower or deeper, isolates the active layer, and can separate the complete stack to make boundaries easier to compare.
+
+Required fields are `title`, `structure`, and 2–16 unique `layers`. Every layer needs `id` and `title`. Optional layer fields are `depthLabel`, `tissue`, `description`, `landmarks`, `clinicalNote`, `boundaryAfter`, `relativeThickness` from `0.25` to `8`, and a controlled visual `tone`: `surface`, `epithelial`, `connective`, `muscle`, `vascular`, `neural`, `cavity`, or `other`. Relative thickness controls visual emphasis only unless the source data explicitly establishes scale.
+
+```json
+{
+  "type": "structure-layers",
+  "title": "Wall from surface to depth",
+  "structure": "Named organ or anatomical region",
+  "direction": "superficial-to-deep",
+  "layers": [
+    {"id": "surface", "title": "Surface layer", "tone": "epithelial", "relativeThickness": 0.7},
+    {"id": "support", "title": "Supporting layer", "tone": "connective", "relativeThickness": 1.2},
+    {"id": "deep", "title": "Deep layer", "tone": "muscle", "relativeThickness": 2}
+  ]
+}
+```
+
+## Substance journey through the body
+
+Use `substance-journey` for one physiological substance or drug moving through compartments. It has a separate route-map design, selectable stage nodes, previous/next controls, a user-started tracer animation, a location/form/timing inspector, optional transfer labels, and an optional availability meter. It does not reuse the reaction step-card renderer.
+
+Required fields are `title`, `substance`, and 2–20 unique `stages`. Every stage needs `id`, `title`, and `location`. Optional fields are `description`, `form`, `duration`, `transition`, `details`, `fraction` from `0` to `100`, and `phase`: `entry`, `absorption`, `distribution`, `metabolism`, `action`, `storage`, `elimination`, `regulation`, or `other`. `fraction` is descriptive input, not a value calculated by the website; omit it when quantitative evidence is unavailable.
+
+```json
+{
+  "type": "substance-journey",
+  "title": "Journey of compound X",
+  "substance": "Compound X",
+  "route": "Entry → circulation → target → elimination",
+  "stages": [
+    {"id": "entry", "title": "Entry", "location": "Gut", "phase": "entry", "transition": "Absorption"},
+    {"id": "blood", "title": "Distribution", "location": "Plasma", "phase": "distribution", "transition": "Tissue delivery"},
+    {"id": "target", "title": "Target response", "location": "Target tissue", "phase": "action"}
+  ]
+}
+```
+
 ## Populated medical lectures
 
 - `lectures/carbohydrate-biochemistry.json`: sugar structure, absorption, glycolysis, separate pyruvate reactions, separate glycogenesis/glycogenolysis pathways, PPP results, and other monosaccharides.
 - `lectures/heart-drugs-pharmacology.json`: HFrEF classes, separate sacubitril/valsartan mechanisms, beta-blockade results, angina, separate digoxin mechanisms, thrombosis, and major safety interactions.
 
-All three use version 4 and require the redesigned reader. Each includes a visible reference block and machine-readable source metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.
+Both use version 4 and require the redesigned reader. Each includes a visible reference block and machine-readable source metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.

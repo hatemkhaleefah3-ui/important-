@@ -262,6 +262,144 @@
           "description": "Explain the event occurring at the target location."
         }
       ]
+    },
+    {
+      "type": "section",
+      "title": "Structural depth"
+    },
+    {
+      "type": "structure-layers",
+      "title": "Skin from surface to subcutis",
+      "structure": "Skin and superficial fascia",
+      "direction": "superficial-to-deep",
+      "description": "Select a slab to peel through the tissue in anatomical order. Separate the stack when you need to compare boundaries and relative thickness.",
+      "layers": [
+        {
+          "id": "epidermis",
+          "title": "Epidermis",
+          "depthLabel": "Surface",
+          "tone": "epithelial",
+          "relativeThickness": 0.55,
+          "tissue": "Keratinized stratified squamous epithelium",
+          "description": "Avascular epithelial barrier renewed by keratinocytes moving toward the surface.",
+          "landmarks": ["Stratum corneum", "Basal layer", "Rete ridges"],
+          "clinicalNote": "The thickness and named strata vary by body site.",
+          "boundaryAfter": "Dermal–epidermal junction"
+        },
+        {
+          "id": "papillary-dermis",
+          "title": "Papillary dermis",
+          "depthLabel": "Superficial dermis",
+          "tone": "connective",
+          "relativeThickness": 0.8,
+          "tissue": "Loose connective tissue",
+          "description": "A superficial connective-tissue zone that interdigitates with the epidermis.",
+          "landmarks": ["Dermal papillae", "Capillary loops", "Fine collagen fibers"],
+          "boundaryAfter": "Transition to dense irregular connective tissue"
+        },
+        {
+          "id": "reticular-dermis",
+          "title": "Reticular dermis",
+          "depthLabel": "Deep dermis",
+          "tone": "connective",
+          "relativeThickness": 2.4,
+          "tissue": "Dense irregular connective tissue",
+          "description": "The thicker load-bearing dermal layer containing coarse collagen bundles and skin appendages.",
+          "landmarks": ["Hair follicles", "Sweat glands", "Neurovascular bundles"],
+          "clinicalNote": "Incisions and burns are described partly by how deeply they cross this layer.",
+          "boundaryAfter": "Dermal–subcutaneous interface"
+        },
+        {
+          "id": "subcutis",
+          "title": "Subcutaneous tissue",
+          "depthLabel": "Deep",
+          "tone": "other",
+          "relativeThickness": 1.8,
+          "tissue": "Adipose-rich loose connective tissue",
+          "description": "A mobile deep compartment connecting skin to the underlying fascia.",
+          "landmarks": ["Adipose lobules", "Fibrous septa", "Larger vessels and nerves"]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Substance journey"
+    },
+    {
+      "type": "substance-journey",
+      "title": "Trace an oral compound through the body",
+      "substance": "Example compound X",
+      "route": "Oral → target tissue → renal elimination",
+      "description": "The tracer separates location, physical or chemical form, timing, transfer, and conceptual availability. Percentages are illustrative authoring data, not measured pharmacokinetics.",
+      "stages": [
+        {
+          "id": "dose",
+          "title": "Dose enters the gastrointestinal tract",
+          "location": "Stomach",
+          "phase": "entry",
+          "form": "Dosage form",
+          "duration": "Initial",
+          "fraction": 100,
+          "description": "Define disintegration, dissolution, and the factors that make the compound available for absorption.",
+          "transition": "Gastric emptying"
+        },
+        {
+          "id": "absorption",
+          "title": "Compound crosses the intestinal barrier",
+          "location": "Small intestine",
+          "phase": "absorption",
+          "form": "Dissolved compound",
+          "duration": "Early",
+          "fraction": 82,
+          "description": "State the dominant transport route and any luminal or epithelial loss.",
+          "details": [{"label": "Interface", "value": "Apical membrane → enterocyte → basolateral membrane"}],
+          "transition": "Portal venous transport"
+        },
+        {
+          "id": "first-pass",
+          "title": "Presystemic handling changes exposure",
+          "location": "Liver",
+          "phase": "metabolism",
+          "form": "Parent compound + metabolites",
+          "duration": "Before systemic delivery",
+          "fraction": 64,
+          "description": "Represent extraction, biotransformation, activation, or inactivation without implying a fixed value.",
+          "transition": "Hepatic venous outflow"
+        },
+        {
+          "id": "distribution",
+          "title": "Circulation distributes the compound",
+          "location": "Systemic plasma",
+          "phase": "distribution",
+          "form": "Free and protein-bound fractions",
+          "duration": "Distribution phase",
+          "fraction": 58,
+          "description": "Connect perfusion, binding, and membrane permeability to tissue exposure.",
+          "transition": "Tissue delivery"
+        },
+        {
+          "id": "effect",
+          "title": "Target engagement produces a response",
+          "location": "Target tissue",
+          "phase": "action",
+          "form": "Biophase concentration",
+          "duration": "Effect phase",
+          "fraction": 36,
+          "description": "Distinguish target-site exposure from the downstream physiological effect.",
+          "details": [{"label": "Teaching question", "value": "Is the response limited by delivery, binding, signaling, or adaptation?"}],
+          "transition": "Redistribution and clearance"
+        },
+        {
+          "id": "elimination",
+          "title": "Parent compound or metabolites leave the body",
+          "location": "Kidney and urine",
+          "phase": "elimination",
+          "form": "Filtered or secreted material",
+          "duration": "Terminal phase",
+          "fraction": 8,
+          "description": "Describe filtration, secretion, reabsorption, and the meaning of residual body burden."
+        }
+      ]
     }
   ]
 }
