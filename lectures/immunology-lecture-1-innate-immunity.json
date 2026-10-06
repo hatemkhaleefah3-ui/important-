@@ -224,7 +224,9 @@
       ],
       "sourcePages": [
         2
-      ]
+      ],
+      "purpose": "quick-comparison",
+      "description": "Contrast onset, specificity, memory, cells, components, and repeated exposure."
     },
     {
       "type": "image",
@@ -285,7 +287,9 @@
       ],
       "sourcePages": [
         3
-      ]
+      ],
+      "purpose": "quick-comparison",
+      "description": "Compare immune protection and infection risk across the major life stages."
     },
     {
       "type": "table",
@@ -325,7 +329,9 @@
       "sourcePages": [
         3,
         4
-      ]
+      ],
+      "purpose": "structured-variables",
+      "description": "Track each modifying factor, its effect on defense, and its important associations."
     },
     {
       "type": "note",
@@ -524,7 +530,9 @@
       "sourcePages": [
         6,
         7
-      ]
+      ],
+      "purpose": "simplify-complexity",
+      "description": "Connect each soluble innate-defense factor to its principal action or setting."
     },
     {
       "type": "table",
@@ -553,7 +561,9 @@
       ],
       "sourcePages": [
         7
-      ]
+      ],
+      "purpose": "simplify-complexity",
+      "description": "Reduce colonization resistance to its core mechanisms and consequences."
     },
     {
       "type": "section",
@@ -658,7 +668,9 @@
       ],
       "sourcePages": [
         8
-      ]
+      ],
+      "purpose": "quick-comparison",
+      "description": "Distinguish microbial survival strategies from disorders that reveal the importance of phagocytes."
     },
     {
       "type": "note",
@@ -726,7 +738,9 @@
       ],
       "sourcePages": [
         9
-      ]
+      ],
+      "purpose": "rapid-review",
+      "description": "Review pyrogen categories and the beneficial effects of fever."
     },
     {
       "type": "table",
@@ -759,7 +773,9 @@
       ],
       "sourcePages": [
         9
-      ]
+      ],
+      "purpose": "rapid-review",
+      "description": "Link the major acute-phase proteins to their contributions during infection and tissue injury."
     },
     {
       "type": "section",
@@ -865,7 +881,9 @@
       ],
       "sourcePages": [
         12
-      ]
+      ],
+      "purpose": "rapid-review",
+      "description": "Use the defense levels as a final visual memory sheet for innate immunity."
     },
     {
       "type": "references",
