@@ -227,4 +227,4 @@ Use a `list` block for hierarchical content. Supported visual styles are `bullet
 
 ### Designed tables
 
-Every `table` block adapts automatically to its column count. Two-column tables use a paired fact layout, three-column tables use a comparison matrix, and tables with four or more columns use a compact data-board layout. On small screens every row becomes a labelled card. Optional `purpose` values are `quick-comparison`, `simplify-complexity`, `rapid-review`, and `structured-variables`; `description` adds a short instructional line above the table.
+Every `table` block uses one consistent columns-and-rows design regardless of column count. The desktop and tablet presentation remains a conventional table inside a responsive container. On small screens, each row becomes one labelled card so no column is clipped or compressed. Optional `purpose` values are `quick-comparison`, `simplify-complexity`, `rapid-review`, and `structured-variables`; they provide a semantic label above the table without changing the table layout. `description` adds a short instructional line.
