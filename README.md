@@ -2,15 +2,15 @@
 
 A static medical-learning generator using PDF.js, JSZip, and OpenSeadragon from jsDelivr. Serve this folder with any static HTTP server, open `index.html`, and use the three-step **Create something new** wizard. The wizard first selects Histology or Other, then the output format, then presents only the applicable import controls.
 
-For **Histology → Web app**, import the WSI histology JSON. The generated `#histology=` link opens the split-screen lecture and deep-zoom slide viewer. For **Other → Web app**, import the standard lecture JSON and optionally its PDF, PPTX, or DOCX source when image extraction is required. The generated `#lecture=` link opens the Study and Exam reader. Both link types embed the complete validated JSON in the URL fragment and require no application database. Anyone with a link can read its content.
+For **Histology → Web app**, import the histology JSON and, when it declares lecture-image fallbacks, the original PDF, PPTX, or DOCX. The builder resolves only exact, verified entries from `histology-template/public/data/slide-catalog.json`; unmatched requests use the image location declared in the JSON. The generated `#histology=` link opens the split-screen, multi-slide lecture viewer. For **Other → Web app**, import the standard lecture JSON and optionally its source file when image extraction is required. The generated `#lecture=` link opens the Study and Exam reader. Both link types embed the complete validated JSON in the URL fragment and require no application database. Anyone with a link can read its content.
 
 `medical-lecture.template.json` is an authoring starter. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
 
 ## Histology and pathology WSI template
 
-The root application includes `histology-reader.js` and `histology-reader.css`; the authoring contract, liver example, deployment source, and R2 instructions are in `histology-template/`. Histology waypoints and SVG overlays use source-image pixel coordinates. `zoom_level: 1` means native slide resolution. The browser converts image pixels and image zoom through the loaded OpenSeadragon `TiledImage` before panning.
+The root application includes `histology-slide-resolver.js`, `histology-reader.js`, and `histology-reader.css`; the authoring contract, examples, deployment source, and R2 instructions are in `histology-template/`. Schema v2 supports several named specimens in one lecture. A source can be a DZI URL, an IIIF `info.json` URL, or an image extracted from the uploaded lecture file. Histology waypoints and SVG overlays use source-image pixel coordinates. `zoom_level: 1` means native slide resolution. The browser converts image pixels and image zoom through the loaded OpenSeadragon `TiledImage` before panning.
 
-The example DZI URL is a placeholder, and the reader presents it as an unconnected setup state rather than a broken slide. Production JSON must reference a public or authorized R2 custom-domain `.dzi` URL whose sibling `_files` directory contains every tile. Both the descriptor and tiles must return CORS headers permitting the website origin.
+The legacy liver example's DZI URL is a placeholder, and the reader presents it as an unconnected setup state rather than a broken slide. The populated lymph-node v2 example requests five views and falls back to pages 2, 7, 5, 8, and 11 of the original lecture PDF. A production DZI or IIIF source must permit the website origin through CORS. Do not add an external catalog entry unless its identity, license, stable URL, and tissue metadata have been verified.
 
 ## JSON version 4
 

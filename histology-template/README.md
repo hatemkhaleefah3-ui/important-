@@ -1,17 +1,21 @@
 # Histology & Pathology WSI lecture template
 
-Static Vite application for Cloudflare Pages. Lecture text and slide navigation are JSON-driven; Deep Zoom Image (DZI) descriptors and tiles are served from a public Cloudflare R2 custom domain.
+Static histology authoring package for Cloudflare Pages. The root website supports legacy single-DZI lectures and semantic multi-slide lectures backed by verified DZI/IIIF sources or images extracted from the original lecture file.
 
 ## Contract
 
 - `histology-lecture.schema.json` is the normative JSON Schema (draft 2020-12).
-- `public/data/liver-hepatic-lobule.json` is a complete authoring example.
+- `public/data/lymph-node-histology.json` is the schema-v2 multi-slide example.
+- `public/data/liver-hepatic-lobule.json` is the backward-compatible schema-v1 DZI example.
+- `public/data/slide-catalog.json` is the verified external-slide allowlist. It is intentionally empty until a stable, licensed provider is added.
 - Waypoint `x` and `y` are source-image pixels.
 - Waypoint `zoom_level` is OpenSeadragon image zoom: `1` means native image resolution, `0.5` means half resolution.
 - Rectangle and polygon overlay coordinates are also source-image pixels.
 - IDs must be unique across sections and waypoints; overlay group IDs must be unique within `overlays`.
 
-The example DZI hostname is intentionally a placeholder. The viewer now recognizes it and shows a calm “Connect the whole-slide image” setup state instead of making a failed network request. Replace `viewer.dzi_url`, `image_width`, and `image_height` with the uploaded slide's actual values before deployment.
+In schema v2, every item in `slides` declares a semantic `request` and either a usable `source` or an exact `fallback` location in a PDF, PPTX, or DOCX. The website uses a catalog source only when organ, stain, diagnosis, and species match and the catalog entry is marked `verified`. Otherwise it extracts the declared fallback from the user-selected lecture file. It never chooses a merely similar public image.
+
+The schema-v1 DZI hostname is intentionally a placeholder. The viewer recognizes it and shows a calm setup state instead of making a failed network request.
 
 ## Local development
 
@@ -75,17 +79,18 @@ npx wrangler r2 bucket cors list YOUR_BUCKET
 
 Use explicit production and preview origins instead of `*` when the set of consumers is controlled. Purge the R2 custom-domain cache after changing CORS on a bucket already serving traffic.
 
-## Interaction flow
+## Integrated website flow
 
-1. `loadLecture()` fetches and structurally validates the JSON.
-2. `WsiViewer` initializes OpenSeadragon with the DZI URL and navigator.
-3. A waypoint click calls `TiledImage.imageToViewportCoordinates(x, y)` and `TiledImage.imageToViewportZoom(zoom_level)`.
-4. The viewport pans and zooms to the converted point.
-5. Overlay groups are rendered as full-slide SVG layers and toggled without rebuilding the viewer.
+1. Choose **Histology & pathology → Web app**.
+2. Import the schema-v2 histology JSON.
+3. If the JSON has unresolved fallbacks, import the original lecture PDF, PPTX, or DOCX.
+4. `histology-slide-resolver.js` checks the verified catalog, then extracts only the declared fallback locations.
+5. `histology-reader.js` initializes OpenSeadragon and provides a slide switcher, navigator, text-to-slide buttons, waypoints, and overlays.
+6. The generated long link contains the resolved lecture and requires no database.
 
 ## Operational constraints
 
 - R2 must return CORS headers for the Pages origin on both the `.dzi` descriptor and every tile.
 - The JSON dimensions must equal the DZI source dimensions; mismatch shifts waypoints and overlays.
-- This template assumes one WSI per lecture. Multi-slide cases require a slide ID on every waypoint/overlay and a tile-source switch before navigation.
+- Schema v2 supports multiple slides; a waypoint must name its `slide_id`.
 - The client has no PHI controls or authorization boundary. Do not publish identifiable clinical material from a public bucket.
