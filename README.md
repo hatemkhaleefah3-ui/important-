@@ -215,4 +215,8 @@ Required fields are `title`, `substance`, and 2–20 unique `stages`. Every stag
 - `lectures/carbohydrate-biochemistry.json`: sugar structure, absorption, glycolysis, separate pyruvate reactions, separate glycogenesis/glycogenolysis pathways, PPP results, and other monosaccharides.
 - `lectures/heart-drugs-pharmacology.json`: HFrEF classes, separate sacubitril/valsartan mechanisms, beta-blockade results, angina, separate digoxin mechanisms, thrombosis, and major safety interactions.
 
-Both use version 4 and require the redesigned reader. Each includes a visible reference block and machine-readable source metadata. These metadata fields do not change rendering. Guideline statements name their source year; the files are teaching resources rather than dosing protocols or quantitative simulations.
+- `lectures/immunology-lecture-1-innate-immunity.json`: immunity, immune competence, barrier defense, phagocytosis, inflammation, fever, and acute-phase responses.
+- `lectures/immunology-lecture-2-cells-and-organs.json`: hematopoietic lineages, immune-cell functions, primary and secondary lymphoid organs, and mucosal lymphoid tissue.
+- `lectures/immunology-lecture-3-antigens.json`: epitopes, haptens, antigen classes, immunogenicity, adjuvants, and superantigens.
+
+All populated lecture JSON files use schema version 4 and require the redesigned reader.

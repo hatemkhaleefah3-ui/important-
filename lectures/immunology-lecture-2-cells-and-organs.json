@@ -1,0 +1,836 @@
+{
+  "schemaVersion": 4,
+  "id": "immunology-2-cells-organs",
+  "title": "Cells and Organs of the Immune System",
+  "subtitle": "Hematopoietic lineages, antigen-presenting cells, and lymphoid organization.",
+  "course": "Microbiology · Immunology",
+  "author": "Tikrit University · College of Medicine · Microbiology Department",
+  "level": "Second class",
+  "durationMinutes": 50,
+  "sourceDocument": {
+    "fileName": "Immunology_Lecture_2_Cells_and_Organs .pdf",
+    "pageCount": 8,
+    "imagePlaceholderCount": 4
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Immune cells: origin and functional grouping",
+      "id": "origin"
+    },
+    {
+      "type": "paragraph",
+      "text": "Immune cells arise from pluripotent hematopoietic stem cells in bone marrow. Growth factors and cytokines direct differentiation into lymphoid and myeloid lineages. Cell size, nuclear shape, cytoplasmic granules, surface markers, tissue distribution, and immune function distinguish the mature populations.",
+      "variant": "lead",
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "type": "objectives",
+      "title": "Learning objectives",
+      "items": [
+        "Trace lymphoid and myeloid development",
+        "Compare granulocytes, monocytes, macrophages, and dendritic cells",
+        "Locate lymphocyte maturation in primary lymphoid organs",
+        "Relate lymph-node and splenic compartments to immune function",
+        "Distinguish MALT, GALT, and BALT"
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Institutional heading",
+      "title": "Tikrit University heading",
+      "alt": "Tikrit University heading from the first page.",
+      "caption": "Tikrit University, College of Medicine, Microbiology Department.",
+      "sourceLabel": "PDF page 1 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.35725490096347784,
+          0.31454542911413946,
+          0.2858823639115477,
+          0.025151512839577415
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "image",
+      "processName": "Institutional emblem",
+      "title": "Tikrit University emblem",
+      "alt": "Tikrit University emblem.",
+      "caption": "Institutional emblem.",
+      "sourceLabel": "PDF page 1 · embedded image 2",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.3737745098039216,
+          0.06363636556297841,
+          0.2512254901960784,
+          0.10303030110368824
+        ]
+      },
+      "sourceImageIndex": 2
+    },
+    {
+      "type": "image",
+      "processName": "Immune cells and organs",
+      "title": "Cells and organs of the immune system",
+      "alt": "Illustration associated with immune cells and lymphoid organs.",
+      "caption": "Cells generated from hematopoietic stem cells populate primary and secondary lymphoid organs.",
+      "sourceLabel": "PDF page 1 · embedded image 3",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.2267156862745098,
+          0.3602146187213936,
+          0.5465686274509803,
+          0.17746210579920296
+        ]
+      },
+      "sourceImageIndex": 3
+    },
+    {
+      "type": "table",
+      "title": "Two major hematopoietic lineages",
+      "columns": [
+        "Lineage",
+        "Major cells",
+        "Core roles"
+      ],
+      "rows": [
+        [
+          "Lymphoid",
+          "B lymphocytes, T lymphocytes, and NK cells",
+          "Adaptive humoral and cellular defense; innate cytotoxicity"
+        ],
+        [
+          "Myeloid",
+          "Neutrophils, eosinophils, basophils, mast cells, monocytes, macrophages, and dendritic cells",
+          "Phagocytosis, inflammation, allergy, antiparasitic defense, and antigen presentation"
+        ]
+      ],
+      "sourcePages": [
+        1
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Hematopoietic differentiation",
+      "title": "Immune-cell lineage map",
+      "alt": "Diagram of hematopoietic differentiation into lymphoid and myeloid immune cells.",
+      "caption": "Hematopoietic stem cells give rise to lymphoid and myeloid lineages.",
+      "sourceLabel": "PDF page 5 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 5,
+        "crop": [
+          0.1556372549019608,
+          0.06553029532384391,
+          0.6891339869281046,
+          0.30338383684254655
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "table",
+      "title": "Lymphoid cells",
+      "columns": [
+        "Cell",
+        "Recognition or differentiation",
+        "Principal function"
+      ],
+      "rows": [
+        [
+          "B lymphocyte",
+          "Recognizes native antigen through surface immunoglobulin; differentiates into plasma and memory cells",
+          "Antibody production and humoral memory"
+        ],
+        [
+          "CD4 T lymphocyte",
+          "Recognizes peptide presented by MHC class II",
+          "Coordinates immunity through helper functions"
+        ],
+        [
+          "CD8 T lymphocyte",
+          "Recognizes peptide presented by MHC class I",
+          "Kills infected or abnormal cells"
+        ],
+        [
+          "Memory lymphocyte",
+          "Persists after antigen exposure",
+          "Produces a faster and stronger secondary response"
+        ],
+        [
+          "NK cell",
+          "Recognizes cellular abnormality without antigen-specific receptors",
+          "Early cytotoxic defense"
+        ]
+      ],
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "flow",
+      "title": "B-cell response",
+      "steps": [
+        {
+          "title": "Native antigen recognition",
+          "description": "Surface immunoglobulin binds intact antigen."
+        },
+        {
+          "title": "Activation",
+          "description": "Appropriate antigen and helper signals stimulate the B cell."
+        },
+        {
+          "title": "Clonal expansion",
+          "description": "Antigen-specific cells proliferate."
+        },
+        {
+          "title": "Plasma-cell differentiation",
+          "description": "Effector cells secrete antibody."
+        },
+        {
+          "title": "Memory formation",
+          "description": "Long-lived cells support a rapid secondary response."
+        }
+      ],
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Granulocytes and mast cells",
+      "columns": [
+        "Cell",
+        "Morphology or location",
+        "Major function"
+      ],
+      "rows": [
+        [
+          "Neutrophil",
+          "Multilobed nucleus; abundant circulating granulocyte",
+          "Rapid phagocytosis and killing in acute inflammation"
+        ],
+        [
+          "Eosinophil",
+          "Bilobed nucleus and eosinophilic granules",
+          "Defense against parasites and participation in allergy"
+        ],
+        [
+          "Basophil",
+          "Circulating granulocyte with mediator-rich granules",
+          "Immediate hypersensitivity and inflammation"
+        ],
+        [
+          "Mast cell",
+          "Tissue-resident cell with mediator-rich granules",
+          "Immediate hypersensitivity, vascular change, and inflammatory recruitment"
+        ]
+      ],
+      "sourcePages": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Mononuclear phagocytes and antigen-presenting cells",
+      "id": "phagocytes"
+    },
+    {
+      "type": "table",
+      "title": "Monocytes, macrophages, and dendritic cells",
+      "columns": [
+        "Cell",
+        "Defining features",
+        "Functions"
+      ],
+      "rows": [
+        [
+          "Monocyte",
+          "12–20 µm; horseshoe- or kidney-shaped nucleus; cytoplasmic granules and lysosomes; nondividing in blood",
+          "Migrates into tissue and differentiates into macrophages"
+        ],
+        [
+          "Macrophage",
+          "Free or fixed tissue phagocyte within the mononuclear phagocyte system",
+          "Phagocytosis, microbial killing, debris removal, cytokine release, tissue repair, and MHC II antigen presentation"
+        ],
+        [
+          "Dendritic cell",
+          "Highly effective antigen-presenting cell; includes epidermal Langerhans cells",
+          "Captures antigen, activates CD4 and CD8 T cells, and produces IL-12 that promotes TH1 responses"
+        ]
+      ],
+      "sourcePages": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "flow",
+      "title": "Monocyte-to-macrophage transition",
+      "steps": [
+        {
+          "title": "Circulating monocyte",
+          "description": "A nondividing blood cell carries lysosomes and cytoplasmic granules."
+        },
+        {
+          "title": "Tissue migration",
+          "description": "The monocyte leaves the circulation."
+        },
+        {
+          "title": "Differentiation",
+          "description": "Tissue signals generate a macrophage."
+        },
+        {
+          "title": "Local defense",
+          "description": "The macrophage phagocytoses, presents antigen, releases cytokines, and supports repair."
+        }
+      ],
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Specialized tissue phagocytes",
+      "columns": [
+        "Cell",
+        "Location",
+        "Functional emphasis"
+      ],
+      "rows": [
+        [
+          "Kupffer cell",
+          "Liver sinusoids",
+          "Removes blood-borne material, including gut-derived antigen"
+        ],
+        [
+          "Mesangial cell",
+          "Renal glomerulus",
+          "Local phagocytic and supportive function"
+        ],
+        [
+          "Microglial cell",
+          "Central nervous system",
+          "Resident brain phagocyte"
+        ],
+        [
+          "Synovial type A cell",
+          "Synovial membrane",
+          "Phagocytosis within joints"
+        ]
+      ],
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Primary lymphoid organs",
+      "id": "primary"
+    },
+    {
+      "type": "table",
+      "title": "Bone marrow and thymus",
+      "columns": [
+        "Organ",
+        "Developmental role",
+        "Structural or temporal features"
+      ],
+      "rows": [
+        [
+          "Bone marrow",
+          "Generates hematopoietic cells; supports B-cell development and central tolerance; releases T-cell progenitors to the thymus",
+          "Fetal liver is a major prenatal site; after birth marrow predominates; after puberty hematopoiesis is concentrated in the axial skeleton"
+        ],
+        [
+          "Thymus",
+          "Supports antigen-independent T-cell proliferation, selection, maturation, and central tolerance",
+          "Arises from third and fourth pharyngeal pouches; develops by the third embryonic month; active at birth; maximal near puberty; later involutes; bilobed above the heart"
+        ]
+      ],
+      "sourcePages": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "flow",
+      "title": "T-cell maturation",
+      "steps": [
+        {
+          "title": "Bone-marrow progenitor",
+          "description": "A lymphoid precursor enters the circulation."
+        },
+        {
+          "title": "Thymic cortex",
+          "description": "Immature T cells proliferate and undergo selection."
+        },
+        {
+          "title": "Thymic medulla",
+          "description": "Surviving cells continue maturation and tolerance selection."
+        },
+        {
+          "title": "Mature naïve T cell",
+          "description": "Cells leave for secondary lymphoid tissues without prior foreign-antigen exposure."
+        }
+      ],
+      "sourcePages": [
+        5
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Thymic mediators and competence",
+      "text": "Thymopoietin and thymosins support T-cell development. Neonatal thymectomy impairs immune competence because mature T-cell populations have not yet been established.",
+      "sourcePages": [
+        5
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Secondary lymphoid organs",
+      "id": "secondary"
+    },
+    {
+      "type": "table",
+      "title": "Lymph-node organization",
+      "columns": [
+        "Region",
+        "Dominant cells or structures",
+        "Function"
+      ],
+      "rows": [
+        [
+          "Cortex",
+          "B-cell follicles; germinal centers after activation",
+          "B-cell activation, proliferation, and differentiation"
+        ],
+        [
+          "Paracortex",
+          "T cells and interdigitating dendritic cells",
+          "T-cell activation and antigen presentation"
+        ],
+        [
+          "Medulla",
+          "T cells, B cells, plasma cells, and macrophages",
+          "Antibody secretion, filtration, and effector-cell organization"
+        ]
+      ],
+      "sourcePages": [
+        6
+      ]
+    },
+    {
+      "type": "flow",
+      "title": "Lymph-node immune encounter",
+      "steps": [
+        {
+          "title": "Lymph-borne antigen arrives",
+          "description": "Afferent lymph carries antigen and antigen-presenting cells."
+        },
+        {
+          "title": "Regional capture",
+          "description": "Macrophages and dendritic cells sample material."
+        },
+        {
+          "title": "Compartmental activation",
+          "description": "B cells respond in follicles; T cells respond in the paracortex."
+        },
+        {
+          "title": "Effector generation",
+          "description": "Plasma cells, activated lymphocytes, and memory cells develop."
+        },
+        {
+          "title": "Egress",
+          "description": "Cells and antibodies leave through efferent lymph."
+        }
+      ],
+      "sourcePages": [
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Splenic compartments",
+      "columns": [
+        "Compartment",
+        "Organization",
+        "Function"
+      ],
+      "rows": [
+        [
+          "White pulp: PALS",
+          "T cells around central arterioles",
+          "T-cell responses to blood-borne antigen"
+        ],
+        [
+          "White pulp: follicles",
+          "B cells with mantle, marginal, and germinal-center regions",
+          "B-cell activation and antibody responses"
+        ],
+        [
+          "Red pulp",
+          "Sinusoids, macrophages, red blood cells, and fewer lymphocytes",
+          "Filters blood and removes old or damaged blood cells"
+        ]
+      ],
+      "sourcePages": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Mucosa-associated lymphoid tissue",
+      "columns": [
+        "Category",
+        "Sites or examples",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "MALT",
+          "Diffuse and organized lymphoid tissue at mucosal surfaces",
+          "Rapid response at major portals of entry"
+        ],
+        [
+          "GALT",
+          "Tonsils, adenoids, appendix, and Peyer patches",
+          "Gastrointestinal immune surveillance"
+        ],
+        [
+          "BALT",
+          "Bronchial mucosa",
+          "Respiratory immune surveillance"
+        ]
+      ],
+      "sourcePages": [
+        7
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Integrated cell–organ map",
+      "columns": [
+        "Component",
+        "Production or residence",
+        "Primary contribution"
+      ],
+      "rows": [
+        [
+          "Hematopoietic stem cell",
+          "Bone marrow",
+          "Source of lymphoid and myeloid lineages"
+        ],
+        [
+          "B cell",
+          "Bone marrow; follicles in secondary organs",
+          "Antibody and memory"
+        ],
+        [
+          "T cell",
+          "Thymus; paracortex and PALS",
+          "Cell-mediated coordination and killing"
+        ],
+        [
+          "Phagocyte",
+          "Blood and tissues",
+          "Engulfment, killing, cytokines, and repair"
+        ],
+        [
+          "Dendritic cell",
+          "Barrier tissues and secondary organs",
+          "Antigen capture and T-cell activation"
+        ],
+        [
+          "Lymph node",
+          "Along lymphatic vessels",
+          "Filters lymph and organizes regional responses"
+        ],
+        [
+          "Spleen",
+          "Blood circulation",
+          "Filters blood and organizes blood-borne antigen responses"
+        ],
+        [
+          "MALT",
+          "Mucosal surfaces",
+          "Local defense at environmental interfaces"
+        ]
+      ],
+      "sourcePages": [
+        1,
+        8
+      ]
+    },
+    {
+      "type": "references",
+      "title": "References",
+      "items": [
+        "Tikrit University, College of Medicine, Microbiology Department. Cells and Organs of the Immune System, pages 1–8."
+      ]
+    }
+  ],
+  "exam": {
+    "title": "Immune cells and organs exam",
+    "instructions": "Answer every question. Submit once to receive a score, correct answers, and explanations.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "l2-1",
+        "type": "mcq",
+        "prompt": "Which cell recognizes peptide presented by MHC class II?",
+        "options": [
+          "B cell",
+          "CD4 T cell",
+          "CD8 T cell",
+          "Neutrophil"
+        ],
+        "correctIndex": 1,
+        "explanation": "CD4 T cells recognize peptide–MHC II complexes."
+      },
+      {
+        "id": "l2-2",
+        "type": "mcq",
+        "prompt": "Which cell recognizes peptide presented by MHC class I?",
+        "options": [
+          "CD8 T cell",
+          "Plasma cell",
+          "Eosinophil",
+          "Mast cell"
+        ],
+        "correctIndex": 0,
+        "explanation": "CD8 T cells recognize peptide–MHC I complexes."
+      },
+      {
+        "id": "l2-3",
+        "type": "fill-blank",
+        "prompt": "A circulating monocyte differentiates into a tissue _____.",
+        "answers": [
+          "macrophage"
+        ],
+        "explanation": "Tissue migration and differentiation generate macrophages."
+      },
+      {
+        "id": "l2-4",
+        "type": "select-number",
+        "prompt": "How many principal hematopoietic lineages are described?",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "answer": 2,
+        "explanation": "The major lineages are lymphoid and myeloid."
+      },
+      {
+        "id": "l2-5",
+        "type": "match",
+        "prompt": "Match each specialized phagocyte to its location.",
+        "pairs": [
+          {
+            "left": "Kupffer cell",
+            "right": "Liver sinusoids"
+          },
+          {
+            "left": "Mesangial cell",
+            "right": "Renal glomerulus"
+          },
+          {
+            "left": "Microglial cell",
+            "right": "Brain"
+          },
+          {
+            "left": "Synovial type A cell",
+            "right": "Joint synovium"
+          }
+        ],
+        "explanation": "These are tissue-adapted members of the mononuclear phagocyte system."
+      },
+      {
+        "id": "l2-6",
+        "type": "medical-history-mcq",
+        "history": "A newborn undergoes thymectomy before mature T-cell populations are established.",
+        "prompt": "Which consequence is most likely?",
+        "options": [
+          "Impaired T-cell immune competence",
+          "Absent gastric acidity",
+          "Loss of neutrophil granules",
+          "Excess red-pulp filtration"
+        ],
+        "correctIndex": 0,
+        "explanation": "Early thymectomy disrupts T-cell maturation."
+      },
+      {
+        "id": "l2-7",
+        "type": "mcq",
+        "prompt": "Where are B-cell follicles located in a lymph node?",
+        "options": [
+          "Cortex",
+          "Paracortex",
+          "Medullary sinus only",
+          "Capsule"
+        ],
+        "correctIndex": 0,
+        "explanation": "B-cell follicles occupy the cortex."
+      },
+      {
+        "id": "l2-8",
+        "type": "mcq",
+        "prompt": "Which lymph-node region is rich in T cells and interdigitating dendritic cells?",
+        "options": [
+          "Cortex",
+          "Paracortex",
+          "Germinal center only",
+          "Hilum"
+        ],
+        "correctIndex": 1,
+        "explanation": "The paracortex is the T-cell zone."
+      },
+      {
+        "id": "l2-9",
+        "type": "fill-blank",
+        "prompt": "The T-cell sheath around a splenic central arteriole is the _____.",
+        "answers": [
+          "PALS",
+          "periarteriolar lymphoid sheath"
+        ],
+        "explanation": "PALS is the periarteriolar lymphoid sheath."
+      },
+      {
+        "id": "l2-10",
+        "type": "match",
+        "prompt": "Match each splenic region to its dominant function.",
+        "pairs": [
+          {
+            "left": "PALS",
+            "right": "T-cell response"
+          },
+          {
+            "left": "B-cell follicle",
+            "right": "Humoral response"
+          },
+          {
+            "left": "Red pulp",
+            "right": "Blood filtration and old-cell removal"
+          }
+        ],
+        "explanation": "The spleen separates immune activation from blood filtration across these compartments."
+      },
+      {
+        "id": "l2-11",
+        "type": "medical-history-mcq",
+        "history": "A blood-borne encapsulated organism reaches a lymphoid organ that filters blood and removes old erythrocytes.",
+        "prompt": "Which organ is involved?",
+        "options": [
+          "Thymus",
+          "Spleen",
+          "Lymph node",
+          "Bone marrow"
+        ],
+        "correctIndex": 1,
+        "explanation": "The spleen filters blood and mounts responses to blood-borne antigen."
+      },
+      {
+        "id": "l2-12",
+        "type": "mcq",
+        "prompt": "Which dendritic-cell cytokine promotes TH1 responses?",
+        "options": [
+          "IL-12",
+          "IL-1 only",
+          "IgA",
+          "C3"
+        ],
+        "correctIndex": 0,
+        "explanation": "Dendritic-cell IL-12 promotes TH1 differentiation."
+      },
+      {
+        "id": "l2-13",
+        "type": "select-number",
+        "prompt": "How many embryonic pharyngeal pouch levels contribute to the thymus?",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "answer": 2,
+        "explanation": "The third and fourth pharyngeal pouches contribute."
+      },
+      {
+        "id": "l2-14",
+        "type": "fill-blank",
+        "prompt": "Epidermal dendritic cells are called _____ cells.",
+        "answers": [
+          "Langerhans",
+          "Langerhans cells"
+        ],
+        "explanation": "Langerhans cells are epidermal dendritic cells."
+      },
+      {
+        "id": "l2-15",
+        "type": "match",
+        "prompt": "Match mucosal lymphoid categories.",
+        "pairs": [
+          {
+            "left": "GALT",
+            "right": "Gastrointestinal tract"
+          },
+          {
+            "left": "BALT",
+            "right": "Bronchial mucosa"
+          },
+          {
+            "left": "MALT",
+            "right": "General mucosal surfaces"
+          }
+        ],
+        "explanation": "The names indicate their anatomical associations."
+      },
+      {
+        "id": "l2-16",
+        "type": "medical-history-mcq",
+        "history": "A lymph-node biopsy shows an expanded germinal center.",
+        "prompt": "Which cell population is primarily proliferating there?",
+        "options": [
+          "B lymphocytes",
+          "Neutrophils",
+          "Erythrocytes",
+          "Microglia"
+        ],
+        "correctIndex": 0,
+        "explanation": "Germinal centers are sites of activated B-cell proliferation and differentiation."
+      },
+      {
+        "id": "l2-17",
+        "type": "mcq",
+        "prompt": "Which cell is most associated with antiparasitic defense?",
+        "options": [
+          "Eosinophil",
+          "Basophil",
+          "Monocyte",
+          "Plasma cell"
+        ],
+        "correctIndex": 0,
+        "explanation": "Eosinophils participate prominently in antiparasitic responses."
+      },
+      {
+        "id": "l2-18",
+        "type": "fill-blank",
+        "prompt": "After puberty, hematopoiesis becomes concentrated mainly in the _____ skeleton.",
+        "answers": [
+          "axial"
+        ],
+        "explanation": "Active marrow becomes concentrated in the axial skeleton."
+      }
+    ]
+  }
+}
