@@ -1,0 +1,211 @@
+{
+  "title": "Respiratory System Examination",
+  "subtitle": "A step-by-step practical guide to inspection, palpation, percussion, and auscultation",
+  "course": "Clinical Skills",
+  "accent": "emerald",
+  "examTitle": "Practical exam",
+  "examInstructions": "Choose the best answer for each station-style question. Select an option to reveal feedback.",
+  "pages": [
+    {
+      "title": "Preparation and patient positioning",
+      "intro": "Begin with a structured approach. Confirm the patient's identity, explain the examination, obtain consent, and ensure adequate exposure while maintaining dignity.",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "Before you begin",
+          "items": [
+            "Perform hand hygiene and introduce yourself.",
+            "Confirm identity and explain what the examination involves.",
+            "Obtain consent and ask about pain before touching the patient.",
+            "Position the patient sitting upright and expose the chest appropriately.",
+            "Compare corresponding areas on the left and right sides."
+          ]
+        },
+        {
+          "type": "note",
+          "title": "Clinical note",
+          "text": "If the patient becomes breathless or distressed, pause the examination and assess their immediate clinical needs."
+        }
+      ],
+      "images": [
+        {
+          "title": "Patient position",
+          "src": "",
+          "alt": "Placeholder for an illustration of a patient sitting upright for a respiratory examination",
+          "caption": "Insert a positioning photograph or labelled clinical illustration here.",
+          "explanation": "The patient should be comfortably seated with the chest accessible. Preserve privacy and expose only the area required for each examination step."
+        }
+      ],
+      "takeaway": "A safe, explained, and systematic examination comes before individual examination techniques."
+    },
+    {
+      "title": "Inspection",
+      "intro": "Inspect the patient from the end of the bed and then examine the chest directly. Look for respiratory distress before focusing on anatomical details.",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "What to assess",
+          "items": [
+            "Respiratory rate, rhythm, and depth.",
+            "Use of accessory muscles, recession, or pursed-lip breathing.",
+            "Chest shape, symmetry, and movement.",
+            "Scars, deformities, or visible lesions.",
+            "Cyanosis and relevant signs such as clubbing."
+          ]
+        },
+        {
+          "type": "callout",
+          "label": "EXAM PEARL",
+          "text": "Assess the patient's general appearance and work of breathing before beginning hands-on examination."
+        }
+      ],
+      "images": [
+        {
+          "title": "Chest inspection landmarks",
+          "src": "",
+          "alt": "Placeholder for a diagram showing anterior and posterior chest inspection landmarks",
+          "caption": "Add an anterior and posterior chest landmark diagram.",
+          "explanation": "Use a consistent sequence and compare both sides. Record abnormal shape, asymmetrical movement, scars, and signs of increased work of breathing."
+        }
+      ],
+      "takeaway": "Inspection begins before contact and may reveal urgent respiratory compromise."
+    },
+    {
+      "title": "Palpation and chest expansion",
+      "intro": "Palpation assesses tracheal position, chest expansion, and tactile vocal fremitus when indicated.",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "Technique",
+          "items": [
+            "Assess tracheal position gently when clinically appropriate.",
+            "Place both hands symmetrically on the lower posterior chest.",
+            "Position the thumbs near the midline and ask the patient to take a deep breath.",
+            "Observe and compare the separation of the thumbs.",
+            "If indicated, compare tactile vocal fremitus in symmetrical areas."
+          ]
+        },
+        {
+          "type": "note",
+          "title": "Interpretation",
+          "text": "Reduced expansion on one side may occur with pleural effusion, pneumothorax, collapse, or other unilateral pathology. Interpret the finding with the history and the rest of the examination."
+        }
+      ],
+      "images": [
+        {
+          "title": "Assessing chest expansion",
+          "src": "",
+          "alt": "Placeholder for a photograph demonstrating hand placement for posterior chest expansion",
+          "caption": "Insert a practical image showing symmetric hand placement on the lower posterior chest.",
+          "explanation": "Place the hands at the same level on each side. The thumbs should move apart symmetrically during inspiration; reduced or asymmetric movement should be documented."
+        }
+      ],
+      "takeaway": "Correct hand placement and side-to-side comparison are essential for a reproducible assessment."
+    },
+    {
+      "title": "Percussion",
+      "intro": "Percussion compares the resonance of underlying lung fields and helps identify areas that may contain air, fluid, or consolidated tissue.",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "Technique",
+          "items": [
+            "Percuss corresponding areas on the right and left sides.",
+            "Use the middle finger of the non-dominant hand as the pleximeter finger.",
+            "Strike the finger joint with the tip of the dominant middle finger using a quick wrist movement.",
+            "Avoid percussing directly over the scapulae or other bony structures.",
+            "Compare percussion notes systematically from apex to base."
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Common percussion notes",
+          "columns": ["Note", "Possible interpretation"],
+          "rows": [
+            ["Resonant", "Expected over normal aerated lung"],
+            ["Dull", "May occur with consolidation or pleural fluid"],
+            ["Hyperresonant", "May occur with increased air, such as pneumothorax"]
+          ]
+        }
+      ],
+      "images": [
+        {
+          "title": "Percussion hand technique",
+          "src": "",
+          "alt": "Placeholder for an image showing correct finger placement during chest percussion",
+          "caption": "Add a close-up image of the pleximeter finger and striking finger.",
+          "explanation": "Keep the pleximeter finger firmly against an intercostal space and lift adjacent fingers away from the chest. Compare like-for-like areas on both sides."
+        }
+      ],
+      "takeaway": "A percussion note is one component of the examination and should not be interpreted in isolation."
+    },
+    {
+      "title": "Auscultation",
+      "intro": "Auscultation evaluates breath sounds and additional sounds. Ask the patient to breathe through an open mouth and listen to a full respiratory cycle at each site.",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "Technique and findings",
+          "items": [
+            "Warm the stethoscope and place the diaphragm directly on the skin.",
+            "Listen systematically over anterior, lateral, and posterior lung fields.",
+            "Compare equivalent sites on both sides.",
+            "Assess breath-sound intensity and character.",
+            "Identify added sounds such as crackles, wheeze, or a pleural rub.",
+            "If needed, assess vocal resonance using a consistent phrase."
+          ]
+        },
+        {
+          "type": "callout",
+          "label": "EXAM PEARL",
+          "text": "Ask the patient to take comfortable deep breaths and pause if they become dizzy or uncomfortable."
+        }
+      ],
+      "images": [
+        {
+          "title": "Auscultation sites",
+          "src": "",
+          "alt": "Placeholder for a diagram of anterior and posterior lung auscultation sites",
+          "caption": "Insert a diagram showing a systematic sequence of stethoscope positions.",
+          "explanation": "Listen in a ladder pattern, comparing right and left at each level. Avoid placing the stethoscope over clothing, the scapulae, or other bony areas."
+        }
+      ],
+      "takeaway": "Document where abnormal sounds are heard, whether they change with coughing, and how they relate to other findings."
+    }
+  ],
+  "exam": [
+    {
+      "question": "During chest expansion assessment, what is the most important comparison?",
+      "options": [
+        "The patient's left and right sides at the same level",
+        "The upper chest on one side against the lower chest on the other",
+        "Chest movement only during expiration",
+        "The patient's chest against the examiner's chest"
+      ],
+      "answerIndex": 0,
+      "explanation": "Symmetric hand placement and comparison of both sides during inspiration help identify reduced or unequal expansion."
+    },
+    {
+      "question": "Which percussion note may be associated with pleural effusion?",
+      "options": [
+        "Resonant",
+        "Dull",
+        "Hyperresonant",
+        "Tympanic in every case"
+      ],
+      "answerIndex": 1,
+      "explanation": "Pleural fluid can produce dullness to percussion. Correlate this with examination findings and appropriate investigations."
+    },
+    {
+      "question": "What is the best technique during lung auscultation?",
+      "options": [
+        "Listen through the patient's clothing",
+        "Listen to one side only",
+        "Compare equivalent sites on both sides for a full respiratory cycle",
+        "Ask the patient to hold their breath at every site"
+      ],
+      "answerIndex": 2,
+      "explanation": "Systematic side-to-side comparison over a full respiratory cycle improves detection and localization of abnormal breath sounds."
+    }
+  ]
+}
