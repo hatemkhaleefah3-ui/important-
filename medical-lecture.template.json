@@ -69,7 +69,8 @@
     {
       "type": "paragraph",
       "variant": "lead",
-      "text": "Introduce the central concept in a clear, concise paragraph."
+      "text": "Introduce the central concept in a clear, concise paragraph.",
+      "explanation": "Optional hidden voice-teaching script for practical lectures. If omitted, the reader uses the block's visible teaching text."
     },
     {
       "type": "objectives",
