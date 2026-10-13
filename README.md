@@ -4,7 +4,7 @@ A static medical-learning generator using PDF.js and JSZip from jsDelivr. Serve 
 
 For **Web app**, import the standard lecture JSON and optionally its PDF, PPTX, or DOCX source when image extraction is required. The generated `#lecture=` link opens the Study and Exam reader. The link embeds the complete validated JSON in its URL fragment and requires no application database. Anyone with the link can read its content.
 
-`medical-lecture.template.json` is an authoring starter. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
+`theoretical-lecture.template.json` and `practical-lecture.template.json` are separate authoring starters selected by the creation wizard. The theoretical template focuses on concepts, explanations, comparisons, and recall; the practical template focuses on preparation, equipment, ordered procedures, visual technique cards, checkpoints, and safety review. Each template declares `lectureType`, and the wizard rejects a marked JSON file when its type does not match the selected app. `medical-lecture.template.json` remains available as a full reference template. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
 
 ## JSON version 4
 
