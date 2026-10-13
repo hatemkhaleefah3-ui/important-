@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": 4,
+  "id": "immunology-3-antigens",
+  "title": "Antigens: Definition, Properties, and Immunogenicity",
+  "subtitle": "Epitopes, haptens, antigen classes, adjuvants, and superantigens.",
+  "course": "Microbiology · Immunology",
+  "author": "Tikrit University · College of Medicine · Microbiology Department",
+  "level": "Second class",
+  "durationMinutes": 50,
+  "sourceDocument": {
+    "fileName": "2nd_class_Immunology_Lecture_3_Antigens_Definition,_Properties,.pdf",
+    "pageCount": 6,
+    "imagePlaceholderCount": 7
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Antigen, immunogen, and epitope",
+      "id": "concepts"
+    },
+    {
+      "type": "paragraph",
+      "text": "An antigen is a substance specifically recognized by antibodies or lymphocyte receptors. An immunogen induces an immune response. Antigenicity is the capacity for specific binding; immunogenicity is the capacity to induce humoral or cell-mediated immunity. An epitope is the particular molecular region recognized by an antibody, B-cell receptor, or T-cell receptor.",
+      "variant": "lead",
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "objectives",
+      "title": "Learning objectives",
+      "items": [
+        "Distinguish antigenicity from immunogenicity",
+        "Explain B-cell and T-cell epitope recognition",
+        "Classify antigens by source, chemical nature, completeness, and lymphocyte dependence",
+        "Analyze the molecular, host, processing, and exposure factors that control immunogenicity",
+        "Compare conventional antigens with superantigens"
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Institutional heading",
+      "title": "College heading detail",
+      "alt": "Embedded heading detail from the first page.",
+      "caption": "College of Medicine and Microbiology Department.",
+      "sourceLabel": "PDF page 1 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.33313726288041257,
+          0.2846969643024483,
+          0.33411761514501637,
+          0.029696975091491083
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "image",
+      "processName": "Institutional heading detail",
+      "title": "Department heading detail",
+      "alt": "Embedded department heading detail from the first page.",
+      "caption": "Microbiology Department heading detail.",
+      "sourceLabel": "PDF page 1 · embedded image 2",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.3431372549019608,
+          0.29292929292929293,
+          0.3137254901960784,
+          0.013888888888888888
+        ]
+      },
+      "sourceImageIndex": 2
+    },
+    {
+      "type": "image",
+      "processName": "Antigen recognition",
+      "title": "Antigens and immune recognition",
+      "alt": "Illustration associated with antigen recognition.",
+      "caption": "Antigen structure, epitopes, and host factors determine immune recognition.",
+      "sourceLabel": "PDF page 1 · embedded image 3",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.31985294117647056,
+          0.3346224698153409,
+          0.3590686274509804,
+          0.11816791572956124
+        ]
+      },
+      "sourceImageIndex": 3
+    },
+    {
+      "type": "image",
+      "processName": "Institutional emblem",
+      "title": "Tikrit University emblem",
+      "alt": "Tikrit University emblem.",
+      "caption": "Institutional emblem.",
+      "sourceLabel": "PDF page 1 · embedded image 4",
+      "source": {
+        "fileType": "pdf",
+        "page": 1,
+        "crop": [
+          0.3803921618492775,
+          0.05909094184336036,
+          0.24999997506733812,
+          0.10303030110368824
+        ]
+      },
+      "sourceImageIndex": 4
+    },
+    {
+      "type": "table",
+      "title": "Core terminology",
+      "columns": [
+        "Term",
+        "Definition"
+      ],
+      "rows": [
+        [
+          "Antigen",
+          "Specifically binds an antibody or antigen receptor"
+        ],
+        [
+          "Immunogen",
+          "Induces a specific immune response"
+        ],
+        [
+          "Antigenicity",
+          "Capacity to bind specifically to immune recognition molecules"
+        ],
+        [
+          "Immunogenicity",
+          "Capacity to induce humoral or cell-mediated immunity"
+        ],
+        [
+          "Epitope",
+          "Discrete antigenic determinant recognized by a receptor or antibody"
+        ],
+        [
+          "Valency",
+          "Number of epitopes or binding sites available on an antigen"
+        ],
+        [
+          "Cross-reactivity",
+          "Recognition of a related epitope on a different antigen"
+        ]
+      ],
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "table",
+      "title": "B-cell and T-cell recognition",
+      "columns": [
+        "Feature",
+        "B cell or antibody",
+        "T cell"
+      ],
+      "rows": [
+        [
+          "Antigen form",
+          "Intact native molecule",
+          "Processed peptide"
+        ],
+        [
+          "Structural access",
+          "Surface-accessible conformational or linear determinants",
+          "Linear peptide held by an MHC molecule"
+        ],
+        [
+          "Presentation requirement",
+          "No MHC requirement for direct binding",
+          "Requires peptide–MHC presentation"
+        ]
+      ],
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Epitope recognition",
+      "title": "Epitopes recognized by B and T cells",
+      "alt": "Diagram comparing B-cell and T-cell recognition of antigenic determinants.",
+      "caption": "B cells recognize intact accessible structures; T cells recognize processed peptide presented by MHC.",
+      "sourceLabel": "PDF page 2 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 2,
+        "crop": [
+          0.3125,
+          0.2298863728841146,
+          0.37562092301113154,
+          0.13049243194888335
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "flow",
+      "title": "From antigen structure to lymphocyte recognition",
+      "steps": [
+        {
+          "title": "Molecular structure",
+          "description": "An antigen contains one or more epitopes."
+        },
+        {
+          "title": "Accessibility or processing",
+          "description": "B-cell determinants remain accessible; T-cell determinants are released as peptides."
+        },
+        {
+          "title": "Specific receptor binding",
+          "description": "BCR, antibody, or TCR binds its matching determinant."
+        },
+        {
+          "title": "Activation context",
+          "description": "Costimulation, host genetics, dose, route, and adjuvant signals shape the response."
+        }
+      ],
+      "sourcePages": [
+        1,
+        2
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Haptens, carriers, and antigen classes",
+      "id": "classification"
+    },
+    {
+      "type": "paragraph",
+      "text": "A complete antigen is both antigenic and immunogenic. A hapten is antigenic but too small to induce a response alone. Covalent or stable association with a larger carrier provides helper determinants and converts the complex into an effective immunogen. Penicillin and other drugs may behave as haptens after binding host proteins, producing drug hypersensitivity.",
+      "sourcePages": [
+        2
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Hapten–carrier complex",
+      "title": "Hapten and carrier",
+      "alt": "Diagram showing a hapten coupled to a carrier molecule.",
+      "caption": "A hapten gains immunogenicity after linkage to a larger carrier.",
+      "sourceLabel": "PDF page 2 · embedded image 2",
+      "source": {
+        "fileType": "pdf",
+        "page": 2,
+        "crop": [
+          0.20955882352941177,
+          0.5973863698015309,
+          0.5807189442753012,
+          0.2390024975092724
+        ]
+      },
+      "sourceImageIndex": 2
+    },
+    {
+      "type": "table",
+      "title": "Classification by source",
+      "columns": [
+        "Class",
+        "Origin or relationship to host"
+      ],
+      "rows": [
+        [
+          "Exogenous antigen",
+          "Enters from outside the body"
+        ],
+        [
+          "Endogenous antigen",
+          "Generated within host cells"
+        ],
+        [
+          "Autoantigen",
+          "Normal self component recognized by an autoimmune response"
+        ],
+        [
+          "Alloantigen",
+          "Differs among members of the same species"
+        ],
+        [
+          "Heterologous or xenogeneic antigen",
+          "Derived from another species"
+        ]
+      ],
+      "sourcePages": [
+        2,
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Classification by chemical nature",
+      "columns": [
+        "Class",
+        "General immunogenic pattern"
+      ],
+      "rows": [
+        [
+          "Protein",
+          "Usually highly immunogenic because of size and structural complexity"
+        ],
+        [
+          "Polysaccharide",
+          "Can be immunogenic and may activate B cells without conventional T-cell help"
+        ],
+        [
+          "Lipid",
+          "Usually weak alone; recognition can depend on association and presentation context"
+        ],
+        [
+          "Nucleic acid",
+          "Usually weak alone; immunogenicity rises in complexes or abnormal contexts"
+        ]
+      ],
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "type": "table",
+      "title": "T-dependent and T-independent antigens",
+      "columns": [
+        "Feature",
+        "T-dependent",
+        "T-independent"
+      ],
+      "rows": [
+        [
+          "Typical chemistry",
+          "Protein",
+          "Repeating polysaccharide or polymeric determinants"
+        ],
+        [
+          "T-cell help",
+          "Required",
+          "Not required for initial B-cell activation"
+        ],
+        [
+          "Antibody class",
+          "Effective class switching",
+          "Predominantly IgM"
+        ],
+        [
+          "Affinity maturation",
+          "Prominent",
+          "Limited"
+        ],
+        [
+          "Memory",
+          "Strong",
+          "Weak or absent"
+        ],
+        [
+          "Age response",
+          "Effective after immune maturation",
+          "Some responses are limited in young children"
+        ]
+      ],
+      "sourcePages": [
+        3
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Determinants of immunogenicity",
+      "id": "factors"
+    },
+    {
+      "type": "table",
+      "title": "Molecular and processing factors",
+      "columns": [
+        "Factor",
+        "Effect"
+      ],
+      "rows": [
+        [
+          "Foreignness",
+          "Greater difference from self generally increases immunogenicity"
+        ],
+        [
+          "Molecular size",
+          "Larger molecules are generally more immunogenic"
+        ],
+        [
+          "Chemical nature and complexity",
+          "Proteins and structurally complex molecules provide more determinants"
+        ],
+        [
+          "Physical form",
+          "Particulate or aggregated material is often more immunogenic than highly soluble material"
+        ],
+        [
+          "Antigen specificity",
+          "Distinct epitopes determine receptor specificity"
+        ],
+        [
+          "Species specificity",
+          "Shared and species-restricted structures affect recognition"
+        ],
+        [
+          "Susceptibility to tissue enzymes",
+          "Enzymatic accessibility influences processing"
+        ],
+        [
+          "Organ specificity",
+          "Some antigens are associated with particular tissues or organs"
+        ],
+        [
+          "Degradability and processing",
+          "Material must be processed appropriately for many T-cell responses"
+        ],
+        [
+          "Epitopes, valency, and cross-reactivity",
+          "Number, accessibility, and similarity of determinants shape response strength and specificity"
+        ]
+      ],
+      "sourcePages": [
+        3,
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Host and exposure factors",
+      "columns": [
+        "Factor",
+        "Effect or example"
+      ],
+      "rows": [
+        [
+          "Genetic factors",
+          "MHC alleles and other immune-response genes alter presentation and responsiveness"
+        ],
+        [
+          "Dose",
+          "Very low or very high doses may be less effective or induce tolerance"
+        ],
+        [
+          "Route",
+          "Subcutaneous or intramuscular exposure favors systemic responses; mucosal exposure can favor IgA"
+        ],
+        [
+          "Pattern and schedule",
+          "Repeated exposure and boosters strengthen memory responses"
+        ],
+        [
+          "Age and immune status",
+          "Immaturity, aging, disease, and immunosuppression alter responsiveness"
+        ],
+        [
+          "Prior antibody",
+          "Existing antibody can suppress response by rapidly clearing antigen"
+        ],
+        [
+          "Inhalation",
+          "Allergen exposure can favor IgE-mediated responses in susceptible hosts"
+        ]
+      ],
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Applied examples",
+      "columns": [
+        "Situation",
+        "Immunological principle"
+      ],
+      "rows": [
+        [
+          "Hepatitis B vaccination",
+          "Injection site, dose, and schedule affect the response"
+        ],
+        [
+          "Booster dose",
+          "Reactivates memory and strengthens the secondary response"
+        ],
+        [
+          "Mucosal immunization",
+          "Supports secretory IgA at mucosal surfaces"
+        ],
+        [
+          "Inhaled allergen",
+          "Can promote IgE-mediated sensitization"
+        ],
+        [
+          "Anti-D immunoglobulin after an Rh-positive infant",
+          "Preformed antibody clears Rh antigen and prevents sensitization of an Rh-negative mother"
+        ]
+      ],
+      "sourcePages": [
+        4
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Adjuvants",
+      "id": "adjuvants"
+    },
+    {
+      "type": "paragraph",
+      "text": "An adjuvant is administered with an antigen to enhance immunogenicity without becoming the target of the specific response.",
+      "sourcePages": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "flow",
+      "title": "How adjuvants amplify immunity",
+      "steps": [
+        {
+          "title": "Antigen persistence",
+          "description": "A depot or retained antigen prolongs exposure."
+        },
+        {
+          "title": "Innate activation",
+          "description": "Microbial or particulate signals activate local innate cells."
+        },
+        {
+          "title": "Antigen uptake and presentation",
+          "description": "Antigen-presenting cells capture and process antigen more efficiently."
+        },
+        {
+          "title": "Costimulation and cytokines",
+          "description": "Activated antigen-presenting cells provide stronger lymphocyte signals."
+        }
+      ],
+      "sourcePages": [
+        4,
+        5
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Adjuvant examples",
+      "columns": [
+        "Adjuvant",
+        "Characteristic"
+      ],
+      "rows": [
+        [
+          "Alum",
+          "Common vaccine adjuvant that promotes local antigen uptake and innate activation"
+        ],
+        [
+          "Freund adjuvant",
+          "Experimental water-in-oil preparation; complete form contains mycobacterial products"
+        ],
+        [
+          "BCG",
+          "Live attenuated mycobacterial stimulus used in selected immune applications"
+        ],
+        [
+          "Microbial products",
+          "Innate-receptor agonists that increase activation"
+        ],
+        [
+          "Saponins",
+          "Particulate or membrane-active adjuvant components"
+        ]
+      ],
+      "sourcePages": [
+        5
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Superantigens",
+      "id": "superantigens"
+    },
+    {
+      "type": "paragraph",
+      "text": "A superantigen cross-links MHC class II and selected T-cell receptor Vβ regions outside the conventional peptide-binding groove. The interaction activates a large polyclonal T-cell population, causing massive cytokine release followed by dysfunction, anergy, or apoptosis.",
+      "variant": "lead",
+      "sourcePages": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "general",
+      "title": "Superantigen-driven T-cell activation",
+      "description": "Trace nonconventional receptor cross-linking to systemic inflammation.",
+      "pathway": "Superantigen activation",
+      "steps": [
+        {
+          "id": "sa-bind-mhc",
+          "title": "MHC II binding",
+          "description": "The superantigen binds the outer surface of MHC class II without conventional peptide processing.",
+          "agent": "superantigen"
+        },
+        {
+          "id": "sa-crosslink",
+          "title": "TCR Vβ cross-linking",
+          "description": "The molecule simultaneously engages selected TCR Vβ families.",
+          "agent": "MHC II–superantigen complex"
+        },
+        {
+          "id": "sa-poly",
+          "title": "Polyclonal activation",
+          "description": "Many unrelated T-cell clones become activated.",
+          "agent": "broad Vβ engagement"
+        },
+        {
+          "id": "sa-cytokine",
+          "title": "Cytokine surge",
+          "description": "Activated T cells and antigen-presenting cells release large quantities of cytokines.",
+          "agent": "T cells and APCs"
+        },
+        {
+          "id": "sa-outcome",
+          "title": "Systemic effects",
+          "description": "Fever, inflammation, shock, followed by immune dysfunction, anergy, or apoptosis may occur.",
+          "agent": "cytokine storm"
+        }
+      ],
+      "sourcePages": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Conventional antigen and superantigen",
+      "columns": [
+        "Feature",
+        "Conventional antigen",
+        "Superantigen"
+      ],
+      "rows": [
+        [
+          "Binding site",
+          "Peptide groove of MHC",
+          "Outside the peptide groove"
+        ],
+        [
+          "Processing",
+          "Usually required",
+          "Not required in the conventional manner"
+        ],
+        [
+          "TCR recognition",
+          "Peptide-specific receptor",
+          "Selected TCR Vβ region"
+        ],
+        [
+          "Fraction of T cells activated",
+          "Small antigen-specific clone set",
+          "Large polyclonal population"
+        ],
+        [
+          "Dominant outcome",
+          "Specific adaptive response",
+          "Massive cytokine release and systemic toxicity"
+        ]
+      ],
+      "sourcePages": [
+        5,
+        6
+      ]
+    },
+    {
+      "type": "image",
+      "processName": "Superantigen activation",
+      "title": "Conventional antigen and superantigen",
+      "alt": "Diagram comparing conventional peptide recognition with superantigen cross-linking.",
+      "caption": "Superantigens bind outside the peptide groove and activate many T-cell clones through selected TCR Vβ regions.",
+      "sourceLabel": "PDF page 6 · embedded image 1",
+      "source": {
+        "fileType": "pdf",
+        "page": 6,
+        "crop": [
+          0.24877450980392157,
+          0.22390151746345288,
+          0.5018300573810254,
+          0.3097222260754518
+        ]
+      },
+      "sourceImageIndex": 1
+    },
+    {
+      "type": "table",
+      "title": "Microbial superantigens",
+      "columns": [
+        "Source",
+        "Examples"
+      ],
+      "rows": [
+        [
+          "Staphylococcus aureus",
+          "Toxic shock syndrome toxin-1, exfoliative toxin, and enterotoxins"
+        ],
+        [
+          "Streptococcus pyogenes",
+          "Streptococcal pyrogenic exotoxins A and C"
+        ],
+        [
+          "Mycoplasma arthritidis",
+          "Mycoplasma arthritidis mitogen-I"
+        ],
+        [
+          "Yersinia",
+          "Y. enterocolitica and Y. pseudotuberculosis superantigens"
+        ],
+        [
+          "Viruses",
+          "Epstein–Barr virus, cytomegalovirus, rabies virus nucleocapsid, and HIV Nef"
+        ],
+        [
+          "Fungus",
+          "Malassezia furfur"
+        ]
+      ],
+      "sourcePages": [
+        6
+      ]
+    },
+    {
+      "type": "references",
+      "title": "References",
+      "items": [
+        "Tikrit University, College of Medicine, Microbiology Department. Antigens: Definition and Properties, pages 1–6."
+      ]
+    }
+  ],
+  "exam": {
+    "title": "Antigens and immunogenicity exam",
+    "instructions": "Answer every question. Submit once to receive a score, correct answers, and explanations.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "l3-1",
+        "type": "mcq",
+        "prompt": "Which term means the capacity to induce an immune response?",
+        "options": [
+          "Antigenicity",
+          "Immunogenicity",
+          "Valency",
+          "Cross-reactivity"
+        ],
+        "correctIndex": 1,
+        "explanation": "Immunogenicity is the ability to induce humoral or cell-mediated immunity."
+      },
+      {
+        "id": "l3-2",
+        "type": "fill-blank",
+        "prompt": "The discrete region recognized by an antibody or receptor is an _____.",
+        "answers": [
+          "epitope",
+          "antigenic determinant"
+        ],
+        "explanation": "An epitope is an antigenic determinant."
+      },
+      {
+        "id": "l3-3",
+        "type": "mcq",
+        "prompt": "How do T cells usually recognize antigen?",
+        "options": [
+          "As intact soluble molecules",
+          "As peptide presented by MHC",
+          "Only as polysaccharide",
+          "Only through antibody"
+        ],
+        "correctIndex": 1,
+        "explanation": "TCRs recognize processed peptide–MHC complexes."
+      },
+      {
+        "id": "l3-4",
+        "type": "select-number",
+        "prompt": "How many major factors influencing immunogenicity are enumerated?",
+        "min": 1,
+        "max": 15,
+        "step": 1,
+        "answer": 12,
+        "explanation": "Twelve factors are identified, from foreignness through dose, route, and exposure pattern."
+      },
+      {
+        "id": "l3-5",
+        "type": "match",
+        "prompt": "Match antigen source classifications.",
+        "pairs": [
+          {
+            "left": "Autoantigen",
+            "right": "Self component"
+          },
+          {
+            "left": "Alloantigen",
+            "right": "Different member of the same species"
+          },
+          {
+            "left": "Xenogeneic antigen",
+            "right": "Different species"
+          },
+          {
+            "left": "Exogenous antigen",
+            "right": "Outside the body"
+          }
+        ],
+        "explanation": "These classifications describe origin or biological relationship."
+      },
+      {
+        "id": "l3-6",
+        "type": "medical-history-mcq",
+        "history": "A patient develops hypersensitivity after a small drug molecule binds covalently to host protein.",
+        "prompt": "What role did the drug play?",
+        "options": [
+          "Hapten",
+          "Carrier",
+          "Superantigen",
+          "Adjuvant"
+        ],
+        "correctIndex": 0,
+        "explanation": "A small drug can become immunogenic after binding a carrier protein."
+      },
+      {
+        "id": "l3-7",
+        "type": "mcq",
+        "prompt": "Which response is typical of a T-independent antigen?",
+        "options": [
+          "Strong memory and affinity maturation",
+          "Predominantly IgM with limited memory",
+          "Mandatory peptide–MHC II presentation",
+          "Exclusive CD8 activation"
+        ],
+        "correctIndex": 1,
+        "explanation": "T-independent antigens generally cause IgM-dominant responses with limited memory."
+      },
+      {
+        "id": "l3-8",
+        "type": "fill-blank",
+        "prompt": "A molecule that enhances the response to a coadministered antigen is an _____.",
+        "answers": [
+          "adjuvant"
+        ],
+        "explanation": "Adjuvants increase immunogenicity."
+      },
+      {
+        "id": "l3-9",
+        "type": "match",
+        "prompt": "Match adjuvant mechanisms to their effects.",
+        "pairs": [
+          {
+            "left": "Persistence",
+            "right": "Prolonged antigen exposure"
+          },
+          {
+            "left": "Innate activation",
+            "right": "Local inflammatory signals"
+          },
+          {
+            "left": "Enhanced uptake",
+            "right": "Improved APC capture"
+          },
+          {
+            "left": "Costimulation",
+            "right": "Stronger lymphocyte activation"
+          }
+        ],
+        "explanation": "Adjuvants amplify several linked stages."
+      },
+      {
+        "id": "l3-10",
+        "type": "medical-history-mcq",
+        "history": "An Rh-negative mother receives anti-D immunoglobulin after delivering an Rh-positive infant.",
+        "prompt": "What is the intended mechanism?",
+        "options": [
+          "Clear fetal Rh antigen before maternal sensitization",
+          "Activate all TCR Vβ families",
+          "Create mucosal IgA only",
+          "Convert Rh antigen into a hapten"
+        ],
+        "correctIndex": 0,
+        "explanation": "Preformed antibody suppresses sensitization by clearing antigen."
+      },
+      {
+        "id": "l3-11",
+        "type": "mcq",
+        "prompt": "Where does a superantigen bind MHC class II?",
+        "options": [
+          "Inside the conventional peptide groove only",
+          "Outside the conventional peptide groove",
+          "At the B-cell Fc receptor",
+          "Inside the nucleus"
+        ],
+        "correctIndex": 1,
+        "explanation": "Superantigens bind the outer surface of MHC II."
+      },
+      {
+        "id": "l3-12",
+        "type": "fill-blank",
+        "prompt": "Superantigens engage selected T-cell receptor _____ regions.",
+        "answers": [
+          "Vβ",
+          "V beta",
+          "V-beta"
+        ],
+        "explanation": "TCR Vβ engagement drives broad clone activation."
+      },
+      {
+        "id": "l3-13",
+        "type": "match",
+        "prompt": "Match each superantigen source to an example.",
+        "pairs": [
+          {
+            "left": "Staphylococcus aureus",
+            "right": "TSST-1"
+          },
+          {
+            "left": "Streptococcus pyogenes",
+            "right": "SPE-A or SPE-C"
+          },
+          {
+            "left": "Mycoplasma arthritidis",
+            "right": "Mitogen-I"
+          },
+          {
+            "left": "HIV",
+            "right": "Nef"
+          }
+        ],
+        "explanation": "Microbial species produce distinct superantigens."
+      },
+      {
+        "id": "l3-14",
+        "type": "medical-history-mcq",
+        "history": "A patient has high fever, hypotension, and diffuse inflammation caused by simultaneous activation of many unrelated T-cell clones.",
+        "prompt": "Which mechanism best explains the syndrome?",
+        "options": [
+          "Superantigen cross-linking of MHC II and TCR Vβ",
+          "A single peptide-specific clone",
+          "Hapten binding without a carrier",
+          "Loss of antigen valency"
+        ],
+        "correctIndex": 0,
+        "explanation": "Broad Vβ engagement produces polyclonal activation and a cytokine surge."
+      },
+      {
+        "id": "l3-15",
+        "type": "mcq",
+        "prompt": "Which molecular property generally increases immunogenicity?",
+        "options": [
+          "Small size and simple structure",
+          "Large size and chemical complexity",
+          "Complete identity with self",
+          "Inability to be processed"
+        ],
+        "correctIndex": 1,
+        "explanation": "Large, foreign, complex, processable molecules tend to be more immunogenic."
+      },
+      {
+        "id": "l3-16",
+        "type": "select-number",
+        "prompt": "How many broad chemical antigen classes are listed?",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "answer": 4,
+        "explanation": "Proteins, polysaccharides, lipids, and nucleic acids are listed."
+      },
+      {
+        "id": "l3-17",
+        "type": "fill-blank",
+        "prompt": "A repeated vaccine exposure that strengthens memory is a _____ dose.",
+        "answers": [
+          "booster",
+          "booster dose"
+        ],
+        "explanation": "Boosters reactivate memory responses."
+      },
+      {
+        "id": "l3-18",
+        "type": "match",
+        "prompt": "Match recognition properties.",
+        "pairs": [
+          {
+            "left": "B cell",
+            "right": "Intact accessible antigen"
+          },
+          {
+            "left": "T cell",
+            "right": "Processed peptide–MHC"
+          },
+          {
+            "left": "Hapten",
+            "right": "Antigenic but not independently immunogenic"
+          },
+          {
+            "left": "Complete antigen",
+            "right": "Antigenic and immunogenic"
+          }
+        ],
+        "explanation": "These distinctions define the major recognition and completeness categories."
+      }
+    ]
+  }
+}

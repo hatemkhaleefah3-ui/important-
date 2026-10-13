@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 4,
+  "id": "carbohydrate-biochemistry",
+  "title": "Carbohydrate biochemistry",
+  "subtitle": "Follow the carbon. Balance the energy. Understand the metabolic switches.",
+  "course": "Medical Biochemistry",
+  "author": "Verdant lecture collection",
+  "level": "Medical student / core mechanisms",
+  "durationMinutes": 35,
+  "sources": [
+    {
+      "id": "B1",
+      "title": "Biochemistry, Glycolysis — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482303/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B2",
+      "title": "Biochemistry, Aerobic Glycolysis — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK470170/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B3",
+      "title": "Biochemistry, Glycogen — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK539802/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B4",
+      "title": "Biochemistry – Glycogenolysis — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK549820/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B5",
+      "title": "Biochemistry, Gluconeogenesis — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK544346/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B6",
+      "title": "Biochemistry, Hexose Monophosphate Pathway — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK551687/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B7",
+      "title": "The pentose phosphate pathway in health and disease — Nature Reviews Molecular Cell Biology, 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37612403/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B8",
+      "title": "Biochemistry, Fructose Metabolism — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK576428/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B9",
+      "title": "Monosaccharide Metabolism — Essentials of Glycobiology",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK20703/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B10",
+      "title": "Physiology, Nutrient Absorption — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK597379/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B11",
+      "title": "Intermediary Metabolism — Basic Neurochemistry",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK28268/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B12",
+      "title": "Biochemistry, Citric Acid Cycle — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK541072/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B13",
+      "title": "The Biosynthesis of Cell Constituents — The Cell",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK9956/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B14",
+      "title": "Monosaccharide Diversity — Essentials of Glycobiology, 4th edition",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK579981/",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": "B15",
+      "title": "Physiology, Carbohydrates — NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK459280/",
+      "accessed": "2026-10-04"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Carbon, energy, and context"
+    },
+    {
+      "type": "paragraph",
+      "text": "Carbohydrate metabolism connects immediate ATP production, glucose storage, glucose synthesis, and cellular reducing power. Track three things through each pathway: where the carbon goes, which energy carriers change, and which tissue is doing the work.",
+      "variant": "lead"
+    },
+    {
+      "type": "table",
+      "title": "Structure changes biological meaning",
+      "sourceIds": [
+        "B14",
+        "B15"
+      ],
+      "columns": [
+        "Concept",
+        "Example",
+        "Distinction"
+      ],
+      "rows": [
+        [
+          "Monosaccharide",
+          "Glucose, fructose, galactose",
+          "One sugar unit; different chemistry and enzyme recognition"
+        ],
+        [
+          "Disaccharide",
+          "Lactose: glucose + galactose",
+          "Requires cleavage before monosaccharide absorption"
+        ],
+        [
+          "Epimers",
+          "Glucose–mannose: C2; glucose–galactose: C4",
+          "Differ at one stereogenic center"
+        ],
+        [
+          "Anomers",
+          "α versus β forms of a cyclic sugar",
+          "Differ at the anomeric carbon"
+        ],
+        [
+          "Storage polymer",
+          "Glycogen",
+          "Branched glucose reserve in animal tissues"
+        ]
+      ]
+    },
+    {
+      "type": "objectives",
+      "items": [
+        "Trace glucose through competing metabolic routes",
+        "Account for ATP, NADH, and NADPH separately",
+        "Explain fed–fasting regulation and tissue differences",
+        "Connect enzyme defects to mechanistic consequences"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "A pathway map",
+      "columns": [
+        "Pathway",
+        "Main role",
+        "Key output"
+      ],
+      "rows": [
+        [
+          "Glycolysis",
+          "Break down glucose",
+          "Pyruvate; net ATP; NADH"
+        ],
+        [
+          "Glycogenesis",
+          "Store glucose units",
+          "Glycogen"
+        ],
+        [
+          "Glycogenolysis",
+          "Mobilize stored glucose",
+          "Mostly glucose-1-phosphate"
+        ],
+        [
+          "Gluconeogenesis",
+          "Maintain glucose availability",
+          "Glucose from noncarbohydrate precursors"
+        ],
+        [
+          "Pentose phosphate pathway",
+          "Supply reducing power and pentoses",
+          "NADPH; ribose-5-phosphate"
+        ]
+      ],
+      "sourceIds": [
+        "B1",
+        "B3",
+        "B4",
+        "B5",
+        "B6"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Absorption is not intracellular metabolism",
+      "text": "Brush-border digestion yields absorbable monosaccharides. Intestinal glucose and galactose use SGLT1; fructose uses GLUT5. These transport steps precede the intracellular pathways shown below.",
+      "sourceIds": [
+        "B10"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Glycolysis: invest, split, recover"
+    },
+    {
+      "type": "paragraph",
+      "text": "Glycolysis occurs in the cytosol. One glucose yields two pyruvate molecules. Two ATP are invested and four are produced: the net is two ATP and two NADH per glucose. These are glycolytic yields, not the total yield from complete glucose oxidation.",
+      "sourceIds": [
+        "B1"
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Glycolysis: the carbon and ATP checkpoints",
+      "description": "A grouped map, not all ten individual reactions. Select checkpoints to inspect their role. [B1, B2]",
+      "steps": [
+        {
+          "id": "g",
+          "title": "Glucose",
+          "context": "Cytosol",
+          "description": "Six-carbon starting substrate.",
+          "formula": "6C",
+          "agent": "HK / GK"
+        },
+        {
+          "id": "g6",
+          "title": "Glucose-6-phosphate",
+          "badge": "Investment 1",
+          "description": "Hexokinase or glucokinase uses ATP to phosphorylate glucose.",
+          "formula": "ATP → ADP",
+          "agent": "isomerase"
+        },
+        {
+          "id": "f6",
+          "title": "Fructose-6-phosphate",
+          "description": "Phosphoglucose isomerase rearranges the six-carbon sugar.",
+          "agent": "PFK-1"
+        },
+        {
+          "id": "f16",
+          "title": "Fructose-1,6-bisphosphate",
+          "badge": "Investment 2",
+          "description": "PFK-1 consumes the second ATP; this is a major control point.",
+          "formula": "ATP → ADP",
+          "agent": "split"
+        },
+        {
+          "id": "triose",
+          "title": "Two triose streams",
+          "description": "Aldolase yields GAP and DHAP. Triose phosphate isomerase converts DHAP to GAP.",
+          "formula": "2 × 3C",
+          "agent": "payoff"
+        },
+        {
+          "id": "pyr",
+          "title": "Two pyruvate",
+          "badge": "Grouped payoff",
+          "description": "The payoff reactions form four ATP and two NADH per glucose. Several intermediates are grouped here.",
+          "formula": "Net: 2 ATP + 2 NADH"
+        }
+      ],
+      "sourceIds": [
+        "B1",
+        "B2"
+      ],
+      "pathway": "Glycolysis"
+    },
+    {
+      "type": "table",
+      "title": "Three irreversible checkpoints",
+      "columns": [
+        "Enzyme",
+        "Conversion",
+        "Interpretation"
+      ],
+      "rows": [
+        [
+          "Hexokinase / glucokinase",
+          "Glucose → G6P",
+          "Entry and trapping step"
+        ],
+        [
+          "PFK-1",
+          "F6P → F1,6BP",
+          "Committed glycolytic control point"
+        ],
+        [
+          "Pyruvate kinase",
+          "PEP → pyruvate",
+          "ATP-producing terminal step"
+        ]
+      ],
+      "sourceIds": [
+        "B2"
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "Energy accounting",
+      "text": "Gross ATP production is four; net production is two after the investment steps. Conversion of pyruvate to lactate regenerates NAD⁺ and adds no extra ATP.",
+      "sourceIds": [
+        "B1",
+        "B2"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "A regulator can be both substrate and signal",
+      "text": "ATP supplies phosphate to reactions but also signals energy abundance. ATP and citrate inhibit PFK-1; AMP signals low energy availability. Fructose-2,6-bisphosphate strongly favors glycolysis.",
+      "sourceIds": [
+        "B11"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Four ATP are produced and two are invested. What is the net glycolytic ATP yield per glucose?",
+      "options": [
+        "0 ATP",
+        "2 ATP",
+        "4 ATP",
+        "6 ATP"
+      ],
+      "correctIndex": 1,
+      "answer": "Net ATP = 4 − 2 = 2. Keep this separate from NADH and mitochondrial ATP production.",
+      "sourceIds": [
+        "B1"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Pyruvate: a metabolic junction"
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Lactate dehydrogenase reaction",
+      "pathway": "Pyruvate reduction to lactate",
+      "description": "One reversible redox reaction coupling pyruvate/lactate with NADH/NAD⁺. [B4]",
+      "steps": [
+        {
+          "id": "py",
+          "title": "Pyruvate",
+          "description": "A three-carbon junction between several pathways.",
+          "formula": "3C",
+          "agent": "LDH"
+        },
+        {
+          "id": "lac",
+          "title": "Lactate",
+          "context": "Cytosol",
+          "description": "Lactate dehydrogenase interconverts lactate and pyruvate while coupling NADH/NAD⁺.",
+          "formula": "NADH → NAD⁺"
+        }
+      ],
+      "sourceIds": [
+        "B2",
+        "B5",
+        "B12"
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Pyruvate dehydrogenase reaction",
+      "pathway": "Oxidative decarboxylation of pyruvate",
+      "description": "One mitochondrial conversion of pyruvate to acetyl-CoA. [B4]",
+      "steps": [
+        {
+          "id": "py",
+          "title": "Pyruvate",
+          "description": "A three-carbon junction between several pathways.",
+          "formula": "3C",
+          "agent": "PDH"
+        },
+        {
+          "id": "ac--oxidation",
+          "title": "Acetyl-CoA",
+          "context": "Mitochondrial matrix",
+          "description": "Pyruvate dehydrogenase forms acetyl-CoA, CO₂, and NADH.",
+          "agent": "oxidation"
+        }
+      ],
+      "sourceIds": [
+        "B2",
+        "B5",
+        "B12"
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Pyruvate carboxylase reaction",
+      "pathway": "Carboxylation of pyruvate",
+      "description": "One ATP- and biotin-dependent conversion of pyruvate to oxaloacetate. [B4]",
+      "steps": [
+        {
+          "id": "py",
+          "title": "Pyruvate",
+          "description": "A three-carbon junction between several pathways.",
+          "formula": "3C",
+          "agent": "pyruvate carboxylase"
+        },
+        {
+          "id": "oaa--synthesis",
+          "title": "Oxaloacetate",
+          "description": "Pyruvate carboxylase uses ATP and biotin to add carbon from bicarbonate.",
+          "formula": "ATP required",
+          "agent": "bypass route"
+        }
+      ],
+      "sourceIds": [
+        "B2",
+        "B5",
+        "B12"
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "Direction matters",
+      "text": "Pyruvate dehydrogenase is not reversed to make glucose. In humans, acetyl-CoA from even-chain fatty acids does not provide net glucose synthesis.",
+      "sourceIds": [
+        "B5",
+        "B12"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Glycogen: store locally, mobilize selectively"
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Glycogenesis",
+      "pathway": "Glycogen synthesis",
+      "description": "One storage pathway from glucose-6-phosphate to glycogen. [B5]",
+      "steps": [
+        {
+          "id": "g6",
+          "title": "Glucose-6-phosphate",
+          "description": "A shared entry point linking storage and glycolysis.",
+          "agent": "mutase"
+        },
+        {
+          "id": "g1",
+          "title": "Glucose-1-phosphate",
+          "description": "Phosphoglucomutase interconverts G6P and G1P.",
+          "agent": "activation"
+        },
+        {
+          "id": "udp",
+          "title": "UDP-glucose",
+          "description": "An activated glucose donor for glycogen synthesis.",
+          "formula": "UTP required",
+          "agent": "synthesis"
+        },
+        {
+          "id": "gly",
+          "title": "Glycogen",
+          "badge": "Branched reserve",
+          "description": "Glycogen synthase extends α1→4 chains; branching enzyme forms α1→6 branches."
+        }
+      ],
+      "sourceIds": [
+        "B3",
+        "B4"
+      ]
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Glycogenolysis",
+      "pathway": "Glycogen mobilization",
+      "description": "One mobilization pathway from glycogen to glucose-6-phosphate. [B5]",
+      "steps": [
+        {
+          "id": "gly",
+          "title": "Glycogen",
+          "badge": "Branched reserve",
+          "description": "Glycogen synthase extends α1→4 chains; branching enzyme forms α1→6 branches.",
+          "agent": "glycogen phosphorylase"
+        },
+        {
+          "id": "break--mobilize",
+          "title": "Mobilized G1P",
+          "description": "Phosphorylase releases G1P from α1→4 links. Debranching handles branch points; a small fraction is free glucose.",
+          "agent": "mutase"
+        },
+        {
+          "id": "reuse--mobilize",
+          "title": "Glucose-6-phosphate",
+          "description": "G1P is converted to G6P for tissue-specific use."
+        }
+      ],
+      "sourceIds": [
+        "B3",
+        "B4"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Liver versus skeletal muscle",
+      "columns": [
+        "Feature",
+        "Liver",
+        "Skeletal muscle"
+      ],
+      "rows": [
+        [
+          "Primary purpose",
+          "Support blood glucose",
+          "Support local contraction"
+        ],
+        [
+          "Glucose-6-phosphatase",
+          "Present",
+          "Absent"
+        ],
+        [
+          "Glycogen-derived carbon",
+          "Can become circulating glucose",
+          "Used locally through glycolysis"
+        ],
+        [
+          "Regulatory emphasis",
+          "Glucagon and epinephrine",
+          "Epinephrine, AMP, and contraction-related Ca²⁺"
+        ]
+      ],
+      "sourceIds": [
+        "B3",
+        "B4"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Why can liver glycogen support circulating glucose while skeletal muscle glycogen mainly supports local work?",
+      "options": [
+        "Muscle contains no glycogen",
+        "Muscle lacks glucose-6-phosphatase",
+        "Liver glycolysis produces no ATP",
+        "Muscle stores only fructose"
+      ],
+      "correctIndex": 1,
+      "answer": "Skeletal muscle lacks glucose-6-phosphatase. It cannot directly convert its G6P pool into free glucose for export.",
+      "sourceIds": [
+        "B4"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Gluconeogenesis: bypass, do not reverse"
+    },
+    {
+      "type": "paragraph",
+      "text": "Liver, with a contribution from kidney, makes glucose from precursors such as lactate, glycerol, and glucogenic amino acids. Irreversible glycolytic reactions require distinct bypass enzymes. Synthesis of one glucose from two pyruvate costs four ATP, two GTP, and two NADH.",
+      "sourceIds": [
+        "B5",
+        "B13"
+      ]
+    },
+    {
+      "type": "table",
+      "title": "The bypass logic",
+      "columns": [
+        "Glycolytic checkpoint",
+        "Gluconeogenic bypass",
+        "Essential distinction"
+      ],
+      "rows": [
+        [
+          "Pyruvate kinase",
+          "Pyruvate carboxylase + PEP carboxykinase",
+          "Pyruvate → OAA → PEP; ATP and GTP required"
+        ],
+        [
+          "PFK-1",
+          "Fructose-1,6-bisphosphatase",
+          "Hydrolysis rather than ATP production"
+        ],
+        [
+          "Hexokinase / glucokinase",
+          "Glucose-6-phosphatase",
+          "Produces free glucose in suitable tissues"
+        ]
+      ],
+      "sourceIds": [
+        "B5"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Fed and fasting states",
+      "text": "In the liver, insulin generally favors glucose use and storage. Glucagon favors glucose production and glycogen mobilization. Hormonal regulation changes enzyme activity and expression; it does not override mass balance or tissue-specific enzyme availability.",
+      "sourceIds": [
+        "B3",
+        "B4",
+        "B5"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Which pairing bypasses pyruvate kinase during gluconeogenesis?",
+      "options": [
+        "Hexokinase + PFK-1",
+        "Pyruvate carboxylase + PEP carboxykinase",
+        "Glycogen synthase + branching enzyme",
+        "G6PD + transketolase"
+      ],
+      "correctIndex": 1,
+      "answer": "Pyruvate first becomes oxaloacetate, then PEP. The bypass consumes energy instead of reversing the pyruvate kinase reaction.",
+      "sourceIds": [
+        "B13"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Pentose phosphate pathway: a different currency"
+    },
+    {
+      "type": "step-process",
+      "domain": "chemistry",
+      "title": "Pentose phosphate pathway: alternative carbon results",
+      "description": "One pathway can support ribose production or recycle pentose carbon into glycolytic intermediates. [B6]",
+      "steps": [
+        {
+          "id": "g6",
+          "title": "Glucose-6-phosphate",
+          "description": "Substrate shared with glycolysis and glycogen metabolism.",
+          "agent": "G6PD"
+        },
+        {
+          "id": "ox",
+          "title": "Oxidative phase",
+          "badge": "G6PD checkpoint",
+          "description": "G6PD initiates an irreversible oxidation sequence.",
+          "agent": "oxidation"
+        },
+        {
+          "id": "ru",
+          "title": "Ribulose-5-phosphate",
+          "description": "Oxidation yields a pentose, two NADPH, and CO₂ per G6P.",
+          "formula": "2 NADPH + CO₂",
+          "agent": "isomerization"
+        },
+        {
+          "id": "r5",
+          "title": "Ribose-5-phosphate",
+          "description": "Pentose interconversion supplies ribose for nucleotide synthesis."
+        }
+      ],
+      "sourceIds": [
+        "B6",
+        "B7"
+      ],
+      "pathway": "Pentose phosphate pathway",
+      "resultSets": [
+        {
+          "id": "pentose-results",
+          "fromStep": "ru",
+          "defaultResult": "Ribose-5-phosphate",
+          "alternatives": [
+            {
+              "id": "recycled-carbon",
+              "title": "Glycolytic intermediates",
+              "agent": "carbon exchange",
+              "steps": [
+                {
+                  "id": "non--recycle",
+                  "title": "Nonoxidative exchange",
+                  "description": "Reversible carbon rearrangements adapt pentose supply to demand. Transketolase requires thiamine pyrophosphate.",
+                  "agent": "rearrangement"
+                },
+                {
+                  "id": "gly--recycle",
+                  "title": "Glycolytic intermediates",
+                  "description": "F6P and GAP reconnect pentose metabolism with glycolysis.",
+                  "formula": "F6P + GAP"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "Red-cell vulnerability",
+      "text": "NADPH supports regeneration of reduced glutathione. G6PD deficiency can impair oxidative defense and cause episodic hemolysis under oxidative stress.",
+      "sourceIds": [
+        "B7"
+      ]
+    },
+    {
+      "type": "question",
+      "prompt": "Which output is most directly associated with the oxidative pentose phosphate pathway?",
+      "options": [
+        "NADPH",
+        "FADH₂",
+        "GTP",
+        "Acetyl-CoA"
+      ],
+      "correctIndex": 0,
+      "answer": "The oxidative phase supplies NADPH. Pentose carbon is also generated; the nonoxidative reactions redistribute it.",
+      "sourceIds": [
+        "B6"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Other sugars and clinical connections"
+    },
+    {
+      "type": "table",
+      "title": "Entry routes and defects",
+      "columns": [
+        "Sugar / process",
+        "Key enzyme or step",
+        "High-yield connection"
+      ],
+      "rows": [
+        [
+          "Fructose",
+          "Fructokinase → fructose-1-phosphate; aldolase B",
+          "Aldolase B deficiency causes hereditary fructose intolerance"
+        ],
+        [
+          "Galactose",
+          "Galactokinase; GALT; UDP-galactose epimerase",
+          "GALT deficiency causes classic galactosemia"
+        ],
+        [
+          "Glycogen",
+          "Tissue-specific synthesis and breakdown enzymes",
+          "Defects may cause hepatic or muscle-predominant disease"
+        ],
+        [
+          "PPP",
+          "G6PD",
+          "Oxidative-stress vulnerability in red cells"
+        ]
+      ],
+      "sourceIds": [
+        "B8",
+        "B9",
+        "B3",
+        "B7"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Do not confuse two fructose disorders",
+      "text": "Essential fructosuria reflects fructokinase deficiency and is usually benign. Hereditary fructose intolerance reflects aldolase B deficiency and is a clinically serious metabolic disorder.",
+      "sourceIds": [
+        "B8"
+      ]
+    },
+    {
+      "type": "checklist",
+      "title": "Ready to explain the system?",
+      "items": [
+        "I can calculate gross versus net glycolytic ATP",
+        "I can separate NADH from NADPH functions",
+        "I can name the three glycolytic bypasses",
+        "I can explain liver–muscle glycogen differences",
+        "I can trace the PPP without calling it an ATP-producing pathway"
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Sources and scope"
+    },
+    {
+      "type": "note",
+      "title": "Reading the processes",
+      "text": "These are deliberately grouped teaching sequences. Omitted intermediates, cofactors, and tissue-specific regulation are identified where relevant. The steps show mechanistic routes, not quantitative flux simulations."
+    },
+    {
+      "type": "references",
+      "title": "Source key — checked 4 October 2026",
+      "items": [
+        "B1 · Biochemistry, Glycolysis — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK482303/",
+        "B2 · Biochemistry, Aerobic Glycolysis — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK470170/",
+        "B3 · Biochemistry, Glycogen — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK539802/",
+        "B4 · Biochemistry – Glycogenolysis — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK549820/",
+        "B5 · Biochemistry, Gluconeogenesis — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK544346/",
+        "B6 · Biochemistry, Hexose Monophosphate Pathway — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK551687/",
+        "B7 · The pentose phosphate pathway in health and disease — Nature Reviews Molecular Cell Biology, 2023 · https://pubmed.ncbi.nlm.nih.gov/37612403/",
+        "B8 · Biochemistry, Fructose Metabolism — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK576428/",
+        "B9 · Monosaccharide Metabolism — Essentials of Glycobiology · https://www.ncbi.nlm.nih.gov/books/NBK20703/",
+        "B10 · Physiology, Nutrient Absorption — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK597379/",
+        "B11 · Intermediary Metabolism — Basic Neurochemistry · https://www.ncbi.nlm.nih.gov/books/NBK28268/",
+        "B12 · Biochemistry, Citric Acid Cycle — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK541072/",
+        "B13 · The Biosynthesis of Cell Constituents — The Cell · https://www.ncbi.nlm.nih.gov/books/NBK9956/",
+        "B14 · Monosaccharide Diversity — Essentials of Glycobiology, 4th edition · https://www.ncbi.nlm.nih.gov/books/NBK579981/",
+        "B15 · Physiology, Carbohydrates — NCBI Bookshelf · https://www.ncbi.nlm.nih.gov/books/NBK459280/"
+      ]
+    }
+  ]
+}
