@@ -1,0 +1,12 @@
+name = "verdant-lecture-links"
+main = "src/index.js"
+compatibility_date = "2026-10-18"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "LECTURE_LINKS"
+bucket_name = "verdant-lecture-links"
+
+[vars]
+# Set this to the deployed static app URL, e.g. https://OWNER.github.io/REPO/
+APP_URL = "https://YOUR-STATIC-APP-URL/"
