@@ -9,4 +9,4 @@ bucket_name = "verdant-lecture-links"
 
 [vars]
 # Set this to the deployed static app URL, e.g. https://OWNER.github.io/REPO/
-APP_URL = "https://YOUR-STATIC-APP-URL/"
+APP_URL = "https://important-9qf.pages.dev/"
