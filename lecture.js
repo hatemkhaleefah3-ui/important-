@@ -40,7 +40,26 @@ window.validateLecture=d=>{
 	  if(b.purpose!=null&&!['quick-comparison','simplify-complexity','rapid-review','structured-variables'].includes(b.purpose))throw Error('Table purpose must be quick-comparison, simplify-complexity, rapid-review, or structured-variables.');
 	  if(!Array.isArray(b.columns)||b.columns.length<2||b.columns.some(x=>typeof x!=='string')||!Array.isArray(b.rows)||b.rows.some(row=>!Array.isArray(row)||row.length!==b.columns.length||row.some(x=>typeof x!=='string')))throw Error('Table rows must match at least two text columns.');
 	 }
- if(b.type==='image'){block.classList.add('lecture-image');const figure=el('figure','image-study-card'),head=el('div','image-study-head');head.append(el('span','image-study-label',b.label||b.processName||'VISUAL STUDY'),el('h3','image-study-title',b.title||b.alt||'Lecture image'),el('p','image-study-description',b.explanation||b.text||b.description||b.caption||'Study this visual alongside the subject explained on this page.'));const frame=el('div','lecture-image-frame'),location=b.source.fileType==='pdf'?'PDF page '+b.source.page+(b.source.crop?' · crop '+b.source.crop.join(', '):''):b.source.fileType==='pptx'?'PPTX slide '+b.source.slide+' · '+(b.source.media||'image '+b.source.image):'DOCX · '+(b.source.media||'image '+b.source.image+' in document order');if(b.imageData){const image=el('img');image.src=b.imageData;image.alt=b.alt||b.title||'Lecture image';image.loading='lazy';image.decoding='async';frame.append(image)}else{const placeholder=el('div','lecture-image-placeholder');placeholder.setAttribute('role','img');placeholder.setAttribute('aria-label','Image placeholder: '+(b.alt||b.title||'lecture image'));placeholder.append(el('span','lecture-image-icon','▧'),el('strong','',b.title||b.processName||'Image content'),el('small','',b.sourceLabel||location));frame.append(placeholder)}const footer=el('div','image-study-footer');footer.append(el('span','image-study-alt',b.alt||'Visual reference'),el('span','image-study-source',b.sourceLabel||location));figure.append(head,frame,footer);block.append(figure)}
+ if(b.type==='image'){
+  str(b.processName,'Block '+(i+1)+' image process name',true);
+  str(b.alt,'Block '+(i+1)+' image alt text',true);
+  str(b.title,'Block '+(i+1)+' image title');
+  str(b.caption,'Block '+(i+1)+' image caption');
+  str(b.explanation,'Block '+(i+1)+' image explanation');
+  str(b.sourceLabel,'Block '+(i+1)+' image source label');
+  if(!b.source||typeof b.source!=='object'||Array.isArray(b.source))throw Error('Image blocks need a source object.');
+  const source=b.source;
+  if(source.fileType==='pdf'){
+   if(!Number.isInteger(source.page)||source.page<1)throw Error('PDF image sources need a positive page number.');
+   if(source.crop!=null&&(!Array.isArray(source.crop)||source.crop.length!==4||source.crop.some(value=>!Number.isFinite(value)||value<0||value>1)||source.crop[2]<=0||source.crop[3]<=0||source.crop[0]+source.crop[2]>1||source.crop[1]+source.crop[3]>1))throw Error('PDF image crops need normalized [x, y, width, height] values within the page.');
+  }else if(source.fileType==='pptx'){
+   if(!Number.isInteger(source.slide)||source.slide<1||!Number.isInteger(source.image)||source.image<1)throw Error('PPTX image sources need positive slide and image numbers.');
+   str(source.media,'PPTX image media');
+  }else if(source.fileType==='docx'){
+   if(source.media!=null)str(source.media,'DOCX image media',true);
+   else if(!Number.isInteger(source.image)||source.image<1)throw Error('DOCX image sources need a media name or positive image number.');
+  }else throw Error('Image source fileType must be pdf, pptx, or docx.');
+ }
  if(b.type==='question'){str(b.prompt,'question prompt',true);str(b.answer,'question answer',true);if(b.options!=null&&(!Array.isArray(b.options)||b.options.length<2||b.options.some(x=>typeof x!=='string')||!Number.isInteger(b.correctIndex)||b.correctIndex<0||b.correctIndex>=b.options.length))throw Error('Question options require a valid correctIndex.');}
  }
  return d;
