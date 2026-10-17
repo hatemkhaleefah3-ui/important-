@@ -67,8 +67,37 @@ window.validateLecture=d=>{
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
 const button=(text,cls,fn)=>{const n=el('button',cls,text);n.type='button';n.onclick=fn;return n;};
 function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return (h>>>0).toString(36)}
+function consolidateTablesBySection(lecture){
+ const blocks=lecture.blocks.slice(),result=[];let sectionBlocks=[];
+ const flush=()=>{
+  const tables=sectionBlocks.filter(block=>block.type==='table');
+  if(tables.length<2){result.push(...sectionBlocks);sectionBlocks=[];return}
+  const columns=['Topic',...new Set(tables.flatMap(table=>table.columns))];
+  const rows=[];
+  for(const table of tables){
+   const title=table.title||'Reference';
+   for(const row of table.rows){
+    const values=Object.fromEntries(table.columns.map((column,index)=>[column,row[index]]));
+    rows.push([title,...columns.slice(1).map(column=>values[column]??'')]);
+   }
+  }
+  const combined={type:'table',title:'Consolidated lecture table',purpose:'rapid-review',description:'All table content in this section is combined below. The Topic column identifies each original table; cells are aligned by their column headings.',columns,rows};
+  let inserted=false;
+  for(const block of sectionBlocks){
+   if(block.type==='table'){if(!inserted){result.push(combined);inserted=true}}
+   else result.push(block);
+  }
+  sectionBlocks=[];
+ };
+ for(const block of blocks){
+  if(block.type==='section'||block.type==='title'){flush();result.push(block)}
+  else sectionBlocks.push(block);
+ }
+ flush();
+ return {...lecture,blocks:result};
+}
 window.renderLecture=d=>{
- validateLecture(d);const practical=d.lectureType==='practical';document.body.classList.add('lecture-page');document.title=d.title+' · Verdant';document.body.replaceChildren();
+ validateLecture(d);d=consolidateTablesBySection(d);const practical=d.lectureType==='practical';document.body.classList.add('lecture-page');document.title=d.title+' · Verdant';document.body.replaceChildren();
  const root=el('div','lecture'),key='verdant:'+hash(JSON.stringify(d));let state={};
  try{state=JSON.parse(localStorage.getItem(key)||'{}')||{}}catch{}
  if(typeof state!=='object'||Array.isArray(state))state={};
