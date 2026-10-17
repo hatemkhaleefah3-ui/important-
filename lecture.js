@@ -107,6 +107,20 @@ window.renderLecture=d=>{
  }
  let practicalPageIndex=0;
  if(practical){root.classList.add('practical-pages');side.hidden=true;const count=el('span','practical-page-count');const prev=button('← Previous','practical-nav-button previous',()=>showPage(practicalPageIndex-1));const voice=button('▶ Voice teaching','practical-nav-button voice',()=>{const text=chapterExplanations[practicalPageIndex].join('\n\n');if(!text||!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return;if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();voice.textContent='▶ Voice teaching';return}const utterance=new SpeechSynthesisUtterance(text);utterance.onstart=()=>voice.textContent='■ Stop teaching';utterance.onend=utterance.onerror=()=>voice.textContent='▶ Voice teaching';window.speechSynthesis.cancel();window.speechSynthesis.speak(utterance)});const next=button('Next →','practical-nav-button next',()=>showPage(practicalPageIndex+1));const bar=el('nav','practical-page-bar');bar.setAttribute('aria-label','Practical lecture navigation');bar.append(prev,voice,count,next);root.append(bar);
+ // Mobile browsers (notably iOS Safari) can place fixed controls behind their
+ // expanding/collapsing browser chrome. Anchor the pager to the visual viewport.
+ const syncPracticalBarViewport=()=>{
+  const viewport=window.visualViewport;
+  const obscuredBottom=viewport?Math.max(0,window.innerHeight-(viewport.height+viewport.offsetTop)):0;
+  bar.style.bottom=obscuredBottom+'px';
+ };
+ syncPracticalBarViewport();
+ window.addEventListener('resize',syncPracticalBarViewport,{passive:true});
+ window.addEventListener('orientationchange',syncPracticalBarViewport,{passive:true});
+ if(window.visualViewport){
+  window.visualViewport.addEventListener('resize',syncPracticalBarViewport,{passive:true});
+  window.visualViewport.addEventListener('scroll',syncPracticalBarViewport,{passive:true});
+ }
  function showPage(i){practicalPageIndex=Math.max(0,Math.min(chapters.length-1,i));chapters.forEach((chapter,j)=>{chapter.hidden=j!==practicalPageIndex});links.forEach((link,j)=>{link.classList.toggle('active',j===practicalPageIndex);if(j===practicalPageIndex)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});prev.disabled=practicalPageIndex===0;next.disabled=practicalPageIndex===chapters.length-1;count.textContent='PAGE '+(practicalPageIndex+1)+' / '+chapters.length;voice.disabled=!chapterExplanations[practicalPageIndex]?.join('').trim()||!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window);voice.textContent='▶ Voice teaching';window.speechSynthesis?.cancel();window.scrollTo(0,0)}
  showPage(0)}
  const notes=el('section','block notes'),label=el('label','','Your margin notes'),area=el('textarea');area.id='lecture-notes';label.htmlFor=area.id;area.placeholder='What clicked? What would you like to revisit?';area.value=typeof state.notes==='string'?state.notes:'';const status=el('span','save-status','Notes stay in this browser.');status.setAttribute('aria-live','polite');area.oninput=()=>{state.notes=area.value;status.textContent=save()?'Saved in this browser.':'Storage unavailable. Copy your notes before leaving.'};notes.append(label,area,status);article.append(notes);
