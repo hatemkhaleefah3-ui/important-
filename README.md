@@ -6,6 +6,23 @@ For **Web app**, import the standard lecture JSON and optionally its PDF, PPTX, 
 
 `theoretical-lecture.template.json` and `practical-lecture.template.json` are separate authoring starters selected by the creation wizard. The theoretical template focuses on concepts, explanations, comparisons, and recall; the practical template focuses on preparation, equipment, ordered procedures, visual technique cards, checkpoints, and safety review. Each template declares `lectureType`, and the wizard rejects a marked JSON file when its type does not match the selected app. `medical-lecture.template.json` remains available as a full reference template. `medical-lecture.example.json` demonstrates the complete reader. The example is educational content, not a reviewed clinical guideline.
 
+## Cloudflare R2 short links
+
+Web-app links are self-contained by default: the lecture JSON is encoded in the URL fragment. To create compact share links, deploy the optional Cloudflare Worker in `cloudflare-worker/`. It stores each lecture JSON object in an R2 bucket and returns a short `workers.dev` URL. Opening that URL redirects to this static app with the lecture restored in its fragment. The short URL is the shareable link; after redirect, the browser address bar displays the app URL and its embedded lecture data.
+
+### Deploy
+
+1. Install Node.js and authenticate with Cloudflare: `npx wrangler login`.
+2. Create the bucket: `npx wrangler r2 bucket create verdant-lecture-links`.
+3. Deploy the static app to a stable HTTPS URL (for example, GitHub Pages). Edit `cloudflare-worker/wrangler.toml` and replace `APP_URL` with the app's exact base URL, including the trailing slash. Do not include a fragment or query string.
+4. From the repository root, deploy the Worker: `npx wrangler deploy --config cloudflare-worker/wrangler.toml`.
+5. Copy the resulting `https://verdant-lecture-links.<your-subdomain>.workers.dev` origin into `window.LECTURE_SHORT_LINK_API` in `short-link-config.js` (without a trailing slash). Commit and redeploy the static app.
+6. Create a Web app from a lecture JSON. The generated link should now use the Worker URL. If the Worker request fails, the wizard reports an error rather than silently claiming a short link was created.
+
+The Worker exposes `POST /api/links` for link creation and `GET /:code` for redirects. It validates the lecture shape and size, generates random codes, only redirects to the configured `APP_URL` (no user-supplied redirect destinations), and allows browser creation requests only from the configured app origin. R2 stores the JSON payload; the Worker constructs the reader URL when the short link is opened. No Cloudflare credentials belong in this repository.
+
+Short links do not expire automatically. Deleting an R2 object under `links/<code>.json` revokes that link. Because the creation endpoint is publicly reachable, monitor Worker/R2 usage and add Cloudflare rate limiting or Turnstile if abuse becomes a concern. The long-link flow remains available when `short-link-config.js` is empty.
+
 ## JSON version 4
 
 Required fields: `title` and a non-empty `blocks` array. Set `schemaVersion` to `4`. Optional metadata: `id`, `subtitle`, `course`, `author`, `level`, and positive `durationMinutes`. Imports are limited to 250 KB and 200 blocks. Unknown blocks and malformed tables, questions, or processes produce an actionable import error. Text is rendered literally; HTML, scripts, and Markdown are not executed. Version 2 and 3 lecture files using retained block types remain compatible; version 3 `step-process.branches` are deliberately rejected because they encode pathway switching.
