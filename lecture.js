@@ -112,7 +112,8 @@ window.renderLecture=d=>{
  const syncPracticalBarViewport=()=>{
   const viewport=window.visualViewport;
   const obscuredBottom=viewport?Math.max(0,window.innerHeight-(viewport.height+viewport.offsetTop)):0;
-  bar.style.bottom=obscuredBottom+'px';
+  const mobileBrowserClearance=window.matchMedia('(max-width: 600px)').matches?96:0;
+  bar.style.bottom=(obscuredBottom+mobileBrowserClearance)+'px';
  };
  syncPracticalBarViewport();
  window.addEventListener('resize',syncPracticalBarViewport,{passive:true});
