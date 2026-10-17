@@ -113,7 +113,7 @@ body.lecture-page{margin:0;background:#f6f7fb;overflow-x:hidden}
 @media print{.lecture .responsive-table{overflow:visible;box-shadow:none}.lecture .responsive-table table{min-width:0}.lecture .responsive-table th,.lecture .responsive-table td{min-width:0}}
 
 /* Practical page-by-page reader */
-.lecture.practical-pages{padding-bottom:112px}
+.lecture.practical-pages{padding-bottom:160px}
 .lecture.practical-pages .reader{display:block;max-width:980px;margin:0 auto;padding:28px 26px 48px}
 .lecture.practical-pages .article{width:100%;max-width:100%;min-width:0}
 .lecture.practical-pages .chapter[hidden]{display:none!important}
